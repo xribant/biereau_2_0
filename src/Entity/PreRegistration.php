@@ -20,52 +20,69 @@ class PreRegistration
 
     /**
      * @ORM\Column(type="string", length=100)
+     * @Assert\NotBlank()
      * @Assert\Length(min=2, max=100)
      */
     private $parentFirstName;
 
     /**
      * @ORM\Column(type="string", length=100)
+     * @Assert\NotBlank()
+     * @Assert\Length(min=2, max=100)
      */
     private $parentLastName;
 
     /**
      * @ORM\Column(type="string", length=100)
+     * @Assert\NotBlank()
+     * @Assert\Regex(
+     *     pattern="/[0-9]{9,10}"
+     * )
      */
     private $phone;
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\NotBlank()
+     * @Assert\Email()
      */
     private $email;
 
     /**
      * @ORM\Column(type="string", length=100)
+     * @Assert\NotBlank()
+     * @Assert\Length(min=2, max=100)
      */
     private $childFirstName;
 
     /**
      * @ORM\Column(type="string", length=100)
+     * @Assert\NotBlank()
+     * @Assert\Length(min=2, max=100)
      */
     private $childLastName;
 
     /**
      * @ORM\Column(type="date")
+     * @Assert\DateTime()
      */
     private $childBirthDate;
 
     /**
      * @ORM\Column(type="date")
+     * @Assert\DateTime()
      */
     private $childEntryDate;
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\NotBlank()
      */
     private $childSection;
 
     /**
      * @ORM\Column(type="date")
+     * @Assert\DateTime()
      */
     private $registrationSession;
 
