@@ -1,0 +1,131 @@
+{%  extends "base.html.twig" %}
+
+{% block title %}Biereau.be - Inscription{% endblock %}
+
+{% block content %}
+
+    <section class="hero-wrap hero-wrap-2" style="background-image: url('images/bg_2.jpg');">
+        <div class="overlay"></div>
+        <div class="container">
+            <div class="row no-gutters slider-text align-items-center justify-content-center">
+                <div class="col-md-9 ftco-animate text-center">
+                    <h1 class="mb-2 bread">Inscription</h1>
+                    <p class="breadcrumbs">
+                        <span class="mr-2"><a href="{{ path('home_page') }}">Accueil <i class="ion-ios-arrow-forward"></i></a></span>
+                        <span>Infos Pratiques <i class="ion-ios-arrow-forward"></i></span>
+                        <span>Inscription <i class="ion-ios-arrow-forward"></i></span></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="ftco-section bg-light">
+        <div class="container">
+            <div class="row justify-content-center mb-1 pb-1">
+                <div class="col-md-8 text-center heading-section ftco-animate">
+                    <p>Chaque année, le collège du Biéreau organise deux séances d'informations permettant aux parents de recevoir documents et renseignements nécessaires
+                    en vue de l'inscription de leur(s) enfant(s) dans l'établissement.</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="ftco-section ftco-consult ftco-no-pt ftco-no-pb" style="background-image: url(images/bg_6.jpg);" data-stellar-background-ratio="0.5">
+        <div class="container">
+            <div class="row justify-content-end">
+                <div class="col-md-6 py-5 px-md-5 bg-primary">
+                    <div class="heading-section heading-section-white ftco-animate mb-5">
+                        <h2 class="mb-4">Préinscription 2021-2022</h2>
+                        <p>Veuillez remplir le formulaire afin de vous inscrire à l'une des deux séances d'information. Une  confirmation vous sera envoyée par e-mail.</p>
+                    </div>
+                    <form action="#" class="appointment-form ftco-animate">
+                        <div class="d-md-flex">
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="Nom du parent">
+                            </div>
+                            <div class="form-group ml-md-4">
+                                <input type="text" class="form-control" placeholder="Prénom du parent">
+                            </div>
+                        </div>
+                        <div class="d-md-flex">
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="Téléphone">
+                            </div>
+                            <div class="form-group ml-md-4">
+                                <input type="text" class="form-control" placeholder="E-Mail">
+                            </div>
+                        </div>
+                        <div class="d-md-flex">
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="Nom de l'enfant">
+                            </div>
+                            <div class="form-group ml-md-4">
+                                <input type="text" class="form-control" placeholder="Prénom de l'enfant">
+                            </div>
+                        </div>
+                        <div class="d-md-flex">
+                            <div class="form-group appointment-form">
+                                <input type="text" class="form-control" placeholder="Date de naissance">
+                            </div>
+                            <div class="form-group ml-md-4">
+                                <div class="form-field">
+                                    <div class="select-wrap">
+                                        <div class="icon"><span class="ion-ios-arrow-down"></span></div>
+                                        <select name="" id="" class="form-control">
+                                            <option value="">Date d'entrée</option>
+                                            <option value="">1er Septembre 2021</option>
+                                            <option value="">8 Novembre 2021</option>
+                                            <option value="">10 Janvier 2022</option>
+                                            <option value="">7 Février 2022</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="d-md-flex">
+                            <div class="form-group">
+                                <div class="form-field">
+                                    <div class="select-wrap">
+                                        <div class="icon"><span class="ion-ios-arrow-down"></span></div>
+                                        <select name="" id="" class="form-control">
+                                            <option value="">Section</option>
+                                            <option value="">Accueil</option>
+                                            <option value="">1ère Maternelle</option>
+                                            <option value="">2e Maternelle</option>
+                                            <option value="">3e Maternelle</option>
+                                            <option value="">1ère Primaire</option>
+                                            <option value="">2e Primaire</option>
+                                            <option value="">3e Primaire</option>
+                                            <option value="">4e Primaire</option>
+                                            <option value="">5e Primaire</option>
+                                            <option value="">6e Primaire</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group ml-md-4">
+                                <div class="form-field">
+                                    <div class="select-wrap">
+                                        <div class="icon"><span class="ion-ios-arrow-down"></span></div>
+                                        <select name="" id="" class="form-control">
+                                            <option value="">Session d'information</option>
+                                            <option value="">24 Novembre 2020</option>
+                                            <option value="">31 Mars 2021</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="d-md-flex">
+
+                            <div class="form-group">
+                                <input type="submit" value="Confirmer l'inscription" class="btn btn-secondary py-3 px-4">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}
