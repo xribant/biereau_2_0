@@ -1,7 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="eb337925-03b6-4a6f-95e2-c598709ccab2" name="Default Changelist" comment="" />
+    <list default="true" id="eb337925-03b6-4a6f-95e2-c598709ccab2" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/packages/twig.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/twig.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/SubscriptionController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/SubscriptionController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/PreRegistration.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Form/PreRegistrationType.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/PreRegistrationRepository.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/symfony.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/subscription.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/subscription.html.twig" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -10,6 +30,9 @@
   <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
     <execution />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="PhpWorkspaceProjectConfiguration">
     <include_path>
@@ -115,6 +138,9 @@
     </include_path>
   </component>
   <component name="ProjectId" id="1iQQ6mJZnZK6Zb5L3X943fHCRuY" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -123,6 +149,7 @@
     <property name="DatabaseDriversLRU" value="mysql.8" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="true" />
+    <property name="com.jetbrains.php.lang.actions.generation.PhpGenerateFieldAccessorHandlerBase$MyMemberChooser.fluent.setters.last.selected" value="true" />
     <property name="settings.editor.selected.configurable" value="PhpAnnotations.SettingsForm" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
@@ -142,24 +169,60 @@
       <updated>1601837162961</updated>
       <workItem from="1601837168853" duration="2099000" />
       <workItem from="1601923538311" duration="2027000" />
+      <workItem from="1601978712147" duration="4198000" />
+      <workItem from="1602057213128" duration="5531000" />
+      <workItem from="1602079196414" duration="35000" />
+      <workItem from="1602079275773" duration="534000" />
+      <workItem from="1602081122712" duration="2848000" />
+      <workItem from="1602089436479" duration="3805000" />
+      <workItem from="1602099945810" duration="2104000" />
+      <workItem from="1602102437518" duration="407000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
   <component name="WindowStateProjectService">
     <state x="560" y="182" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1601843001616">
       <screen x="0" y="23" width="1920" height="987" />
     </state>
     <state x="560" y="182" key="#com.intellij.execution.impl.EditConfigurationsDialog/1920.168.1280.777/0.23.1920.987@0.23.1920.987" timestamp="1601843001616" />
+    <state x="681" y="325" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1602098624652">
+      <screen x="0" y="23" width="1920" height="987" />
+    </state>
+    <state x="681" y="325" key="#com.intellij.fileTypes.FileTypeChooser/1920.168.1280.777/0.23.1920.987@0.23.1920.987" timestamp="1602098624652" />
+    <state x="742" y="232" key="#com.intellij.ide.util.MemberChooser" timestamp="1602098077721">
+      <screen x="0" y="23" width="1920" height="987" />
+    </state>
+    <state x="742" y="232" key="#com.intellij.ide.util.MemberChooser/1920.168.1280.777/0.23.1920.987@0.23.1920.987" timestamp="1602098077721" />
     <state width="256" height="457" key="HiddenNamespacesPopup" timestamp="1601843046027">
       <screen x="0" y="23" width="1920" height="987" />
     </state>
     <state width="256" height="457" key="HiddenNamespacesPopup/1920.168.1280.777/0.23.1920.987@0.23.1920.987" timestamp="1601843046027" />
+    <state x="762" y="447" key="NewPhpFileDialog" timestamp="1602098155436">
+      <screen x="0" y="23" width="1920" height="987" />
+    </state>
+    <state x="762" y="447" key="NewPhpFileDialog/1920.168.1280.777/0.23.1920.987@0.23.1920.987" timestamp="1602098155436" />
     <state x="461" y="155" key="SettingsEditor" timestamp="1601837227025">
       <screen x="0" y="23" width="1920" height="987" />
     </state>
     <state x="461" y="155" key="SettingsEditor/1920.168.1280.777/0.23.1920.987@0.23.1920.987" timestamp="1601837227025" />
+    <state x="625" y="240" width="670" height="676" key="search.everywhere.popup" timestamp="1602078508528">
+      <screen x="0" y="23" width="1920" height="987" />
+    </state>
+    <state x="625" y="240" width="670" height="676" key="search.everywhere.popup/1920.168.1280.777/0.23.1920.987@0.23.1920.987" timestamp="1602078508528" />
   </component>
 </project>

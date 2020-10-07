@@ -1,44 +1,3 @@
-{%  extends "base.html.twig" %}
-
-{% block title %}Biereau.be - Inscription{% endblock %}
-
-{% block content %}
-
-    <section class="hero-wrap hero-wrap-2" style="background-image: url('images/bg_2.jpg');">
-        <div class="overlay"></div>
-        <div class="container">
-            <div class="row no-gutters slider-text align-items-center justify-content-center">
-                <div class="col-md-9 ftco-animate text-center">
-                    <h1 class="mb-2 bread">Inscription</h1>
-                    <p class="breadcrumbs">
-                        <span class="mr-2"><a href="{{ path('home_page') }}">Accueil <i class="ion-ios-arrow-forward"></i></a></span>
-                        <span>Infos Pratiques <i class="ion-ios-arrow-forward"></i></span>
-                        <span>Inscription <i class="ion-ios-arrow-forward"></i></span></p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="ftco-section bg-light">
-        <div class="container">
-            <div class="row justify-content-center mb-1 pb-1">
-                <div class="col-md-8 text-center heading-section ftco-animate">
-                    <p>Chaque année, le collège du Biéreau organise deux séances d'informations permettant aux parents de recevoir documents et renseignements nécessaires
-                    en vue de l'inscription de leur(s) enfant(s) dans l'établissement.</p>
-                </div>
-            </div>
-
-        </div>
-    </section>
-
-    <section class="ftco-section ftco-consult ftco-no-pt ftco-no-pb" style="background-image: url(images/bg_6.jpg);" data-stellar-background-ratio="0.5">
-        <div class="container">
-            <div class="row justify-content-end">
-                <div class="col-md-6 py-5 px-md-5 bg-primary">
-                    <div class="heading-section heading-section-white ftco-animate mb-5">
-                        <h2 class="mb-4">Préinscription 2021-2022</h2>
-                        <p>Veuillez remplir le formulaire afin de vous inscrire à l'une des deux séances d'information. Une  confirmation vous sera envoyée par e-mail.</p>
-                    </div>
                     <form action="#" class="appointment-form ftco-animate">
                         <div class="d-md-flex">
                             <div class="form-group">
@@ -125,9 +84,3 @@
                             </div>
                         </div>
                     </form>
-
-                </div>
-            </div>
-        </div>
-    </section>
-{% endblock %}
