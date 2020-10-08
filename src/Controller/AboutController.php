@@ -9,7 +9,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 Class AboutController extends AbstractController {
 
     /**
-     * @Route("/a_propos", name="about_page")
+     * @Route("/about", name="about.index")
      */
     public function showAboutPage()
     {
