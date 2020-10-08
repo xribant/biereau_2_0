@@ -2,6 +2,8 @@
 
 namespace App\Controller;
 
+use App\Entity\ContactSub;
+use App\Form\ContactSubType;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 
@@ -12,7 +14,13 @@ class SubscriptionController extends AbstractController {
      */
     public function index()
     {
-        return $this->render('subscription.html.twig');
+        $contactSub = new ContactSub();
+        $form = $this->createForm(ContactSubType::class, $contactSub);
+
+        return $this->render('subscription.html.twig', [
+            'current_menu' => 'Inscription',
+            'form' => $form->createView()
+        ]);
     }
 
 

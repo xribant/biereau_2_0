@@ -23,6 +23,7 @@
         <link rel="stylesheet" href="{{ asset('css/icomoon.css') }}">
         <link rel="stylesheet" href="{{ asset('css/style.css') }}">
         <link rel="stylesheet" href="{{ asset('css/custom.css') }}">
+        <link rel="stylesheet" href="{{ asset('css/bootstrap/bootstrap-datepicker.min.css') }}">
     {%  endblock %}
 </head>
 <body>
@@ -207,6 +208,15 @@
     <script src="{{ asset('js/google-map.js') }}"></script>
     <script src="{{ asset('js/main.js') }}"></script>
     <script src="{{ asset('js/custom.js') }}"></script>
+    <script src="{{  asset('js/bootstrap-datepicker.min.js') }}"></script>
+    <script src="{{  asset('js/bootstrap-datepicker.fr.min.js') }}"></script>
+    <script>
+        jQuery(document).ready(function() {
+            $('.js-datepicker').datepicker({
+                language: "fr"
+            });
+        });
+    </script>
 {% endblock %}
 
 </body>

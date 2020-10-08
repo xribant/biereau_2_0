@@ -14,16 +14,16 @@
       <change beforePath="$PROJECT_DIR$/.idea/biereau_2_0.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/biereau_2_0.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/AboutController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/AboutController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/HomeController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20200928114742.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20200928183359.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20201004201718.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/SubscriptionController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/SubscriptionController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Contact.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Form/ContactType.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/ContactSubRepository.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/symfony.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/home.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/home.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/temp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/subscription.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/subscription.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -140,6 +140,11 @@
       <path value="$PROJECT_DIR$/vendor/laminas/laminas-zendframework-bridge" />
       <path value="$PROJECT_DIR$/vendor/laminas/laminas-eventmanager" />
       <path value="$PROJECT_DIR$/vendor/laminas/laminas-code" />
+      <path value="$PROJECT_DIR$/vendor/eternicode/bootstrap-datepicker" />
+      <path value="$PROJECT_DIR$/vendor/kriswallsmith/assetic" />
+      <path value="$PROJECT_DIR$/vendor/components/bootstrap" />
+      <path value="$PROJECT_DIR$/vendor/components/jquery" />
+      <path value="$PROJECT_DIR$/vendor/robloach/component-installer" />
     </include_path>
   </component>
   <component name="ProjectId" id="1iQQ6mJZnZK6Zb5L3X943fHCRuY" />
@@ -186,7 +191,7 @@
       <workItem from="1602102437518" duration="407000" />
       <workItem from="1602103935345" duration="82000" />
       <workItem from="1602105090074" duration="268000" />
-      <workItem from="1602139211312" duration="1175000" />
+      <workItem from="1602139211312" duration="12000000" />
     </task>
     <servers />
   </component>
@@ -214,10 +219,10 @@
       <screen x="0" y="23" width="1920" height="987" />
     </state>
     <state x="681" y="325" key="#com.intellij.fileTypes.FileTypeChooser/1920.168.1280.777/0.23.1920.987@0.23.1920.987" timestamp="1602098624652" />
-    <state x="742" y="232" key="#com.intellij.ide.util.MemberChooser" timestamp="1602098077721">
+    <state x="742" y="232" key="#com.intellij.ide.util.MemberChooser" timestamp="1602174996852">
       <screen x="0" y="23" width="1920" height="987" />
     </state>
-    <state x="742" y="232" key="#com.intellij.ide.util.MemberChooser/1920.168.1280.777/0.23.1920.987@0.23.1920.987" timestamp="1602098077721" />
+    <state x="742" y="232" key="#com.intellij.ide.util.MemberChooser/1920.168.1280.777/0.23.1920.987@0.23.1920.987" timestamp="1602174996852" />
     <state x="1051" y="258" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1602139880386">
       <screen x="0" y="23" width="1920" height="987" />
     </state>

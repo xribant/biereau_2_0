@@ -11,7 +11,7 @@
                 <div class="col-md-9 ftco-animate text-center">
                     <h1 class="mb-2 bread">Inscription</h1>
                     <p class="breadcrumbs">
-                        <span class="mr-2"><a href="{{ path('home_page') }}">Accueil <i class="ion-ios-arrow-forward"></i></a></span>
+                        <span class="mr-2"><a href="{{ path('home.index') }}">Accueil <i class="ion-ios-arrow-forward"></i></a></span>
                         <span>Infos Pratiques <i class="ion-ios-arrow-forward"></i></span>
                         <span>Inscription <i class="ion-ios-arrow-forward"></i></span></p>
                 </div>
@@ -39,34 +39,35 @@
                         <h2 class="mb-4">Préinscription 2021-2022</h2>
                         <p>Veuillez remplir le formulaire afin de vous inscrire à l'une des deux séances d'information. Une  confirmation vous sera envoyée par e-mail.</p>
                     </div>
-                    <form action="#" class="appointment-form ftco-animate">
+                    {{ form_start(form) }}
+                    <div class="appointment-form ftco-animate">
                         <div class="d-md-flex">
                             <div class="form-group">
-                                <input type="text" class="form-control" placeholder="Nom du parent">
+                                {{ form_row(form.parentLastName, { 'attr' : { 'class': 'form-control', 'placeholder': 'Nom du parent' } }) }}
                             </div>
                             <div class="form-group ml-md-4">
-                                <input type="text" class="form-control" placeholder="Prénom du parent">
+                                {{ form_row(form.parentFirstName, { 'attr' : { 'class': 'form-control', 'placeholder': 'Prénom du parent' } }) }}
                             </div>
                         </div>
                         <div class="d-md-flex">
                             <div class="form-group">
-                                <input type="text" class="form-control" placeholder="Téléphone">
+                                {{ form_row(form.parentPhone, { 'attr' : { 'class': 'form-control', 'placeholder': 'Téléphone' } }) }}
                             </div>
                             <div class="form-group ml-md-4">
-                                <input type="text" class="form-control" placeholder="E-Mail">
+                                {{ form_row(form.parentEmail, { 'attr' : { 'class': 'form-control', 'placeholder': 'E-Mail' } }) }}
                             </div>
                         </div>
                         <div class="d-md-flex">
                             <div class="form-group">
-                                <input type="text" class="form-control" placeholder="Nom de l'enfant">
+                                {{ form_row(form.childLastName, { 'attr' : { 'class': 'form-control', 'placeholder': 'Nom de l\'enfant' } }) }}
                             </div>
                             <div class="form-group ml-md-4">
-                                <input type="text" class="form-control" placeholder="Prénom de l'enfant">
+                                {{ form_row(form.childFirstName, { 'attr' : { 'class': 'form-control', 'placeholder': 'Prénom de l\'enfant' } }) }}
                             </div>
                         </div>
                         <div class="d-md-flex">
                             <div class="form-group appointment-form">
-                                <input type="text" class="form-control" placeholder="Date de naissance">
+                                {{ form_row(form.childBirthDate) }}
                             </div>
                             <div class="form-group ml-md-4">
                                 <div class="form-field">
@@ -124,8 +125,8 @@
                                 <input type="submit" value="Confirmer l'inscription" class="btn btn-secondary py-3 px-4">
                             </div>
                         </div>
-                    </form>
-
+                    </div>
+                    {{ form_end(form) }}
                 </div>
             </div>
         </div>
