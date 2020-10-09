@@ -46,7 +46,12 @@ class ContactSubType extends AbstractType
                 'label' => false
             ])
             ->add('childSection', ChoiceType::class, [
-                'label' => false
+                'label' => false,
+                'choices' => $this->getChoices(),
+                'attr' => [
+                    'class' => 'form-control',
+                    'selected' => 'Section'
+                ]
             ])
             ->add('sessionDate', ChoiceType::class, [
                 'label' => false
@@ -59,5 +64,15 @@ class ContactSubType extends AbstractType
         $resolver->setDefaults([
             'data_class' => ContactSub::class,
         ]);
+    }
+
+    private function getChoices()
+    {
+        $choices = ContactSub::SECTION;
+        $output = [];
+        foreach($choices as $k => $v) {
+            $output[$v] = $k;
+        }
+        return $output;
     }
 }
