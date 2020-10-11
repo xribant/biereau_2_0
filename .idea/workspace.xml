@@ -17,9 +17,18 @@
       <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config/bundles.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/bundles.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/packages/translation.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/translation.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/services.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/services.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20201008094009.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20201009081417.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Entity/ContactSub.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/ContactSub.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/RegistrationDate.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/RegistrationDate.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/SchoolEntryDate.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Form/ContactSubType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/ContactSubType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/SchoolEntryDateRepository.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/symfony.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/home.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/home.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/subscription.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/subscription.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -147,6 +156,9 @@
       <path value="$PROJECT_DIR$/vendor/symfony/polyfill-uuid" />
       <path value="$PROJECT_DIR$/vendor/symfony/polyfill-intl-grapheme" />
       <path value="$PROJECT_DIR$/vendor/symfony/uid" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/data-fixtures" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/doctrine-fixtures-bundle" />
+      <path value="$PROJECT_DIR$/vendor/twig/intl-extra" />
     </include_path>
   </component>
   <component name="ProjectId" id="1iQQ6mJZnZK6Zb5L3X943fHCRuY" />
@@ -162,15 +174,24 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="true" />
     <property name="com.jetbrains.php.lang.actions.generation.PhpGenerateFieldAccessorHandlerBase$MyMemberChooser.fluent.setters.last.selected" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/Form" />
     <property name="settings.editor.selected.configurable" value="PhpAnnotations.SettingsForm" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/Form/admin" />
+      <recent name="$PROJECT_DIR$/templates/admin/school/sections" />
+      <recent name="$PROJECT_DIR$/templates/admin" />
       <recent name="$PROJECT_DIR$/src/Controller" />
       <recent name="$PROJECT_DIR$/templates" />
-      <recent name="$PROJECT_DIR$/templates/home" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/Form" />
+      <recent name="$PROJECT_DIR$/src/Entity" />
+      <recent name="$PROJECT_DIR$/templates/admin/school/registration" />
+      <recent name="$PROJECT_DIR$/src/Controller/Admin" />
+      <recent name="$PROJECT_DIR$/templates/admin/school/subscription" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -195,6 +216,12 @@
       <workItem from="1602105090074" duration="268000" />
       <workItem from="1602139211312" duration="13996000" />
       <workItem from="1602229793158" duration="519000" />
+      <workItem from="1602233168810" duration="896000" />
+      <workItem from="1602234694177" duration="7150000" />
+      <workItem from="1602243802870" duration="6140000" />
+      <workItem from="1602310258684" duration="11365000" />
+      <workItem from="1602364087699" duration="492000" />
+      <workItem from="1602406703019" duration="10586000" />
     </task>
     <servers />
   </component>
@@ -226,6 +253,10 @@
       <screen x="0" y="23" width="1920" height="987" />
     </state>
     <state x="742" y="232" key="#com.intellij.ide.util.MemberChooser/1920.168.1280.777/0.23.1920.987@0.23.1920.987" timestamp="1602174996852" />
+    <state x="668" y="205" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1602238729944">
+      <screen x="0" y="23" width="1920" height="987" />
+    </state>
+    <state x="668" y="205" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/1920.23.1280.777/0.23.1920.987@0.23.1920.987" timestamp="1602238729944" />
     <state x="1051" y="258" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1602139880386">
       <screen x="0" y="23" width="1920" height="987" />
     </state>
@@ -234,10 +265,11 @@
       <screen x="0" y="23" width="1920" height="987" />
     </state>
     <state width="256" height="457" key="HiddenNamespacesPopup/1920.168.1280.777/0.23.1920.987@0.23.1920.987" timestamp="1601843046027" />
-    <state x="661" y="249" key="NewPhpClassDialog" timestamp="1602139796771">
+    <state x="661" y="249" key="NewPhpClassDialog" timestamp="1602238768409">
       <screen x="0" y="23" width="1920" height="987" />
     </state>
     <state x="661" y="249" key="NewPhpClassDialog/1920.168.1280.777/0.23.1920.987@0.23.1920.987" timestamp="1602139796771" />
+    <state x="661" y="249" key="NewPhpClassDialog/1920.23.1280.777/0.23.1920.987@0.23.1920.987" timestamp="1602238768409" />
     <state x="762" y="447" key="NewPhpFileDialog" timestamp="1602098155436">
       <screen x="0" y="23" width="1920" height="987" />
     </state>

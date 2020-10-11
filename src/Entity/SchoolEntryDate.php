@@ -20,21 +20,21 @@ class SchoolEntryDate
     /**
      * @ORM\Column(type="date")
      */
-    private $date;
+    private $entryDate;
 
     public function getId(): ?int
     {
         return $this->id;
     }
 
-    public function getDate(): ?\DateTimeInterface
+    public function getEntryDate(): ?\DateTimeInterface
     {
-        return $this->date;
+        return $this->entryDate;
     }
 
-    public function setDate(\DateTimeInterface $date): self
+    public function setEntryDate(\DateTimeInterface $entryDate): self
     {
-        $this->date = $date;
+        $this->entryDate = $entryDate;
 
         return $this;
     }

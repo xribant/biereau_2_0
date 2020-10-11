@@ -3,6 +3,10 @@
 namespace App\Form;
 
 use App\Entity\ContactSub;
+use App\Entity\RegistrationDate;
+use App\Entity\SchoolEntryDate;
+use App\Entity\SchoolSection;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
@@ -42,20 +46,19 @@ class ContactSubType extends AbstractType
                 ],
                 'html5' => false
             ])
-            ->add('childEntryDate', ChoiceType::class, [
-                'label' => false
-            ])
-            ->add('childSection', ChoiceType::class, [
+            ->add('childEntryDate', EntityType::class, [
                 'label' => false,
-                'choices' => $this->getChoices(),
-                'attr' => [
-                    'class' => 'form-control',
-                    'selected' => 'Section'
-                ]
+                'placeholder' => 'Date de rentrée',
+                'class' => SchoolEntryDate::class,
+                'choice_label' => 'entryDate'
             ])
-            ->add('sessionDate', ChoiceType::class, [
-                'label' => false
+            ->add('childSection', EntityType::class,[
+                'label' => false,
+                'placeholder' => 'Section',
+                'class' => SchoolSection::class,
+                'choice_label' => 'sectionFullName'
             ])
+
         ;
     }
 
@@ -64,15 +67,5 @@ class ContactSubType extends AbstractType
         $resolver->setDefaults([
             'data_class' => ContactSub::class,
         ]);
-    }
-
-    private function getChoices()
-    {
-        $choices = ContactSub::SECTION;
-        $output = [];
-        foreach($choices as $k => $v) {
-            $output[$v] = $k;
-        }
-        return $output;
     }
 }

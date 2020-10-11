@@ -20,21 +20,21 @@ class RegistrationDate
     /**
      * @ORM\Column(type="date")
      */
-    private $date;
+    private $regDate;
 
     public function getId(): ?int
     {
         return $this->id;
     }
 
-    public function getDate(): ?\DateTimeInterface
+    public function getRegDate(): ?\DateTimeInterface
     {
-        return $this->date;
+        return $this->regDate;
     }
 
-    public function setDate(\DateTimeInterface $date): self
+    public function setRegDate(\DateTimeInterface $regDate): self
     {
-        $this->date = $date;
+        $this->regDate = $regDate;
 
         return $this;
     }

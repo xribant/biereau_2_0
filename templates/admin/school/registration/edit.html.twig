@@ -1,0 +1,13 @@
+{% extends 'admin/adminbase.html.twig' %}
+
+{% block title %} Admin | Biereau.be - Date d'inscription{% endblock %}
+
+{% block content %}
+
+        <div class="mt-4 ml-4 col-lg-4">
+            <h1 class="h2">Editer la date</h1>
+                {{ include ('admin/school/registration/_form.html.twig', {form: form, button: 'Editer'}) }}
+            </div>
+        </div>
+
+{% endblock %}
