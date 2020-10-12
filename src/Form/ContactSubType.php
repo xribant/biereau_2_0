@@ -8,7 +8,6 @@ use App\Entity\SchoolEntryDate;
 use App\Entity\SchoolSection;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
-use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
@@ -48,9 +47,11 @@ class ContactSubType extends AbstractType
             ])
             ->add('childEntryDate', EntityType::class, [
                 'label' => false,
-                'placeholder' => 'Date de rentrée',
+                'placeholder' => 'Date d\'entrée à l\'école',
                 'class' => SchoolEntryDate::class,
-                'choice_label' => 'entryDate'
+                'choice_label' => function(SchoolEntryDate $entryDate) {
+                    return ($entryDate->getEntryDate())->format("d-M-Y");
+                }
             ])
             ->add('childSection', EntityType::class,[
                 'label' => false,
@@ -58,7 +59,14 @@ class ContactSubType extends AbstractType
                 'class' => SchoolSection::class,
                 'choice_label' => 'sectionFullName'
             ])
-
+            ->add('sessionDate', EntityType::class,[
+                'label' => false,
+                'placeholder' => 'Séance d\'info',
+                'class' => RegistrationDate::class,
+                'choice_label' => function(RegistrationDate $regDate) {
+                    return ($regDate->getRegDate())->format("d-m-Y");
+                }
+            ])
         ;
     }
 
