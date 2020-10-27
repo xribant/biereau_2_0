@@ -1,60 +1,388 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>{% block title %}Admin | Biereau.be - Accueil{% endblock %}</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <script src="https://kit.fontawesome.com/1a23ed521a.js" crossorigin="anonymous"></script>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>{% block title %}{% endblock %}</title>
+    <meta content='width=device-width, initial-scale=1.0, shrink-to-fit=no' name='viewport' />
     {% block stylesheets %}
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+        <link rel="icon" href="{{ asset('admin/assets/img/icon.ico') }}" type="image/x-icon"/>
+        <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
 
-    {%  endblock %}
+        <!-- Fonts and icons -->
+        <script src="{{ asset('admin/assets/js/plugin/webfont/webfont.min.js') }}"></script>
+        <script>
+            WebFont.load({
+                google: {"families":["Open+Sans:300,400,600,700"]},
+                custom: {"families":["Flaticon", "Font Awesome 5 Solid", "Font Awesome 5 Regular", "Font Awesome 5 Brands"], urls: ['{{ asset('admin/assets/css/fonts.css') }}']},
+                active: function() {
+                    sessionStorage.fonts = true;
+                }
+            });
+        </script>
+
+        <!-- CSS Files -->
+        <link rel="stylesheet" href="{{ asset('admin/assets/css/bootstrap.min.css') }}">
+        <link rel="stylesheet" href="{{ asset('admin/assets/css/azzara.min.css') }}">
+    {% endblock %}
 </head>
 <body>
 {%  block body %}
 
-    <!-- NAV Start -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-        <a class="navbar-brand" href="{{ path('admin.index') }}">ADMIN | Biereau.be</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
+    <!-- NAV BAR Header + SIDE BAR -->
+    <div class="wrapper">
+        <!--
+            Tip 1: You can change the background color of the main header using: data-background-color="blue | purple | light-blue | green | orange | red"
+        -->
+        <div class="main-header" data-background-color="blue">
+            <!-- Logo Header -->
+            <div class="logo-header">
 
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Ecole
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="{{ path('admin.sections') }}">Sections</a>
-                        <a class="dropdown-item" href="{{ path('admin.registration') }}">Journées d'inscription</a>
-                        <a class="dropdown-item" href="{{ path('admin.entrydate') }}">Rentrées</a>
+                <a href="{{ path('admin.index') }}" class="logo">
+                    <div class="navbar-brand" style="color: #fff;">
+                        Biereau.be
                     </div>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Utilisateurs
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Link</a>
-                </li>
+                </a>
+                <button class="navbar-toggler sidenav-toggler ml-auto" type="button" data-toggle="collapse" data-target="collapse" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon">
+						<i class="fa fa-bars"></i>
+					</span>
+                </button>
+                <button class="topbar-toggler more"><i class="fa fa-ellipsis-v"></i></button>
+                <div class="navbar-minimize">
+                    <button class="btn btn-minimize btn-rounded">
+                        <i class="fa fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+            <!-- End Logo Header -->
 
-            </ul>
+            <!-- Navbar Header -->
+            <nav class="navbar navbar-header navbar-expand-lg">
+
+                <div class="container-fluid">
+
+                    <ul class="navbar-nav topbar-nav ml-md-auto align-items-center">
+                        <li class="nav-item toggle-nav-search hidden-caret">
+                            <a class="nav-link" data-toggle="collapse" href="#search-nav" role="button" aria-expanded="false" aria-controls="search-nav">
+                                <i class="fa fa-search"></i>
+                            </a>
+                        </li>
+
+                    </ul>
+                </div>
+            </nav>
+            <!-- End Navbar -->
         </div>
-    </nav>
-    <!-- NAV End -->
 
-{% block content %}
-{% endblock %}
+        <!-- Sidebar -->
+        <div class="sidebar">
 
+            <div class="sidebar-background"></div>
+            <div class="sidebar-wrapper scrollbar-inner">
+                <div class="sidebar-content">
+                    <div class="user">
+                        <div class="avatar-sm float-left mr-2">
+                            <img src="{{ asset('admin/assets/img/xribant.jpg') }}" alt="..." class="avatar-img rounded-circle">
+                        </div>
+                        <div class="info">
+                            <a data-toggle="collapse" href="#collapseExample" aria-expanded="true">
+								<span>
+									{{ user.firstName }}
+									<span class="user-level">Administrateur</span>
+									<span class="caret"></span>
+								</span>
+                            </a>
+                            <div class="clearfix"></div>
 
-{%  block javascript %}
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
-{% endblock %}
+                            <div class="collapse in" id="collapseExample">
+                                <ul class="nav">
+                                    <li>
+                                        <a href="#profile">
+                                            <span class="link-collapse">Mon Profil</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="{{ path('admin.logout')}}">
+                                            <span class="link-collapse">Déconnexion</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <ul class="nav">
+                        <li class="nav-item">
+                            <a href="{{ path("admin.index") }}">
+                                <i class="fas fa-home"></i>
+                                <p>Accueil</p>
+                            </a>
+                        </li>
+                        <li class="nav-section">
+							<span class="sidebar-mini-icon">
+								<i class="fa fa-ellipsis-h"></i>
+							</span>
+                            <h4 class="text-section">Configuration</h4>
+                        </li>
+
+                        <li class="nav-item {% if current_menu == 'schoolData' or current_menu == 'schoolSections' %}active{% endif %}">
+                            <a data-toggle="collapse" href="#forms">
+                                <i class="fas fa-school"></i>
+                                <p>L'Ecole</p>
+                                <span class="caret"></span>
+                            </a>
+                            <div class="collapse {% if current_menu == 'schoolData' or current_menu == 'schoolSections' %}show{% endif %}" id="forms">
+                                <ul class="nav nav-collapse">
+                                    <li>
+                                        <a href="{{ path('admin.schoolData.index') }}">
+                                            <span class="sub-item">Coordonnées</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="{{ path('admin.sections.index') }}">
+                                            <span class="sub-item">Sections</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+
+                        <li class="nav-item">
+                            <a data-toggle="collapse" href="#forms">
+                                <i class="fas fa-pen-square"></i>
+                                <p>Inscriptions</p>
+                                <span class="caret"></span>
+                            </a>
+                            <div class="collapse" id="forms">
+                                <ul class="nav nav-collapse">
+                                    <li>
+                                        <a href="#">
+                                            <span class="sub-item">Journées</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <span class="sub-item">Inscrits</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a data-toggle="collapse" href="#tables">
+                                <i class="fas fa-table"></i>
+                                <p>Tables</p>
+                                <span class="caret"></span>
+                            </a>
+                            <div class="collapse" id="tables">
+                                <ul class="nav nav-collapse">
+                                    <li>
+                                        <a href="tables/tables.html">
+                                            <span class="sub-item">Basic Table</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="tables/datatables.html">
+                                            <span class="sub-item">Datatables</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a data-toggle="collapse" href="#maps">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <p>Maps</p>
+                                <span class="caret"></span>
+                            </a>
+                            <div class="collapse" id="maps">
+                                <ul class="nav nav-collapse">
+                                    <li>
+                                        <a href="maps/googlemaps.html">
+                                            <span class="sub-item">Google Maps</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="maps/fullscreenmaps.html">
+                                            <span class="sub-item">Full Screen Maps</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="maps/jqvmap.html">
+                                            <span class="sub-item">JQVMap</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a data-toggle="collapse" href="#charts">
+                                <i class="far fa-chart-bar"></i>
+                                <p>Charts</p>
+                                <span class="caret"></span>
+                            </a>
+                            <div class="collapse" id="charts">
+                                <ul class="nav nav-collapse">
+                                    <li>
+                                        <a href="charts/charts.html">
+                                            <span class="sub-item">Chart Js</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="charts/sparkline.html">
+                                            <span class="sub-item">Sparkline</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+
+                        <li class="nav-item">
+                            <a href="widgets.html">
+                                <i class="fas fa-desktop"></i>
+                                <p>Widgets</p>
+                                <span class="badge badge-count badge-success">4</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a data-toggle="collapse" href="#custompages">
+                                <i class="fas fa-paint-roller"></i>
+                                <p>Custom Pages</p>
+                                <span class="caret"></span>
+                            </a>
+                            <div class="collapse" id="custompages">
+                                <ul class="nav nav-collapse">
+                                    <li>
+                                        <a href="login.html">
+                                            <span class="sub-item">Login & Register 1</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="login2.html">
+                                            <span class="sub-item">Login & Register 2</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="userprofile.html">
+                                            <span class="sub-item">User Profile</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="404.html">
+                                            <span class="sub-item">404</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a data-toggle="collapse" href="#submenu">
+                                <i class="fas fa-bars"></i>
+                                <p>Menu Levels</p>
+                                <span class="caret"></span>
+                            </a>
+                            <div class="collapse" id="submenu">
+                                <ul class="nav nav-collapse">
+                                    <li>
+                                        <a data-toggle="collapse" href="#subnav1">
+                                            <span class="sub-item">Level 1</span>
+                                            <span class="caret"></span>
+                                        </a>
+                                        <div class="collapse" id="subnav1">
+                                            <ul class="nav nav-collapse subnav">
+                                                <li>
+                                                    <a href="#">
+                                                        <span class="sub-item">Level 2</span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">
+                                                        <span class="sub-item">Level 2</span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <a data-toggle="collapse" href="#subnav2">
+                                            <span class="sub-item">Level 1</span>
+                                            <span class="caret"></span>
+                                        </a>
+                                        <div class="collapse" id="subnav2">
+                                            <ul class="nav nav-collapse subnav">
+                                                <li>
+                                                    <a href="#">
+                                                        <span class="sub-item">Level 2</span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <span class="sub-item">Level 1</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- End Sidebar -->
+        {% block content %}
+
+        {% endblock %}
+    </div>
+
+    {%  block javascript %}
+    <!--   Core JS Files   -->
+    <script src="{{ asset('admin/assets/js/core/jquery.3.2.1.min.js') }}"></script>
+        <script src="{{ asset('admin/assets/js/core/popper.min.js') }}"></script>
+        <script src="{{ asset('admin/assets/js/core/bootstrap.min.js') }}"></script>
+
+        <!-- jQuery UI -->
+        <script src="{{ asset('admin/assets/js/plugin/jquery-ui-1.12.1.custom/jquery-ui.min.js') }}"></script>
+        <script src="{{ asset('admin/assets/js/plugin/jquery-ui-touch-punch/jquery.ui.touch-punch.min.js') }}"></script>
+
+        <!-- jQuery Scrollbar -->
+        <script src="{{ asset('admin/assets/js/plugin/jquery-scrollbar/jquery.scrollbar.min.js') }}"></script>
+
+        <!-- Moment JS -->
+        <script src="{{ asset('admin/assets/js/plugin/moment/moment.min.js') }}"></script>
+
+        <!-- Chart JS -->
+        <script src="{{ asset('admin/assets/js/plugin/chart.js/chart.min.js') }}"></script>
+
+        <!-- jQuery Sparkline -->
+        <script src="{{ asset('admin/assets/js/plugin/jquery.sparkline/jquery.sparkline.min.js') }}"></script>
+
+        <!-- Chart Circle -->
+        <script src="{{ asset('admin/assets/js/plugin/chart-circle/circles.min.js') }}"></script>
+
+        <!-- Datatables -->
+        <script src="{{ asset('admin/assets/js/plugin/datatables/datatables.min.js') }}"></script>
+
+        <!-- Bootstrap Notify -->
+        <script src="{{ asset('admin/assets/js/plugin/bootstrap-notify/bootstrap-notify.min.js') }}"></script>
+
+        <!-- Bootstrap Toggle -->
+        <script src="{{ asset('admin/assets/js/plugin/bootstrap-toggle/bootstrap-toggle.min.js') }}"></script>
+
+        <!-- jQuery Vector Maps -->
+        <script src="{{ asset('admin/ssets/js/plugin/jqvmap/jquery.vmap.min.js') }}"></script>
+        <script src="{{ asset('admin/assets/js/plugin/jqvmap/maps/jquery.vmap.world.js') }}"></script>
+
+        <!-- Google Maps Plugin -->
+        <script src="{{ asset('admin/assets/js/plugin/gmaps/gmaps.js') }}"></script>
+
+        <!-- Sweet Alert -->
+        <script src="{{ asset('admin/assets/js/plugin/sweetalert/sweetalert.min.js') }}"></script>
+
+        <!-- Azzara JS -->
+        <script src="{{ asset('admin/assets/js/ready.min.js') }}"></script>
+
+    {% endblock %}
 
 {% endblock %}
 

@@ -22,6 +22,11 @@ class SchoolEntryDate
      */
     private $entryDate;
 
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $textDate;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -35,6 +40,24 @@ class SchoolEntryDate
     public function setEntryDate(\DateTimeInterface $entryDate): self
     {
         $this->entryDate = $entryDate;
+
+        return $this;
+    }
+
+    public function __toString()
+    {
+        // TODO: Implement __toString() method.
+        return $this->textDate;
+    }
+
+    public function getTextDate(): ?string
+    {
+        return $this->textDate;
+    }
+
+    public function setTextDate(string $textDate): self
+    {
+        $this->textDate = $textDate;
 
         return $this;
     }

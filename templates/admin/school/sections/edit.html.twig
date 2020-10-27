@@ -4,10 +4,25 @@
 
 {% block content %}
 
-        <div class="mt-4 ml-4 col-lg-4">
-            <h1 class="h2">Editer la section</h1>
-                {{ include ('admin/school/sections/_form.html.twig', {form: form, button: 'Editer'}) }}
+    <div class="main-panel">
+        <div class="content">
+            <div class="page-inner">
+                <div class="row">
+                    <div class="col-md-8">
+
+                        <div class="card">
+                            <div class="card-header">
+                                <div class="card-title">Modifier une section</div>
+                            </div>
+
+                            {{ include ('admin/school/sections/_form.html.twig', {form: form, button: 'Modifier'}) }}
+
+                        </div>
+
+                    </div>
+                </div>
             </div>
         </div>
+    </div>
 
 {% endblock %}

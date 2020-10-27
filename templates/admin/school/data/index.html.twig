@@ -1,0 +1,66 @@
+{% extends 'admin/adminbase.html.twig' %}
+
+{% block title %}Admin | Données de l'école {% endblock %}
+
+{% block content %}
+    <div class="main-panel">
+        <div class="content">
+            <div class="page-inner">
+                <h4 class="page-title">Données de l'école</h4>
+                {% for message in app.flashes('success') %}
+                    <div class="alert alert-success">
+                        {{ message|raw }}
+                    </div>
+                {% endfor %}
+                <div class="row">
+                    <div class="col-md-8">
+                        <div class="card">
+                            <div class="card-header">
+                                <div class="card-title">Coordonnées</div>
+                            </div>
+                            <div class="card-body">
+                                <div class="row mt-3">
+                                    <div class="col-md-6">
+                                        {{ school.name }}
+                                    </div>
+                                </div>
+                                <div class="row mt-3">
+                                    <div class="col-md-4">
+                                        {{ school.street }}, {{ school.streetNum }}
+                                    </div>
+                                </div>
+                                <div class="row mt-3">
+                                    <div class="col-md-6">
+                                        {{ school.postalCode }} {{ school.city }}
+                                    </div>
+                                </div>
+                                <div class="row mt-3 mb-1">
+                                    <div class="col-md-6">
+                                        Téléphone 1: {{ school.phone1 }}
+                                    </div>
+                                    <div class="col-md-6">
+                                        Téléphone 2: {{ school.phone2 }}
+                                    </div>
+                                </div>
+                                <div class="row mt-3 mb-1">
+                                    <div class="col-md-6">
+                                        E-Mail 1: {{ school.email1 }}
+                                    </div>
+                                    <div class="col-md-6">
+                                        E-Mail 2: {{ school.email2 }}
+                                    </div>
+                                </div>
+                                <div class="text-right mt-3 mb-3">
+                                    <a href="{{ path('admin.schoolData.edit') }}" class="btn btn-primary" >Modifier</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+{% endblock %}

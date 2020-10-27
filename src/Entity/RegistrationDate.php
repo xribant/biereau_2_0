@@ -22,6 +22,11 @@ class RegistrationDate
      */
     private $regDate;
 
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $textDate;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -35,6 +40,18 @@ class RegistrationDate
     public function setRegDate(\DateTimeInterface $regDate): self
     {
         $this->regDate = $regDate;
+
+        return $this;
+    }
+
+    public function getTextDate(): ?string
+    {
+        return $this->textDate;
+    }
+
+    public function setTextDate(string $textDate): self
+    {
+        $this->textDate = $textDate;
 
         return $this;
     }

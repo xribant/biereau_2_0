@@ -22,7 +22,6 @@
         <link rel="stylesheet" href="{{ asset('css/flaticon.css') }}">
         <link rel="stylesheet" href="{{ asset('css/icomoon.css') }}">
         <link rel="stylesheet" href="{{ asset('css/style.css') }}">
-        <link rel="stylesheet" href="{{ asset('css/custom.css') }}">
         <link rel="stylesheet" href="{{ asset('css/bootstrap/bootstrap-datepicker.min.css') }}">
     {%  endblock %}
 </head>
@@ -37,15 +36,17 @@
                         <div class="icon bg-fifth mr-2 d-flex justify-content-center align-items-center">
                             <span class="icon-map"></span>
                         </div>
-                        <span class="text">Rue du Collège 2, 1348 Ottignies-Louvain-la-Neuve</span>
+                        <span class="text">
+                            {{ school.street }} {{ school.streetNum }}, {{ school.postalCode }} {{ school.city }}
+                        </span>
                     </div>
                     <div class="col-md pr-4 d-flex topper align-items-center">
                         <div class="icon bg-secondary mr-2 d-flex justify-content-center align-items-center"><span class="icon-paper-plane"></span></div>
-                        <span class="text">direction@biereau.be</span>
+                        <span class="text">{{ school.email1 }}</span>
                     </div>
                     <div class="col-md pr-4 d-flex topper align-items-center">
                         <div class="icon bg-tertiary mr-2 d-flex justify-content-center align-items-center"><span class="icon-phone2"></span></div>
-                        <span class="text">+32 (0)10 45 03 06</span>
+                        <span class="text">{{  school.phone1 }}</span>
                     </div>
                 </div>
             </div>
@@ -213,7 +214,8 @@
     <script>
         jQuery(document).ready(function() {
             $('.js-datepicker').datepicker({
-                language: "fr"
+                language: "fr",
+                format: 'dd-mm-yyyy',
             });
         });
     </script>

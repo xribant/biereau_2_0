@@ -52,13 +52,17 @@ class EntryDateController extends AbstractController
 
     public function new(Request $request)
     {
-        $date = new SchoolEntryDate();
-        $form = $this->createForm(SchoolEntryDateType::class, $date);
+        $entryDate = new SchoolEntryDate();
+        $form = $this->createForm(SchoolEntryDateType::class, $entryDate);
         $form->handleRequest($request);
 
         if($form->isSubmitted() && $form->isValid())
         {
-            $this->em->persist($date);
+            $date = $entryDate->getEntryDate()->format('d-m-Y');
+
+            $entryDate->setTextDate($date);
+
+            $this->em->persist($entryDate);
             $this->em->flush();
             $this->addFlash('success', 'Une nouvelle date de rentrée a été ajoutée avec succès');
             return $this->redirectToRoute('admin.entrydate');

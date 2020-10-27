@@ -3,7 +3,7 @@
 namespace App\Controller\Admin;
 
 use App\Entity\RegistrationDate;
-use App\Form\RegistrationDateType;
+use App\Form\Admin\School\RegistrationDateType;
 use App\Repository\RegistrationDateRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Doctrine\Persistence\ObjectManager;
@@ -54,6 +54,9 @@ class RegistrationDateController extends AbstractController
 
         if($form->isSubmitted() && $form->isValid())
         {
+            $date = $registrationDate->getRegDate()->format('d-m-Y');
+
+            $registrationDate->setTextDate($date);
             $this->em->persist($registrationDate);
             $this->em->flush();
             $this->addFlash('success', 'Une nouvelle date a été ajoutée avec succès');

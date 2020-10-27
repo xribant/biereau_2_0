@@ -34,16 +34,14 @@ class ContactSub
 
     /**
      * @ORM\Column(type="string", length=100)
-     * @Assert\NotBlank()
      * @Assert\Regex(
-     *     pattern="/[0-9],{9-10}"
+     *     pattern="/[0-9]{9,10}/"
      * )
      */
     private $parentPhone;
 
     /**
      * @ORM\Column(type="string", length=100)
-     * @Assert\NotBlank()
      *@Assert\Email()
      */
     private $parentEmail;
@@ -64,6 +62,7 @@ class ContactSub
 
     /**
      * @ORM\Column(type="date")
+     * @Assert\NotBlank()
      */
     private $childBirthDate;
 
@@ -227,5 +226,11 @@ class ContactSub
         $this->created_at = $created_at;
 
         return $this;
+    }
+
+    public function __toString()
+    {
+        // TODO: Implement __toString() method.
+        return $this->childEntryDate;
     }
 }
