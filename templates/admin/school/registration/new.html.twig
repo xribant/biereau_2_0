@@ -4,9 +4,25 @@
 
 {% block content %}
 
-        <div class="mt-4 ml-4 col-lg-6">
-            <h1 class="h2">Nouvelle Date</h1>
-                {{ include ('admin/school/registration/_form.html.twig', {form: form, button: 'Créer'}) }}
+    <div class="main-panel">
+        <div class="content">
+            <div class="page-inner">
+                <div class="row">
+                    <div class="col-md-8">
+
+                        <div class="card">
+                            <div class="card-header">
+                                <div class="card-title">Créer une journée d'inscriptions</div>
+                            </div>
+
+                            {{ include ('admin/school/registration/_form.html.twig', {form: form, button: 'Créer'}) }}
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
         </div>
+    </div>
 
 {% endblock %}

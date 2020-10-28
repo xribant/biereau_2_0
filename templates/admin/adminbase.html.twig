@@ -125,12 +125,12 @@
                         </li>
 
                         <li class="nav-item {% if current_menu == 'schoolData' or current_menu == 'schoolSections' %}active{% endif %}">
-                            <a data-toggle="collapse" href="#forms">
+                            <a data-toggle="collapse" href="#schoolData">
                                 <i class="fas fa-school"></i>
                                 <p>L'Ecole</p>
                                 <span class="caret"></span>
                             </a>
-                            <div class="collapse {% if current_menu == 'schoolData' or current_menu == 'schoolSections' %}show{% endif %}" id="forms">
+                            <div class="collapse {% if current_menu == 'schoolData' or current_menu == 'schoolSections' %}show{% endif %}" id="schoolData">
                                 <ul class="nav nav-collapse">
                                     <li>
                                         <a href="{{ path('admin.schoolData.index') }}">
@@ -142,26 +142,31 @@
                                             <span class="sub-item">Sections</span>
                                         </a>
                                     </li>
+                                    <li>
+                                        <a href="{{ path('admin.entrydate.index') }}">
+                                            <span class="sub-item">Dates de rentrées</span>
+                                        </a>
+                                    </li>
                                 </ul>
                             </div>
                         </li>
 
-                        <li class="nav-item">
-                            <a data-toggle="collapse" href="#forms">
+                        <li class="nav-item {% if current_menu == 'inscriptions' %}active{% endif %}">
+                            <a data-toggle="collapse" href="#subscription">
                                 <i class="fas fa-pen-square"></i>
                                 <p>Inscriptions</p>
                                 <span class="caret"></span>
                             </a>
-                            <div class="collapse" id="forms">
+                            <div class="collapse {% if current_menu == 'inscriptions' %}show{% endif %}" id="subscription">
                                 <ul class="nav nav-collapse">
                                     <li>
-                                        <a href="#">
-                                            <span class="sub-item">Journées</span>
+                                        <a href="{{ path('admin.registration.index') }}">
+                                            <span class="sub-item">Séances</span>
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="#">
-                                            <span class="sub-item">Inscrits</span>
+                                        <a href="{{ path('admin.registrations.show') }}">
+                                            <span class="sub-item">Liste des inscrits</span>
                                         </a>
                                     </li>
                                 </ul>

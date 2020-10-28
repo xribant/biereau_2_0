@@ -1,6 +1,17 @@
 {{ form_start(form) }}
-<div class="row">
-    <div class="col-md-4">{{ form_row(form.regDate) }}</div>
+
+<div class="card-body">
+    <div class="row mt-3">
+        <div class="col-md-8">
+            <div class="form-group form-group-default">
+                {{ form_row(form.regDate) }}
+            </div>
+        </div>
+    </div>
+
+    <div class="text-right mt-3 mb-3">
+        <button class="btn btn-primary">{{ button|default('Enregistrer') }}</button>
+    </div>
 </div>
-<button class="btn btn-primary">{{ button|default('Enregistrer') }}</button>
+
 {{ form_end(form) }}

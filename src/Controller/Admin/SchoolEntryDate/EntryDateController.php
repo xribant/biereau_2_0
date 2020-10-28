@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Controller\Admin;
+namespace App\Controller\Admin\SchoolEntryDate;
 
 use App\Entity\SchoolEntryDate;
 use App\Form\SchoolEntryDateType;
@@ -33,14 +33,18 @@ class EntryDateController extends AbstractController
     }
 
     /**
-     * @Route("/admin/school/entrydate", name="admin.entrydate")
+     * @Route("/admin/school/entrydate", name="admin.entrydate.index")
      * @return Response
      */
 
     public function index()
     {
         $dates = $this->repository->findAll();
+        $user = $this->getUser();
+
         return $this->render('/admin/school/entrydate/index.html.twig', [
+            'current_menu' => 'schoolData',
+            'user' => $user,
             'dates' => $dates
         ]);
     }
@@ -55,44 +59,23 @@ class EntryDateController extends AbstractController
         $entryDate = new SchoolEntryDate();
         $form = $this->createForm(SchoolEntryDateType::class, $entryDate);
         $form->handleRequest($request);
+        $user = $this->getUser();
 
         if($form->isSubmitted() && $form->isValid())
         {
             $date = $entryDate->getEntryDate()->format('d-m-Y');
-
             $entryDate->setTextDate($date);
 
             $this->em->persist($entryDate);
             $this->em->flush();
             $this->addFlash('success', 'Une nouvelle date de rentrée a été ajoutée avec succès');
-            return $this->redirectToRoute('admin.entrydate');
+            return $this->redirectToRoute('admin.entrydate.index');
         }
 
         return $this->render('/admin/school/entrydate/new.html.twig', [
-            'form' => $form->createView()
-        ]);
-    }
-
-    /**
-     *
-     * @Route("/admin/school/entrydate/{id}", name="admin.entrydate.edit", methods="GET|POST")
-     * @param SchoolEntryDate $date
-     * @return Response
-     */
-    public function edit(SchoolEntryDate $date, Request $request)
-    {
-        $form = $this->createForm(SchoolEntryDateType::class, $date);
-        $form->handleRequest($request);
-
-        if ($form->isSubmitted() && $form->isValid()) {
-            $this->em->flush();
-            $this->addFlash('success', 'La date de rentrée a été modifiée avec succès');
-            return $this->redirectToRoute('admin.entrydate');
-        }
-
-        return $this->render('admin/school/entrydate/edit.html.twig', [
-            'date' => $date,
-            'form' => $form->createView()
+            'form' => $form->createView(),
+            'user' => $user,
+            'current_menu' => 'schoolData'
         ]);
     }
 
@@ -112,6 +95,6 @@ class EntryDateController extends AbstractController
             $this->addFlash('success', 'Date de rentrée supprimée avec succès');
         }
 
-        return $this->redirectToRoute('admin.entrydate');
+        return $this->redirectToRoute('admin.entrydate.index');
     }
 }

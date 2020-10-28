@@ -4,40 +4,52 @@
 
 {% block content %}
 
-        <div class="mt-4 ml-4 col-lg-6">
-            <h1 class="h2">Dates de rentrée de l'école</h1>
-            {% for message in app.flashes('success') %}
-                <div class="alert alert-success">
-                    {{ message }}
+    <div class="main-panel">
+        <div class="content">
+            <div class="page-inner">
+                <div class="row">
+                    <div class="col-md-8">
+                        <div class="card">
+                            <div class="card-header">
+                                <div class="card-title">Dates de rentrées</div>
+                            </div>
+                            <div class="card-body">
+                                {% for message in app.flashes('success') %}
+                                    <div class="alert alert-success">
+                                        {{ message|raw }}
+                                    </div>
+                                {% endfor %}
+                                <table class="table table-striped mt-3">
+                                    <thead>
+                                    <tr>
+                                        <th scope="col">Dates</th>
+                                        <th scope="col"></th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    {% for date in dates %}
+                                        <tr>
+                                            <td>{{ date.entryDate|date("d M Y")|format_datetime('full','none', locale='fr') }}</td>
+                                            <td>
+                                                <form method="post" action="{{ path('admin.entrydate.delete', {id: date.id}) }}" style="display: inline-block" onsubmit="return confirm('Etes-vous certain?')">
+                                                    <input type="hidden" name="_method" value="DELETE">
+                                                    <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ date.id) }}">
+                                                    <button class="btn btn-sm btn-danger"><i class="far fa-trash-alt"></i></button>
+                                                </form>
+                                            </td>
+                                        </tr>
+                                    {% endfor %}
+                                    </tbody>
+                                </table>
+                                <div class="text-right mt-3 mb-3">
+                                    <a href="{{  path('admin.entrydate.new') }}" class="btn btn-primary">Ajouter</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-            {% endfor %}
-
-            <div class="table-responsive">
-                <table class="table table-striped table-sm table-bordered">
-                    <thead>
-                    <tr>
-                        <th>Dates</th>
-                        <th></th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    {% for date in dates %}
-                        <tr>
-                            <td>{{ date.entryDate|date("d M Y")|format_datetime('full','none', locale='fr') }}</td>
-                            <td>
-                                <a href="{{ path('admin.entrydate.edit', {id: date.id}) }}" class="btn btn-secondary">Editer</a>
-                                <form method="post" action="{{ path('admin.entrydate.delete', {id: date.id}) }}" style="display: inline-block" onsubmit="return confirm('Etes-vous certain?')">
-                                    <input type="hidden" name="_method" value="DELETE">
-                                    <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ date.id) }}">
-                                    <button class="btn btn-danger">Supprimer</button>
-                                </form>
-                            </td>
-                        </tr>
-                    {% endfor %}
-                    </tbody>
-                </table>
             </div>
-            <a href="{{ path('admin.entrydate.new') }}" class="btn btn-primary">Nouvelle Date</a>
         </div>
+    </div>
 
 {% endblock %}

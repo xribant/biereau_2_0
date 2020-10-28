@@ -4,41 +4,52 @@
 
 {% block content %}
 
-        <div class="mt-4 ml-4 col-lg-4">
-            <h1 class="h2">Dates des séances d'info de l'école</h1>
-            {% for message in app.flashes('success') %}
-                <div class="alert alert-success">
-                    {{ message }}
+    <div class="main-panel">
+        <div class="content">
+            <div class="page-inner">
+                <div class="row">
+                    <div class="col-md-8">
+                        <div class="card">
+                            <div class="card-header">
+                                <div class="card-title">Journées organisées pour les inscriptions</div>
+                            </div>
+                            <div class="card-body">
+                                {% for message in app.flashes('success') %}
+                                    <div class="alert alert-success">
+                                        {{ message|raw }}
+                                    </div>
+                                {% endfor %}
+                                <table class="table table-striped mt-3">
+                                    <thead>
+                                    <tr>
+                                        <th scope="col">Dates</th>
+                                        <th scope="col"></th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    {% for registrationDate in registrationDates %}
+                                        <tr>
+                                            <td>{{ registrationDate.regDate|date("d M Y")|format_datetime('full','none', locale='fr') }}</td>
+                                            <td>
+                                                <form method="post" action="{{ path('admin.registration.delete', {id: registrationDate.id}) }}" style="display: inline-block" onsubmit="return confirm('Etes-vous certain?')">
+                                                    <input type="hidden" name="_method" value="DELETE">
+                                                    <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ registrationDate.id) }}">
+                                                    <button class="btn btn-danger btn-sm"><i class="far fa-trash-alt"></i></button>
+                                                </form>
+                                            </td>
+                                        </tr>
+                                    {% endfor %}
+                                    </tbody>
+                                </table>
+                                <div class="text-right mt-3 mb-3">
+                                    <a href="{{  path('admin.registration.new') }}" class="btn btn-primary">Ajouter</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-            {% endfor %}
-
-            <div class="table-responsive mt-4" style="font-family: 'Open Sans', sans-serif;">
-                <table class="table table-striped table-secondary table-borderless table-sm table-bordered">
-                    <thead class="thead-dark">
-                    <tr>
-                        <th >Dates </th>
-                        <th></th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    {% for registrationDate in registrationDates %}
-                        <tr>
-                            <td class="align-middle">{{ registrationDate.regDate|date("d M Y")|format_datetime('full','none', locale='fr') }}</td>
-                            <td align="center">
-                                <a href="{{ path('admin.registration.edit', {id: registrationDate.id}) }}" class="btn btn-primary btn-sm"><i class="far fa-edit"></i> Editer</a>
-                                <form method="post" action="{{ path('admin.registration.delete', {id: registrationDate.id}) }}" style="display: inline-block" onsubmit="return confirm('Etes-vous certain?')">
-                                    <input type="hidden" name="_method" value="DELETE">
-                                    <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ registrationDate.id) }}">
-                                    <button class="btn btn-danger btn-sm"><i class="far fa-trash-alt"></i> Supprimer</button>
-                                </form>
-                                <a href="#" class="btn btn-info btn-sm"><i class="far fa-address-book"></i> Inscriptions</a>
-                            </td>
-                        </tr>
-                    {% endfor %}
-                    </tbody>
-                </table>
             </div>
-            <a href="{{ path('admin.registration.new') }}" class="btn btn-primary btn-sm">Nouvelle Date</a>
         </div>
+    </div>
 
 {% endblock %}

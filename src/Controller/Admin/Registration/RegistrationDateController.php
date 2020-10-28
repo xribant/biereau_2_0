@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Controller\Admin;
+namespace App\Controller\Admin\Registration;
 
 use App\Entity\RegistrationDate;
 use App\Form\Admin\School\RegistrationDateType;
@@ -31,19 +31,23 @@ class RegistrationDateController extends AbstractController
     }
 
     /**
-     * @Route("/admin/school/registration", name="admin.registration")
+     * @Route("/admin/ecole/inscriptions/jours", name="admin.registration.index")
      * @return Response
      */
     public function index()
     {
         $registrationDates = $this->repository->findAll();
+        $user = $this->getUser();
+
         return $this->render('/admin/school/registration/index.html.twig', [
-            'registrationDates' => $registrationDates
+            'registrationDates' => $registrationDates,
+            'user' => $user,
+            'current_menu' => 'inscriptions'
         ]);
     }
 
     /**
-     * @Route("/admin/school/registration/new", name="admin.registration.new")
+     * @Route("/admin/ecole/inscriptions/jours/nouveau", name="admin.registration.new")
      * @return Response
      */
     public function new(Request $request)
@@ -51,6 +55,7 @@ class RegistrationDateController extends AbstractController
         $registrationDate = new RegistrationDate();
         $form = $this->createForm(RegistrationDateType::class, $registrationDate);
         $form->handleRequest($request);
+        $user = $this->getUser();
 
         if($form->isSubmitted() && $form->isValid())
         {
@@ -60,40 +65,19 @@ class RegistrationDateController extends AbstractController
             $this->em->persist($registrationDate);
             $this->em->flush();
             $this->addFlash('success', 'Une nouvelle date a été ajoutée avec succès');
-            return $this->redirectToRoute('admin.registration');
+            return $this->redirectToRoute('admin.registration.index');
         }
 
         return $this->render('/admin/school/registration/new.html.twig', [
+            'user' => $user,
+            'current_menu' => 'inscriptions',
             'form' => $form->createView()
         ]);
     }
 
     /**
      *
-     * @Route("/admin/school/registration/{id}", name="admin.registration.edit", methods="GET|POST")
-     * @param RegistrationDate $registrationDate
-     * @return Response
-     */
-    public function edit(RegistrationDate $registrationDate, Request $request)
-    {
-        $form = $this->createForm(RegistrationDateType::class, $registrationDate);
-        $form->handleRequest($request);
-
-        if ($form->isSubmitted() && $form->isValid()) {
-            $this->em->flush();
-            $this->addFlash('success', 'La date a été éditée avec succès');
-            return $this->redirectToRoute('admin.registration');
-        }
-
-        return $this->render('/admin/school/registration/edit.html.twig', [
-            'registrationDate' => $registrationDate,
-            'form' => $form->createView()
-        ]);
-    }
-
-    /**
-     *
-     * @Route("/admin/school/registration/{id}", name="admin.registration.delete", methods="DELETE")
+     * @Route("/admin/ecole/inscriptions/jours/supprimer/{id}", name="admin.registration.delete", methods="DELETE")
      * @param RegistrationDate $registrationDate
      * @return Response
      */
@@ -106,7 +90,7 @@ class RegistrationDateController extends AbstractController
             $this->addFlash('success', 'Date supprimée avec succès');
         }
 
-        return $this->redirectToRoute('admin.registration');
+        return $this->redirectToRoute('admin.registration.index');
     }
 
 
