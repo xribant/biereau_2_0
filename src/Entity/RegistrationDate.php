@@ -27,6 +27,11 @@ class RegistrationDate
      */
     private $textDate;
 
+    /**
+     * @ORM\Column(type="boolean")
+     */
+    private $enabled;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -52,6 +57,18 @@ class RegistrationDate
     public function setTextDate(string $textDate): self
     {
         $this->textDate = $textDate;
+
+        return $this;
+    }
+
+    public function getEnabled(): ?bool
+    {
+        return $this->enabled;
+    }
+
+    public function setEnabled(bool $enabled): self
+    {
+        $this->enabled = $enabled;
 
         return $this;
     }

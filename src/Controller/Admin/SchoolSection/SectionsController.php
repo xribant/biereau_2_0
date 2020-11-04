@@ -31,27 +31,27 @@ class SectionsController extends AbstractController
     }
 
     /**
-     * @Route("/admin/school/sections", name="admin.sections.index")
+     * @Route("/admin/ecole/sections", name="admin.sections.index")
      * @return Response
      */
     public function index()
     {
-        $user = $this->getUser();
+        $currentUser = $this->getUser();
         $sections = $this->repository->findAll();
         return $this->render('/admin/school/sections/index.html.twig', [
             'current_menu' => 'schoolSections',
             'sections' => $sections,
-            'user' => $user
+            'current_user' => $currentUser,
         ]);
     }
 
     /**
-     * @Route("/admin/school/sections/new", name="admin.sections.new")
+     * @Route("/admin/ecole/sections/nouvelle", name="admin.sections.new")
      * @return Response
      */
     public function new(Request $request)
     {
-        $user = $this->getUser();
+        $currentUser = $this->getUser();
         $section = new SchoolSection();
         $form = $this->createForm(SchoolSectionType::class, $section);
         $form->handleRequest($request);
@@ -69,19 +69,19 @@ class SectionsController extends AbstractController
         return $this->render('/admin/school/sections/new.html.twig', [
             'form' => $form->createView(),
             'current_menu' => 'schoolSections',
-            'user' => $user
+            'current_user' => $currentUser
         ]);
     }
 
     /**
      *
-     * @Route("/admin/school/sections/{id}", name="admin.sections.edit", methods="GET|POST")
+     * @Route("/admin/ecole/sections/{id}", name="admin.sections.edit", methods="GET|POST")
      * @param SchoolSection $section
      * @return Response
      */
     public function edit(SchoolSection $section, Request $request)
     {
-        $user = $this->getUser();
+        $currentUser = $this->getUser();
         $form = $this->createForm(SchoolSectionType::class, $section);
         $form->handleRequest($request);
 
@@ -95,13 +95,13 @@ class SectionsController extends AbstractController
             'section' => $section,
             'current_menu' => 'schoolSections',
             'form' => $form->createView(),
-            'user' => $user
+            'current_user' => $currentUser,
         ]);
     }
 
     /**
      *
-     * @Route("/admin/school/sections/{id}", name="admin.sections.delete", methods="DELETE")
+     * @Route("/admin/ecole/sections/{id}", name="admin.sections.delete", methods="DELETE")
      * @param SchoolSection $section
      * @return Response
      */

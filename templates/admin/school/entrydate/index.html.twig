@@ -23,6 +23,8 @@
                                     <thead>
                                     <tr>
                                         <th scope="col">Dates</th>
+                                        <th scope="col">Année académique</th>
+                                        <th scope="col">Active</th>
                                         <th scope="col"></th>
                                     </tr>
                                     </thead>
@@ -30,6 +32,8 @@
                                     {% for date in dates %}
                                         <tr>
                                             <td>{{ date.entryDate|date("d M Y")|format_datetime('full','none', locale='fr') }}</td>
+                                            <td>{{ date.academicYear.year }}</td>
+                                            <td>{% if date.enabled == 0 %}Non{% else %}Oui{% endif %}</td>
                                             <td>
                                                 <form method="post" action="{{ path('admin.entrydate.delete', {id: date.id}) }}" style="display: inline-block" onsubmit="return confirm('Etes-vous certain?')">
                                                     <input type="hidden" name="_method" value="DELETE">

@@ -40,8 +40,10 @@
         <div class="container">
             <div class="row justify-content-end">
                 <div class="col-md-6 py-5 px-md-5 bg-primary">
+
+                    {% if academicYear.activeforregistration == 1 %}
                     <div class="heading-section heading-section-white ftco-animate mb-5">
-                        <h2 class="mb-4">Préinscription {{ academicYear }}</h2>
+                        <h2 class="mb-4">Préinscription {{ academicYear.year }}</h2>
                         <p>Veuillez remplir le formulaire afin de vous inscrire à l'une des deux séances d'information. Une  confirmation vous sera envoyée par e-mail.</p>
                     </div>
                     {{ form_start(form) }}
@@ -109,6 +111,14 @@
                         </div>
                     </div>
                     {{ form_end(form) }}
+                    {% else %}
+                    <div class="heading-section heading-section-white ftco-animate mb-5">
+                        <h2 class="mb-4">Préinscription {{ academicYear.year }}</h2>
+                        <p>Les inscriptions pour cette année académique ne sont pas encore ouvertes.</p>
+                        <p>Nous vous invitions à revenir le {{ academicYear.startRegistrationDate|format_datetime('full', 'none', locale='fr') }} à partir de {{ academicYear.startRegistrationDate|format_datetime('none', 'short', locale='fr') }} pour l'ouverture des inscriptions.</p>
+                    </div>
+                    {% endif %}
+
                 </div>
             </div>
         </div>

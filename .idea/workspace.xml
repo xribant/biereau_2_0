@@ -11,21 +11,39 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="eb337925-03b6-4a6f-95e2-c598709ccab2" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/biereau_2_0.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/biereau_2_0.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/Admin/EntryDateController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/Admin/SchoolEntryDate/EntryDateController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/Admin/RegistrationDateController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/Admin/Registration/RegistrationDateController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Form/RegistrationDateType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/Admin/School/RegistrationDateType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/packages/security.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/security.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/AboutController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/AboutController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/Admin/AdminController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/Admin/AdminController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/Admin/Registration/RegistrationController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/Admin/Registration/RegistrationController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/Admin/Registration/RegistrationDateController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/Admin/Registration/RegistrationDateController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/Admin/SchoolData/SchoolDataController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/Admin/SchoolData/SchoolDataController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/Admin/SchoolEntryDate/EntryDateController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/Admin/SchoolEntryDate/EntryDateController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/Admin/SchoolSection/SectionsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/Admin/SchoolSection/SectionsController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/SecurityController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/SecurityController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/SubscriptionController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/SubscriptionController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/RegistrationDate.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/RegistrationDate.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/SchoolEntryDate.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/SchoolEntryDate.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Form/Admin/School/RegistrationDateType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/Admin/School/RegistrationDateType.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Form/SchoolEntryDateType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/SchoolEntryDateType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Notification/ContactNotification.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Notification/ContactNotification.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/symfony.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/admin/adminbase.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/adminbase.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/admin/school/entrydate/_form.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/school/entrydate/_form.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/admin/school/entrydate/edit.html.twig" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/admin/school/entrydate/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/school/entrydate/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/admin/school/entrydate/new.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/school/entrydate/new.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/admin/school/registration/_form.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/school/registration/_form.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/admin/school/registration/edit.html.twig" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/admin/school/registration/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/school/registration/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/admin/school/registration/new.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/school/registration/new.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/admin/school/sections/new.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/school/sections/new.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/admin/school/registration/view.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/school/registration/view.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/emails/contactsubscriber.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/emails/contactsubscriber.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/security/login.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/security/login.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/subscription.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/subscription.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -130,7 +148,6 @@
       <path value="$PROJECT_DIR$/vendor/doctrine/event-manager" />
       <path value="$PROJECT_DIR$/vendor/doctrine/collections" />
       <path value="$PROJECT_DIR$/vendor/doctrine/sql-formatter" />
-      <path value="$PROJECT_DIR$/vendor/doctrine/reflection" />
       <path value="$PROJECT_DIR$/vendor/doctrine/doctrine-bundle" />
       <path value="$PROJECT_DIR$/vendor/ocramius/proxy-manager" />
       <path value="$PROJECT_DIR$/vendor/webmozart/assert" />
@@ -138,7 +155,6 @@
       <path value="$PROJECT_DIR$/vendor/phpdocumentor/type-resolver" />
       <path value="$PROJECT_DIR$/vendor/symfony/google-mailer" />
       <path value="$PROJECT_DIR$/vendor/phpdocumentor/reflection-docblock" />
-      <path value="$PROJECT_DIR$/vendor/webimpress/safe-writer" />
       <path value="$PROJECT_DIR$/vendor/laminas/laminas-zendframework-bridge" />
       <path value="$PROJECT_DIR$/vendor/laminas/laminas-eventmanager" />
       <path value="$PROJECT_DIR$/vendor/laminas/laminas-code" />
@@ -157,6 +173,7 @@
       <path value="$PROJECT_DIR$/vendor/twig/intl-extra" />
       <path value="$PROJECT_DIR$/vendor/swiftmailer/swiftmailer" />
       <path value="$PROJECT_DIR$/vendor/symfony/swiftmailer-bundle" />
+      <path value="$PROJECT_DIR$/vendor/symfony/apache-pack" />
     </include_path>
   </component>
   <component name="ProjectId" id="1iQQ6mJZnZK6Zb5L3X943fHCRuY" />
@@ -179,19 +196,19 @@
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/Form/Admin" />
+      <recent name="$PROJECT_DIR$/src/Controller/Admin" />
+      <recent name="$PROJECT_DIR$/src/Controller/Admin/SchoolEntryDate" />
+      <recent name="$PROJECT_DIR$/src/Form/Admin/School" />
+      <recent name="$PROJECT_DIR$/src/Controller/Admin/Registration" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/DataFixtures" />
       <recent name="$PROJECT_DIR$/templates/admin/school/details" />
       <recent name="$PROJECT_DIR$/src/Form/DataTransformer" />
       <recent name="$PROJECT_DIR$/src/Form" />
       <recent name="$PROJECT_DIR$/src/Entity" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/Controller/Admin/SchoolEntryDate" />
-      <recent name="$PROJECT_DIR$/src/Form/Admin/School" />
-      <recent name="$PROJECT_DIR$/src/Controller/Admin/Registration" />
-      <recent name="$PROJECT_DIR$/src/Controller/Admin/SchoolSection" />
-      <recent name="$PROJECT_DIR$/src/Form/admin" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -242,7 +259,15 @@
       <workItem from="1603615965177" duration="7275000" />
       <workItem from="1603703495155" duration="8244000" />
       <workItem from="1603833476482" duration="2944000" />
-      <workItem from="1603887969017" duration="9169000" />
+      <workItem from="1603887969017" duration="9417000" />
+      <workItem from="1603963543549" duration="15038000" />
+      <workItem from="1604084839593" duration="4704000" />
+      <workItem from="1604138109739" duration="5811000" />
+      <workItem from="1604232140320" duration="2699000" />
+      <workItem from="1604299151777" duration="1698000" />
+      <workItem from="1604345768291" duration="3807000" />
+      <workItem from="1604394807158" duration="16008000" />
+      <workItem from="1604469461751" duration="10187000" />
     </task>
     <servers />
   </component>
@@ -266,10 +291,10 @@
       <screen x="0" y="23" width="1920" height="987" />
     </state>
     <state x="560" y="182" key="#com.intellij.execution.impl.EditConfigurationsDialog/1920.168.1280.777/0.23.1920.987@0.23.1920.987" timestamp="1601843001616" />
-    <state x="681" y="325" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1602098624652">
+    <state x="681" y="325" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1604474026091">
       <screen x="0" y="23" width="1920" height="987" />
     </state>
-    <state x="681" y="325" key="#com.intellij.fileTypes.FileTypeChooser/1920.168.1280.777/0.23.1920.987@0.23.1920.987" timestamp="1602098624652" />
+    <state x="681" y="325" key="#com.intellij.fileTypes.FileTypeChooser/1920.168.1280.777/0.23.1920.987@0.23.1920.987" timestamp="1604474026091" />
     <state x="1078" y="236" key="#com.intellij.ide.util.MemberChooser" timestamp="1603111833324">
       <screen x="0" y="23" width="1920" height="987" />
     </state>
@@ -283,18 +308,18 @@
     </state>
     <state x="668" y="23" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/1920.168.1280.777/0.23.1920.987@0.23.1920.987" timestamp="1603436282246" />
     <state x="668" y="205" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/1920.23.1280.777/0.23.1920.987@0.23.1920.987" timestamp="1602238729944" />
-    <state x="1051" y="258" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1603639378156">
+    <state x="1051" y="258" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1604486996131">
       <screen x="0" y="23" width="1920" height="987" />
     </state>
-    <state x="1051" y="258" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/1920.168.1280.777/0.23.1920.987@0.23.1920.987" timestamp="1603639378156" />
+    <state x="1051" y="258" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/1920.168.1280.777/0.23.1920.987@0.23.1920.987" timestamp="1604486996131" />
     <state width="256" height="457" key="HiddenNamespacesPopup" timestamp="1601843046027">
       <screen x="0" y="23" width="1920" height="987" />
     </state>
     <state width="256" height="457" key="HiddenNamespacesPopup/1920.168.1280.777/0.23.1920.987@0.23.1920.987" timestamp="1601843046027" />
-    <state x="1124" y="409" key="NewPhpClassDialog" timestamp="1603913610776">
+    <state x="496" y="247" key="NewPhpClassDialog" timestamp="1604474078337">
       <screen x="0" y="23" width="1920" height="987" />
     </state>
-    <state x="1124" y="409" key="NewPhpClassDialog/1920.168.1280.777/0.23.1920.987@0.23.1920.987" timestamp="1603913610776" />
+    <state x="496" y="247" key="NewPhpClassDialog/1920.168.1280.777/0.23.1920.987@0.23.1920.987" timestamp="1604474078337" />
     <state x="661" y="249" key="NewPhpClassDialog/1920.23.1280.777/0.23.1920.987@0.23.1920.987" timestamp="1602238768409" />
     <state x="762" y="447" key="NewPhpFileDialog" timestamp="1602098155436">
       <screen x="0" y="23" width="1920" height="987" />

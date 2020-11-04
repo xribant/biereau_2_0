@@ -37,11 +37,11 @@ class RegistrationDateController extends AbstractController
     public function index()
     {
         $registrationDates = $this->repository->findAll();
-        $user = $this->getUser();
+        $currentUser = $this->getUser();
 
         return $this->render('/admin/school/registration/index.html.twig', [
             'registrationDates' => $registrationDates,
-            'user' => $user,
+            'current_user' => $currentUser,
             'current_menu' => 'inscriptions'
         ]);
     }
@@ -55,7 +55,7 @@ class RegistrationDateController extends AbstractController
         $registrationDate = new RegistrationDate();
         $form = $this->createForm(RegistrationDateType::class, $registrationDate);
         $form->handleRequest($request);
-        $user = $this->getUser();
+        $currentUser = $this->getUser();
 
         if($form->isSubmitted() && $form->isValid())
         {
@@ -69,9 +69,35 @@ class RegistrationDateController extends AbstractController
         }
 
         return $this->render('/admin/school/registration/new.html.twig', [
-            'user' => $user,
+            'current_user' => $currentUser,
             'current_menu' => 'inscriptions',
             'form' => $form->createView()
+        ]);
+    }
+
+    /**
+     *
+     * @Route("/admin/ecole/inscriptions/jour/modifier/{id}", name="admin.registration.edit", methods="GET|POST")
+     * @param RegistrationDate $date
+     * @return Response
+     */
+    public function edit(RegistrationDate $date, Request $request)
+    {
+        $currentUser = $this->getUser();
+        $form = $this->createForm(RegistrationDateType::class, $date);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $this->em->flush();
+            $this->addFlash('success', 'La date de séance a été éditée avec succès');
+            return $this->redirectToRoute('admin.registration.index');
+        }
+
+        return $this->render('admin/school/registration/edit.html.twig', [
+            'date' => $date,
+            'current_menu' => 'inscriptions',
+            'form' => $form->createView(),
+            'current_user' => $currentUser
         ]);
     }
 

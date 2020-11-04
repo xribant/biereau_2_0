@@ -12,10 +12,15 @@ class SecurityController extends AbstractController
 {
 
     /**
-     * @Route("/login", name="admin.login")
+     * @Route("/login", name="login", methods={"GET", "POST"})
      */
     public function login(AuthenticationUtils $authenticationUtils)
     {
+        if($this->getUser())
+        {
+            return $this->redirectToRoute("admin.index");
+        }
+
         $error = $authenticationUtils->getLastAuthenticationError();
         $lastUsername = $authenticationUtils->getLastUsername();
 
@@ -26,11 +31,24 @@ class SecurityController extends AbstractController
     }
 
     /**
-     * @Route("/logout", name="admin.logout")
+     * This is the route the login form submits to.
+     *
+     * But, this will never be executed. Symfony will intercept this first
+     * and handle the login automatically. See form_login in app/config/security.yml
+     *
+     * @Route("/login_check", name="security_login_check")
+     */
+    public function loginCheckAction()
+    {
+        throw new \Exception('This should never be reached!');
+    }
+
+    /**
+     * @Route("/logout", name="logout")
      */
     public function logout()
     {
         $this->addFlash('info', 'Vous avez été déconnecté');
-        return $this->redirectToRoute("admin.index");
+        return $this->redirectToRoute("login");
     }
 }

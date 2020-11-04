@@ -5,7 +5,7 @@
     <title>{% block title %}{% endblock %}</title>
     <meta content='width=device-width, initial-scale=1.0, shrink-to-fit=no' name='viewport' />
     {% block stylesheets %}
-        <link rel="icon" href="{{ asset('admin/assets/img/icon.ico') }}" type="image/x-icon"/>
+        <link rel="shortcut icon" type="image/ico" href="{{ asset('images/logo_biereau.ico') }}"/>
         <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
 
         <!-- Fonts and icons -->
@@ -37,7 +37,7 @@
             <!-- Logo Header -->
             <div class="logo-header">
 
-                <a href="{{ path('admin.index') }}" class="logo">
+                <a href="{{ path('admin.dashboard') }}" class="logo">
                     <div class="navbar-brand" style="color: #fff;">
                         Biereau.be
                     </div>
@@ -87,7 +87,7 @@
                         <div class="info">
                             <a data-toggle="collapse" href="#collapseExample" aria-expanded="true">
 								<span>
-									{{ user.firstName }}
+									{{ current_user.firstName }}
 									<span class="user-level">Administrateur</span>
 									<span class="caret"></span>
 								</span>
@@ -102,7 +102,7 @@
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="{{ path('admin.logout')}}">
+                                        <a href="{{ path('logout')}}">
                                             <span class="link-collapse">Déconnexion</span>
                                         </a>
                                     </li>
@@ -112,7 +112,7 @@
                     </div>
                     <ul class="nav">
                         <li class="nav-item">
-                            <a href="{{ path("admin.index") }}">
+                            <a href="{{ path("admin.dashboard") }}">
                                 <i class="fas fa-home"></i>
                                 <p>Accueil</p>
                             </a>
@@ -122,6 +122,28 @@
 								<i class="fa fa-ellipsis-h"></i>
 							</span>
                             <h4 class="text-section">Configuration</h4>
+                        </li>
+
+                        <li class="nav-item {% if current_menu == 'users' %}active{% endif %}">
+                            <a data-toggle="collapse" href="#users">
+                                <i class="fas fa-users"></i>
+                                <p>Utilisateurs</p>
+                                <span class="caret"></span>
+                            </a>
+                            <div class="collapse {% if current_menu == 'users' %}show{% endif %}" id="users">
+                                <ul class="nav nav-collapse">
+                                    <li>
+                                        <a href="{{ path('admin.users.index') }}">
+                                            <span class="sub-item">Gestion</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="{{ path('admin.users.new') }}">
+                                            <span class="sub-item">Créer</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
                         </li>
 
                         <li class="nav-item {% if current_menu == 'schoolData' or current_menu == 'schoolSections' %}active{% endif %}">
@@ -142,11 +164,6 @@
                                             <span class="sub-item">Sections</span>
                                         </a>
                                     </li>
-                                    <li>
-                                        <a href="{{ path('admin.entrydate.index') }}">
-                                            <span class="sub-item">Dates de rentrées</span>
-                                        </a>
-                                    </li>
                                 </ul>
                             </div>
                         </li>
@@ -160,8 +177,18 @@
                             <div class="collapse {% if current_menu == 'inscriptions' %}show{% endif %}" id="subscription">
                                 <ul class="nav nav-collapse">
                                     <li>
+                                        <a href="{{ path('admin.academicyear.index') }}">
+                                            <span class="sub-item">Année académique</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="{{ path('admin.entrydate.index') }}">
+                                            <span class="sub-item">Dates de rentrées</span>
+                                        </a>
+                                    </li>
+                                    <li>
                                         <a href="{{ path('admin.registration.index') }}">
-                                            <span class="sub-item">Séances</span>
+                                            <span class="sub-item">Séances d'info</span>
                                         </a>
                                     </li>
                                     <li>

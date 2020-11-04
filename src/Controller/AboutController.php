@@ -22,7 +22,7 @@ Class AboutController extends AbstractController
     }
 
     /**
-     * @Route("/about", name="about.index")
+     * @Route("/a_propos", name="about.index")
      */
     public function showAboutPage()
     {

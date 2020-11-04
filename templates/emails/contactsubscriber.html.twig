@@ -137,7 +137,14 @@
                                                             >
                                                     <![endif]-->
                                                     <div class="mj-column-per-100 mj-outlook-group-fix" style="font-size:0px;text-align:left;direction:ltr;display:inline-block;vertical-align:top;width:100%;">
-                                                        <table border="0" cellpadding="0" cellspacing="0" role="presentation" style="background-color:#34aaf1;vertical-align:top;" width="100%">
+                                                        <table border="0" cellpadding="0" cellspacing="0" role="presentation" style="background-color:#ffffff;vertical-align:top;" width="100%">
+                                                            <tr>
+                                                                <td align="left" style="font-size:0px;padding:10px 25px;word-break:break-word;">
+                                                                    <div style="font-family:Ubuntu, Helvetica, Arial, sans-serif;font-size:13px;line-height:1;text-align:left;color:#000000;">
+                                                                        <p></p>
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
                                                             <tr>
                                                                 <td align="center" style="font-size:0px;padding:20px;word-break:break-word;">
                                                                     <table border="0" cellpadding="0" cellspacing="0" role="presentation" style="border-collapse:collapse;border-spacing:0px;">
@@ -197,19 +204,36 @@
                                                             >
                                                     <![endif]-->
                                                     <div class="mj-column-per-100 mj-outlook-group-fix" style="font-size:0px;text-align:left;direction:ltr;display:inline-block;vertical-align:top;width:100%;">
-                                                        <table border="0" cellpadding="0" cellspacing="0" role="presentation" style="background-color:#34aaf1;vertical-align:top;" width="100%">
+                                                        <table border="0" cellpadding="0" cellspacing="0" role="presentation" style="background-color:#ffffff;vertical-align:top;" width="100%">
                                                             <tr>
-                                                                <td align="center" style="font-size:0px;padding:10px 25px;word-break:break-word;">
-                                                                    <div style="font-family:Work Sans;font-size:13px;line-height:1;text-align:center;color:#000000;">
-                                                                        <h1>Séance d'infos du {{ contact.sessionDate|date("d-m-Y") }}</h1>
-                                                                    </div>
+                                                                <td align="left" style="font-size:0px;padding:10px 25px;word-break:break-word;">
+                                                                    <table cellpadding="0" cellspacing="0" width="100%" border="0" style="color:#000000;font-family:Ubuntu, Helvetica, Arial, sans-serif;font-size:13px;line-height:22px;table-layout:auto;width:100%;border:none;">
+                                                                        <tr>
+                                                                            <td style="padding: 0 15px 0 0; background-color: #ccc;" align="center">
+                                                                                <mj-text font-family="Arial black" align="center">
+                                                                                    <h1>Séance Infos du {{ contact.sessionDate|format_datetime('full','none', locale='fr') }}</h1>
+                                                                                </mj-text>
+                                                                            </td>
+                                                                        </tr>
+                                                                    </table>
                                                                 </td>
                                                             </tr>
                                                             <tr>
                                                                 <td align="left" style="font-size:0px;padding:10px 25px;word-break:break-word;">
                                                                     <div style="font-family:Work Sans;font-size:14px;line-height:1;text-align:left;color:#000000;">
                                                                         <p>Bonjour Xavier,</p>
-                                                                        <p>Le collège du biéreau a le plaisir de vous... blabla...
+                                                                        <p>Le collège du biéreau a le plaisir de vous compter parmis les... blabla...
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td align="left" style="font-size:0px;padding:10px 25px;word-break:break-word;">
+                                                                    <div style="font-family:Work Sans;font-size:14px;line-height:1;text-align:left;color:#000000;">
+                                                                        <p>Vous êtes attendu le {{ contact.sessionDate|format_datetime('full','none', locale='fr') }} à 18h30 dans l'enceinte du collège.<br>
+                                                                            {{ schoolData.street }} {{ schoolData.streetNum }}, {{ schoolData.postalCode}} {{ schoolData.city }}.</p>
+                                                                        <p>En cas de désistement, merci de contacter l'école au
+                                                                            {{  schoolData.phone1 }} ou par e-mail à l'adresse
+                                                                            {{ schoolData.email2 }}.</p>
                                                                     </div>
                                                                 </td>
                                                             </tr>
@@ -259,10 +283,10 @@
                                                             >
                                                     <![endif]-->
                                                     <div class="mj-column-per-100 mj-outlook-group-fix" style="font-size:0px;text-align:left;direction:ltr;display:inline-block;vertical-align:top;width:100%;">
-                                                        <table border="0" cellpadding="0" cellspacing="0" role="presentation" style="background-color:#34aaf1;vertical-align:top;" width="100%">
+                                                        <table border="0" cellpadding="0" cellspacing="0" role="presentation" style="background-color:#ffffff;vertical-align:top;" width="100%">
                                                             <tr>
                                                                 <td align="center" style="font-size:0px;padding:10px 25px;word-break:break-word;">
-                                                                    <div style="font-family:Work Sans;font-size:13px;line-height:1;text-align:center;color:#000000;">
+                                                                    <div style="font-family:Arial;font-size:13px;line-height:1;text-align:center;color:#000000;">
                                                                         <h1>Vos données</h1>
                                                                     </div>
                                                                 </td>
@@ -271,8 +295,9 @@
                                                                 <td align="left" style="font-size:0px;padding:10px 25px;word-break:break-word;">
                                                                     <table cellpadding="0" cellspacing="0" width="100%" border="0" style="color:#000000;font-family:Ubuntu, Helvetica, Arial, sans-serif;font-size:13px;line-height:22px;table-layout:auto;width:100%;border:none;">
                                                                         <tr>
-                                                                            <td style="padding: 0 15px 0 0;" align="right">Parent : </td>
-                                                                            <td style="padding: 0 15px;" align="left">{{ contact.parentFirstName }} {{ contact.parentLastName }}</td>
+                                                                            <td style="padding: 0 15px 0 0; background-color: #ccc;" align="right">Parent : </td>
+                                                                            <td style="padding: 0 15px; background-color: #ccc;" align="left">
+                                                                                {{  contact.parentFirstName }} {{ contact.parentLastName }}</td>
                                                                         </tr>
                                                                         <tr>
                                                                             <td style="padding: 0 15px 0 0;" align="right">Téléphone : </td>
@@ -280,9 +305,8 @@
                                                                                 {{ contact.parentPhone }}</td>
                                                                         </tr>
                                                                         <tr>
-                                                                            <td style="padding: 0 15px 0 0;" align="right">E-mail : </td>
-                                                                            <td style="padding: 0 15px;" align="left">
-                                                                                {{ contact.parentEmail }}</td>
+                                                                            <td style="padding: 0 15px 0 0; background-color: #ccc;" align="right">E-mail : </td>
+                                                                            <td style="padding: 0 15px; background-color: #ccc;" align="left">{{ contact.parentEmail }}</td>
                                                                         </tr>
                                                                         <tr>
                                                                             <td style="padding: 0 15px 0 0;" align="right">Enfant : </td>
@@ -290,8 +314,9 @@
                                                                                 {{ contact.childFirstName }} {{ contact.childLastName }}</td>
                                                                         </tr>
                                                                         <tr>
-                                                                            <td style="padding: 0 15px 0 0;" align="right">Date de naissance : </td>
-                                                                            <td style="padding: 0 15px;" align="left">{{ contact.childBirthDate|date("d-m-Y") }}</td>
+                                                                            <td style="padding: 0 15px 0 0; background-color: #ccc;" align="right">Date de naissance : </td>
+                                                                            <td style="padding: 0 15px; background-color: #ccc;" align="left">
+                                                                                {{ contact.childBirthDate|format_datetime('medium', 'none', locale='fr') }}</td>
                                                                         </tr>
                                                                         <tr>
                                                                             <td style="padding: 0 15px 0 0;" align="right">Section : </td>
@@ -299,8 +324,9 @@
                                                                                 {{ contact.childSection }}</td>
                                                                         </tr>
                                                                         <tr>
-                                                                            <td style="padding: 0 15px 0 0;" align="right">Date de rentrée : </td>
-                                                                            <td style="padding: 0 15px;" align="left">{{ contact.childEntryDate|date("d-m-Y") }}</td>
+                                                                            <td style="padding: 0 15px 0 0; background-color: #ccc;" align="right">Date de rentrée : </td>
+                                                                            <td style="padding: 0 15px; background-color: #ccc;" align="left">
+                                                                                {{  contact.childEntryDate|format_datetime('full', 'none', locale='fr') }}</td>
                                                                         </tr>
                                                                     </table>
                                                                 </td>
@@ -351,10 +377,10 @@
                                                             >
                                                     <![endif]-->
                                                     <div class="mj-column-per-100 mj-outlook-group-fix" style="font-size:0px;text-align:left;direction:ltr;display:inline-block;vertical-align:top;width:100%;">
-                                                        <table border="0" cellpadding="0" cellspacing="0" role="presentation" style="background-color:#34aaf1;vertical-align:top;" width="100%">
+                                                        <table border="0" cellpadding="0" cellspacing="0" role="presentation" style="background-color:#ffffff;vertical-align:top;" width="100%">
                                                             <tr>
                                                                 <td align="center" style="font-size:0px;padding:10px 25px;padding-top:60px;padding-bottom:20px;word-break:break-word;">
-                                                                    <div style="font-family:Ubuntu, Helvetica, Arial, sans-serif;font-size:13px;line-height:1;text-align:center;color:#000000;">&copy Biereau.be | Collège du biereau | Rue du Collège 2, 1348 Ottignies-Louvain-la-Neuve</div>
+                                                                    <div style="font-family:Ubuntu, Helvetica, Arial, sans-serif;font-size:13px;line-height:1;text-align:center;color:#000000;">Copyright © 2020 | Collège du biereau LLN | <a href="http://www.biereau.be" target="_blank">biereau.be</a></div>
                                                                 </td>
                                                             </tr>
                                                         </table>

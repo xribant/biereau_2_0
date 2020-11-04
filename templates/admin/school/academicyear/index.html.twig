@@ -1,0 +1,53 @@
+{% extends 'admin/adminbase.html.twig' %}
+
+{% block title %} Admin | Biereau.be - Années académiques{% endblock %}
+
+{% block content %}
+
+    <div class="main-panel">
+        <div class="content">
+            <div class="page-inner">
+                <div class="row">
+                    <div class="col-md-8">
+                        <div class="card">
+                            <div class="card-header">
+                                <div class="card-title">Année académique pour les inscriptions</div>
+                            </div>
+                            <div class="card-body">
+                                {% for message in app.flashes('success') %}
+                                    <div class="alert alert-success">
+                                        {{ message|raw }}
+                                    </div>
+                                {% endfor %}
+                                <table class="table table-striped mt-3">
+                                    <thead>
+                                    <tr>
+                                        <th scope="col">Année</th>
+                                        <th scope="col">Ouverte aux inscriptions</th>
+                                        <th scope="col">Date d'ouverture des inscriptions</th>
+                                        <th scope="col"></th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    {% for year in years %}
+                                        <tr>
+                                            <td>{{ year.year }}</td>
+                                            <td>{% if year.activeForRegistration == 0 %}Non{% else %}Oui{% endif %}</td>
+                                            <td>{{ year.startRegistrationDate|format_datetime('full', 'none', locale='fr') }} à {{ year.startRegistrationDate|format_datetime('none', 'short', locale='fr') }}</td>
+                                            <td>
+                                                <a href="{{ path('admin.academicyear.edit', {id: year.id}) }}" class="btn btn-sm btn-warning"><i class="far fa-edit"></i></a>
+                                            </td>
+                                        </tr>
+                                    {% endfor %}
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

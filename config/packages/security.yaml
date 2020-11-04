@@ -11,9 +11,16 @@ security:
             security: false
         main:
             anonymous: lazy
+
+            form_login:
+                login_path: login
+                check_path: login
+                default_target_path: /admin/dashboard
+                always_use_default_target_path: true
+
             logout:
                 path: /logout
-                target: /admin
+                target: login
 
             # activate different ways to authenticate
             # https://symfony.com/doc/current/security.html#firewalls-authentication
@@ -21,12 +28,10 @@ security:
             # https://symfony.com/doc/current/security/impersonating_user.html
             # switch_user: true
 
-            form_login:
-                check_path: admin.login
-
     # Easy way to control access for large sections of your site
     # Note: Only the *first* access control that matches will be used
     access_control:
+        - { path: ^/login, roles: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/admin, roles: ROLE_ADMIN }
         # - { path: ^/profile, roles: ROLE_USER }
 

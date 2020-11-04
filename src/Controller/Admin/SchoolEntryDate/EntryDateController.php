@@ -33,24 +33,24 @@ class EntryDateController extends AbstractController
     }
 
     /**
-     * @Route("/admin/school/entrydate", name="admin.entrydate.index")
+     * @Route("/admin/ecole/date_de_rentree", name="admin.entrydate.index")
      * @return Response
      */
 
     public function index()
     {
         $dates = $this->repository->findAll();
-        $user = $this->getUser();
+        $currentUser = $this->getUser();
 
         return $this->render('/admin/school/entrydate/index.html.twig', [
-            'current_menu' => 'schoolData',
-            'user' => $user,
+            'current_menu' => 'inscriptions',
+            'current_user' => $currentUser,
             'dates' => $dates
         ]);
     }
 
     /**
-     * @Route("/admin/school/entrydate/new", name="admin.entrydate.new")
+     * @Route("/admin/ecole/date_de_rentree/nouvelle", name="admin.entrydate.new")
      * @return Response
      */
 
@@ -59,7 +59,7 @@ class EntryDateController extends AbstractController
         $entryDate = new SchoolEntryDate();
         $form = $this->createForm(SchoolEntryDateType::class, $entryDate);
         $form->handleRequest($request);
-        $user = $this->getUser();
+        $currentUser = $this->getUser();
 
         if($form->isSubmitted() && $form->isValid())
         {
@@ -74,14 +74,14 @@ class EntryDateController extends AbstractController
 
         return $this->render('/admin/school/entrydate/new.html.twig', [
             'form' => $form->createView(),
-            'user' => $user,
-            'current_menu' => 'schoolData'
+            'current_user' => $currentUser,
+            'current_menu' => 'inscriptions'
         ]);
     }
 
     /**
      *
-     * @Route("/admin/school/entrydate/{id}", name="admin.entrydate.delete", methods="DELETE")
+     * @Route("/admin/ecole/date_de_rentree/{id}", name="admin.entrydate.delete", methods="DELETE")
      * @param SchoolEntryDate $date
      * @return Response
      */

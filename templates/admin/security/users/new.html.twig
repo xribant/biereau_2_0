@@ -1,0 +1,30 @@
+{% extends 'admin/adminbase.html.twig' %}
+
+{% block title %} Admin | Biereau.be - Utilisateurs{% endblock %}
+
+{% block content %}
+
+
+
+    <div class="main-panel">
+        <div class="content">
+            <div class="page-inner">
+                <div class="row">
+                    <div class="col-md-8">
+
+                        <div class="card">
+                            <div class="card-header">
+                                <div class="card-title">Ajout d'un nouvel utilisateur</div>
+                            </div>
+
+                            {{ include ('admin/security/users/_form.html.twig', {form: form, button: 'Créer'}) }}
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

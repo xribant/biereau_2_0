@@ -23,6 +23,7 @@
                                     <thead>
                                     <tr>
                                         <th scope="col">Dates</th>
+                                        <th scope="col">Active</th>
                                         <th scope="col"></th>
                                     </tr>
                                     </thead>
@@ -30,7 +31,9 @@
                                     {% for registrationDate in registrationDates %}
                                         <tr>
                                             <td>{{ registrationDate.regDate|date("d M Y")|format_datetime('full','none', locale='fr') }}</td>
+                                            <td>{% if registrationDate.enabled == 0 %}Non{% else %}Oui{% endif %}</td>
                                             <td>
+                                                <a href="{{ path('admin.registration.edit', {id: registrationDate.id}) }}" class="btn btn-sm btn-warning"><i class="far fa-edit"></i></a>
                                                 <form method="post" action="{{ path('admin.registration.delete', {id: registrationDate.id}) }}" style="display: inline-block" onsubmit="return confirm('Etes-vous certain?')">
                                                     <input type="hidden" name="_method" value="DELETE">
                                                     <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ registrationDate.id) }}">
