@@ -1,0 +1,31 @@
+{% extends "/admin/adminbase.html.twig" %}
+
+{% block title "Biereau.be Admin | Reset du mot de passe" %}
+
+
+{% block body %}
+    <body class="login">
+    <div class="wrapper wrapper-login">
+        <div class="container container-login animated fadeIn">
+            <h3 class="text-center">Réinitialisation de mot de passe</h3>
+
+            {% for flashError in app.flashes('reset_password_error') %}
+                <div class="alert alert-danger" role="alert">{{ flashError }}</div>
+            {% endfor %}
+            <div class="alert alert-primary" role="alert">
+                <p>Veuillez entrer votre adresse e-mail et nous allons vous envoyer un lien pour effectuer le reset de votre mot de passe.</p>
+            </div>
+            {{ form_start(requestForm) }}
+                    <div class="form-group form-floating-label">
+                        {{ form_row(requestForm.email) }}
+                    </div>
+                    <div class="form-action mb-3">
+                        <button class="btn btn-primary btn-rounded btn-login">M'envoyer le lien</button>
+                    </div>
+            {{ form_end(requestForm) }}
+            </form>
+        </div>
+    </div>
+
+    </body>
+{% endblock %}

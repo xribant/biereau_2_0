@@ -22,7 +22,8 @@ class UserType extends AbstractType
                 'label' => 'E-Mail'
             ])
             ->add('avatarFile', TextType::class, [
-                'label' => 'Photo'
+                'label' => 'Photo',
+                'required' => false
             ])
             ->add('firstName', TextType::class, [
                 'label' => 'Prénom'

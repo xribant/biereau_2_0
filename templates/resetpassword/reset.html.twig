@@ -1,0 +1,23 @@
+{% extends "/admin/adminbase.html.twig" %}
+
+{% block title "Biereau.be Admin | Reset du mot de passe" %}
+
+
+{% block body %}
+    <body class="login">
+    <div class="wrapper wrapper-login">
+        <div class="container container-login animated fadeIn">
+            <h3 class="text-center">Réinitialisation de mot de passe</h3>
+            {{ form_start(resetForm) }}
+                <div class="form-group form-floating-label">
+                    {{ form_row(resetForm.plainPassword) }}
+                </div>
+                <div class="form-action mb-3">
+                    <button class="btn btn-primary btn-rounded">Réinitialiser</button>
+                </div>
+            {{ form_end(resetForm) }}
+        </div>
+    </div>
+
+    </body>
+{% endblock %}

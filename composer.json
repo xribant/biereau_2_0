@@ -12,6 +12,7 @@
         "doctrine/orm": "^2.7",
         "easycorp/easyadmin-bundle": "^3.1",
         "eternicode/bootstrap-datepicker": "^1.9",
+        "hackzilla/password-generator": "^1.5",
         "phpdocumentor/reflection-docblock": "^4.3",
         "sensio/framework-extra-bundle": "^5.5",
         "swiftmailer/swiftmailer": "^6.2",
@@ -39,6 +40,7 @@
         "symfony/validator": "4.4.*",
         "symfony/web-link": "4.4.*",
         "symfony/yaml": "4.4.*",
+        "symfonycasts/reset-password-bundle": "^1.1",
         "twig/extra-bundle": "^2.12|^3.0",
         "twig/intl-extra": "^3.0",
         "twig/twig": "^2.12|^3.0"

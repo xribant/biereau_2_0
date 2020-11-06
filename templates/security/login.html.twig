@@ -7,7 +7,7 @@
 <body class="login">
     <div class="wrapper wrapper-login">
         <div class="container container-login animated fadeIn">
-            <h3 class="text-center">Administration du site Biereau.be</h3>
+            <h3 class="text-center">Admin Biereau.be</h3>
             {% if error %}
                 <div class="alert alert-danger">
                     {{ error.messageKey | trans(error.messagedata, 'security') }}
@@ -30,6 +30,9 @@
                         <div class="show-password">
                             <i class="flaticon-interface"></i>
                         </div>
+                    </div>
+                    <div class="row form-sub m-0">
+                        <a href="{{ path('forgot.password.request') }}" class="link float-right">Mot de passe oublié ?</a>
                     </div>
                     <div class="form-action mb-3">
                         <button class="btn btn-primary btn-rounded btn-login">Se connecter</button>

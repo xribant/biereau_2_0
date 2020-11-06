@@ -5,6 +5,8 @@ namespace App\Controller\Admin\Security;
 
 use App\Entity\User;
 use App\Form\Admin\UserType;
+use App\Notification\ContactNotification;
+use App\Notification\PasswordNotification;
 use App\Repository\UserRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Doctrine\Persistence\ObjectManager;
@@ -12,6 +14,8 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\Request;
+use Hackzilla\PasswordGenerator\Generator\ComputerPasswordGenerator;
+use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 
 class UserController extends AbstractController
 {
@@ -25,10 +29,13 @@ class UserController extends AbstractController
      */
     private $em;
 
-    public function __construct(UserRepository $repository, EntityManagerInterface $em)
+    private $encoder;
+
+    public function __construct(UserRepository $repository, EntityManagerInterface $em, UserPasswordEncoderInterface $encoder)
     {
         $this->repository = $repository;
         $this->em = $em;
+        $this->encoder = $encoder;
     }
 
     /**
@@ -50,7 +57,7 @@ class UserController extends AbstractController
      * @Route("/admin/users/nouveau", name="admin.users.new")
      * @return Response
      */
-    public function new(Request $request)
+    public function new(Request $request,  PasswordNotification $notification)
     {
         $currentUser = $this->getUser();
 
@@ -59,7 +66,26 @@ class UserController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+
+            $generator = new ComputerPasswordGenerator();
+
+            $generator
+                ->setUppercase()
+                ->setLowercase()
+                ->setNumbers()
+                ->setSymbols(false)
+                ->setLength(10)
+            ;
+
+            $password = $generator->generatePassword();
+            $user->setPassword($password);
+            $notification->notify($user);
+
+            $user->setPassword($this->encoder->encodePassword($user, $password));
+
+            $this->em->persist($user);
             $this->em->flush();
+
             $this->addFlash('success', 'Un nouvel utilisateur a été ajouté');
             return $this->redirectToRoute('admin.users.index');
         }
@@ -78,9 +104,24 @@ class UserController extends AbstractController
      * @param User $user
      * @return Response
      */
-    public function edit()
+    public function edit(User $user, Request $request)
     {
+        $currentUser = $this->getUser();
+        $form = $this->createForm(UserType::class, $user);
+        $form->handleRequest($request);
 
+        if ($form->isSubmitted() && $form->isValid()) {
+            $this->em->flush();
+            $this->addFlash('success', 'L\'utilisateur a été modifié avec succès');
+            return $this->redirectToRoute('admin.users.index');
+        }
+
+        return $this->render('admin/security/users/edit.html.twig', [
+            'user' => $user,
+            'current_menu' => 'users',
+            'form' => $form->createView(),
+            'current_user' => $currentUser,
+        ]);
     }
 
     /**

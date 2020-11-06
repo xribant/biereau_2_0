@@ -51,4 +51,5 @@ class SecurityController extends AbstractController
         $this->addFlash('info', 'Vous avez été déconnecté');
         return $this->redirectToRoute("login");
     }
+
 }

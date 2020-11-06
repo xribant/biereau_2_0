@@ -3,7 +3,6 @@
 
 namespace App\Notification;
 
-use App\Entity\AcademicYear;
 use App\Entity\ContactSub;
 use App\Entity\SchoolData;
 use App\Repository\AcademicYearRepository;
