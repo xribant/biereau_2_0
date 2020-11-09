@@ -11,32 +11,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="eb337925-03b6-4a6f-95e2-c598709ccab2" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/biereau_2_0.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/biereau_2_0.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config/bundles.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/bundles.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/migrations/Version20201020203029.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/migrations/Version20201020204215.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/migrations/Version20201021202726.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/migrations/Version20201029154105.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/migrations/Version20201029201653.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/migrations/Version20201029203038.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/migrations/Version20201029214941.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/migrations/Version20201030201321.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/migrations/Version20201031204700.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/migrations/Version20201103174302.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/migrations/Version20201103205035.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/Admin/Security/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/Admin/Security/UserController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/SecurityController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/SecurityController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Form/Admin/UserType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/Admin/UserType.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Notification/ContactNotification.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Notification/ContactNotification.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/services.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/services.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/HomeController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/symfony.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/admin/security/users/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/security/users/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/security/login.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/security/login.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/admin/adminbase.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/adminbase.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/home.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/home.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/subscription.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/subscription.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/teachers.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/teachers.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -169,6 +158,11 @@
       <path value="$PROJECT_DIR$/vendor/symfony/apache-pack" />
       <path value="$PROJECT_DIR$/vendor/hackzilla/password-generator" />
       <path value="$PROJECT_DIR$/vendor/symfonycasts/reset-password-bundle" />
+      <path value="$PROJECT_DIR$/vendor/vich/uploader-bundle" />
+      <path value="$PROJECT_DIR$/vendor/jms/metadata" />
+      <path value="$PROJECT_DIR$/vendor/symfony/templating" />
+      <path value="$PROJECT_DIR$/vendor/liip/imagine-bundle" />
+      <path value="$PROJECT_DIR$/vendor/imagine/imagine" />
     </include_path>
   </component>
   <component name="ProjectId" id="1iQQ6mJZnZK6Zb5L3X943fHCRuY" />
@@ -199,11 +193,11 @@
       <recent name="$PROJECT_DIR$/src/Entity" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/Form/Admin/PageContent" />
       <recent name="$PROJECT_DIR$/templates/resetpassword" />
       <recent name="$PROJECT_DIR$/src/Form/Admin" />
       <recent name="$PROJECT_DIR$/src/Controller/Admin" />
       <recent name="$PROJECT_DIR$/src/Controller/Admin/SchoolEntryDate" />
-      <recent name="$PROJECT_DIR$/src/Form/Admin/School" />
     </key>
   </component>
   <component name="RunManager">
@@ -277,7 +271,10 @@
       <workItem from="1604557607152" duration="12400000" />
       <workItem from="1604609108280" duration="1593000" />
       <workItem from="1604643521655" duration="10289000" />
-      <workItem from="1604673703304" duration="1131000" />
+      <workItem from="1604673703304" duration="1225000" />
+      <workItem from="1604730599231" duration="7700000" />
+      <workItem from="1604822323236" duration="17922000" />
+      <workItem from="1604903793046" duration="3173000" />
     </task>
     <servers />
   </component>
@@ -305,10 +302,10 @@
       <screen x="0" y="23" width="1920" height="987" />
     </state>
     <state x="681" y="325" key="#com.intellij.fileTypes.FileTypeChooser/1920.168.1280.777/0.23.1920.987@0.23.1920.987" timestamp="1604474026091" />
-    <state x="1078" y="236" key="#com.intellij.ide.util.MemberChooser" timestamp="1603111833324">
+    <state x="1078" y="236" key="#com.intellij.ide.util.MemberChooser" timestamp="1604908152960">
       <screen x="0" y="23" width="1920" height="987" />
     </state>
-    <state x="1078" y="236" key="#com.intellij.ide.util.MemberChooser/1920.168.1280.777/0.23.1920.987@0.23.1920.987" timestamp="1603111833324" />
+    <state x="1078" y="236" key="#com.intellij.ide.util.MemberChooser/1920.168.1280.777/0.23.1920.987@0.23.1920.987" timestamp="1604908152960" />
     <state x="648" y="259" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1602936329851">
       <screen x="0" y="23" width="1920" height="987" />
     </state>
@@ -318,18 +315,18 @@
     </state>
     <state x="668" y="23" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/1920.168.1280.777/0.23.1920.987@0.23.1920.987" timestamp="1603436282246" />
     <state x="668" y="205" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/1920.23.1280.777/0.23.1920.987@0.23.1920.987" timestamp="1602238729944" />
-    <state x="1051" y="258" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1604583244633">
+    <state x="1051" y="258" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1604863897420">
       <screen x="0" y="23" width="1920" height="987" />
     </state>
-    <state x="1051" y="258" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/1920.168.1280.777/0.23.1920.987@0.23.1920.987" timestamp="1604583244633" />
+    <state x="1051" y="258" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/1920.168.1280.777/0.23.1920.987@0.23.1920.987" timestamp="1604863897420" />
     <state width="256" height="457" key="HiddenNamespacesPopup" timestamp="1601843046027">
       <screen x="0" y="23" width="1920" height="987" />
     </state>
     <state width="256" height="457" key="HiddenNamespacesPopup/1920.168.1280.777/0.23.1920.987@0.23.1920.987" timestamp="1601843046027" />
-    <state x="496" y="247" key="NewPhpClassDialog" timestamp="1604656556418">
+    <state x="637" y="451" key="NewPhpClassDialog" timestamp="1604872046348">
       <screen x="0" y="23" width="1920" height="987" />
     </state>
-    <state x="496" y="247" key="NewPhpClassDialog/1920.168.1280.777/0.23.1920.987@0.23.1920.987" timestamp="1604656556418" />
+    <state x="637" y="451" key="NewPhpClassDialog/1920.168.1280.777/0.23.1920.987@0.23.1920.987" timestamp="1604872046348" />
     <state x="661" y="249" key="NewPhpClassDialog/1920.23.1280.777/0.23.1920.987@0.23.1920.987" timestamp="1602238768409" />
     <state x="762" y="447" key="NewPhpFileDialog" timestamp="1602098155436">
       <screen x="0" y="23" width="1920" height="987" />

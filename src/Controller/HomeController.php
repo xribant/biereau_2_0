@@ -6,6 +6,7 @@ use App\Entity\Contact;
 use App\Entity\SchoolData;
 use App\Form\Admin\School\ContactType;
 use App\Repository\SchoolDataRepository;
+use App\Repository\SiteHomePageCarouselRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Doctrine\Persistence\ObjectManager;
 use Symfony\Component\HttpFoundation\Response;
@@ -25,11 +26,16 @@ Class HomeController extends AbstractController
      * @var ObjectManager
      */
     private $em;
+    /**
+     * @var SiteHomePageCarouselRepository
+     */
+    private $carouselRepository;
 
-    public function __construct(SchoolDataRepository $schoolDataRepo, EntityManagerInterface $em)
+    public function __construct(SchoolDataRepository $schoolDataRepo, SiteHomePageCarouselRepository $carouselRepository, EntityManagerInterface $em)
     {
         $this->schoolDataRepo = $schoolDataRepo;
         $this->em = $em;
+        $this->carouselRepository = $carouselRepository;
     }
 
     /**
@@ -38,10 +44,13 @@ Class HomeController extends AbstractController
      */
     public function index()
     {
+        $carousel = $this->carouselRepository->findAll();
         $schoolData = $this->schoolDataRepo->findOneBy(['id' => 1]);
+
         return $this->render('home.html.twig', [
             'current_menu' => 'home',
-            'school' => $schoolData
+            'school' => $schoolData,
+            'carousel' => $carousel
         ]);
     }
 }

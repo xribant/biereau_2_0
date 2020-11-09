@@ -1,0 +1,79 @@
+{% extends 'admin/adminbase.html.twig' %}
+
+{% block title %} Admin | Biereau.be - Gestion de Contenu{% endblock %}
+
+{% block content %}
+
+    <div class="main-panel">
+        <div class="content">
+            <div class="page-inner">
+                <div class="row">
+                    <div class="col-md-10">
+                        <div class="card">
+                            <div class="card-header">
+                                <div class="card-title">Gestion de la page d'accueil</div>
+                                <p class="card-category">Banière principale (Carousel)</p>
+                            </div>
+                            <div class="card-body">
+                                {% for message in app.flashes('success') %}
+                                    <div class="alert alert-success">
+                                        {{ message|raw }}
+                                    </div>
+                                {% endfor %}
+                                <table class="table table-striped mt-3">
+                                    <thead>
+                                    <tr>
+                                        <th scope="col" style="width: 20%">Slogan</th>
+                                        <th scope="col" style="width: 20%">Lien vers menu</th>
+                                        <th scope="col" style="width: 40%">Image d'arrière-plan</th>
+                                        <th style="width: 20%"></th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    {% for item in home_carousel_data %}
+                                        <tr>
+                                            <td>{{ item.slogan }}</td>
+                                            <td>{{ item.linkToMenu }}</td>
+                                            <td>
+                                                {% if item.filename %}
+                                                    <img src="{{ vich_uploader_asset(item, 'backgroundImageFile') | imagine_filter('thumb') }}" style="width: 20%; height: auto;">
+                                                {% endif %}
+                                            </td>
+                                            <td>
+                                                <a href="{{ path('content.home_carousel_item.edit', {id: item.id}) }}" class="btn btn-sm btn-warning"><i class="far fa-edit"></i></a>
+                                                <form method="post" action="{{ path('content.home_carousel_item.delete', {id: item.id}) }}" style="display: inline-block" onsubmit="return confirm('Etes-vous certain?')">
+                                                    <input type="hidden" name="_method" value="DELETE">
+                                                    <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ item.id) }}">
+                                                    <button class="btn btn-sm btn-danger"><i class="far fa-trash-alt"></i></button>
+                                                </form>
+                                            </td>
+                                        </tr>
+                                    {% endfor %}
+                                    </tbody>
+                                </table>
+                                <div class="text-left mt-3 mb-3">
+                                    <a href="{{  path('content.home_carousel_item.new') }}" class="btn btn-primary">Ajouter</a>
+                                </div>
+
+
+                            </div>
+                            <div class="card-header">
+                                <p class="card-category">Banière secondaire</p>
+                            </div>
+                            <div class="card-body">
+                                {% for message in app.flashes('success') %}
+                                    <div class="alert alert-success">
+                                        {{ message|raw }}
+                                    </div>
+                                {% endfor %}
+                                blabla
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
