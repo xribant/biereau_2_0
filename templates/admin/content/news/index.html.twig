@@ -1,0 +1,66 @@
+{% extends 'admin/adminbase.html.twig' %}
+
+{% block title %} Admin | Biereau.be - Gestion de Contenu{% endblock %}
+
+{% block content %}
+
+    <div class="main-panel">
+        <div class="content">
+            <div class="page-inner">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <div class="card-title">Gestion des news de la page d'accueil</div>
+                            </div>
+                            <div class="card-body">
+                                {% for message in app.flashes('success') %}
+                                    <div class="alert alert-success">
+                                        {{ message|raw }}
+                                    </div>
+                                {% endfor %}
+                                <table class="table table-striped mt-3">
+                                    <thead>
+                                    <tr>
+                                        <th scope="col" style="width: 20%">Titre</th>
+                                        <th scope="col" style="width: 20%">Article</th>
+                                        <th scope="col" style="width: 20%">Initiateur</th>
+                                        <th scope="col" style="width: 20%">Fonction</th>
+                                        <th scope="col" style="width: 20%">Adresse Web</th>
+                                        <th style="width: 20%"></th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    {% for item in news %}
+                                        <tr>
+                                            <td>{{ item.title }}</td>
+                                            <td>{{ item.article }}</td>
+                                            <td>{{ item.author }}</td>
+                                            <td>{{ item.job }}</td>
+                                            <td>{{ item.url }}</td>
+                                            <td>
+                                                <a href="{{ path('admin.content.news.edit', {id: item.id}) }}" class="btn btn-sm btn-warning"><i class="far fa-edit"></i></a>
+                                                <form method="post" action="{{ path('admin.content.news.delete', {id: item.id}) }}" style="display: inline-block" onsubmit="return confirm('Etes-vous certain?')">
+                                                    <input type="hidden" name="_method" value="DELETE">
+                                                    <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ item.id) }}">
+                                                    <button class="btn btn-sm btn-danger"><i class="far fa-trash-alt"></i></button>
+                                                </form>
+                                            </td>
+                                        </tr>
+                                    {% endfor %}
+                                    </tbody>
+                                </table>
+                                <div class="text-left mt-3 mb-3">
+                                    <a href="{{  path('admin.content.news.new') }}" class="btn btn-primary">Ajouter</a>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

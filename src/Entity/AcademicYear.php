@@ -25,11 +25,6 @@ class AcademicYear
     private $year;
 
     /**
-     * @ORM\OneToMany(targetEntity=SchoolEntryDate::class, mappedBy="academicYear")
-     */
-    private $schoolEntryDates;
-
-    /**
      * @ORM\Column(type="boolean")
      */
     private $activeForRegistration;
@@ -61,36 +56,6 @@ class AcademicYear
         return $this;
     }
 
-    /**
-     * @return Collection|SchoolEntryDate[]
-     */
-    public function getSchoolEntryDates(): Collection
-    {
-        return $this->schoolEntryDates;
-    }
-
-    public function addSchoolEntryDate(SchoolEntryDate $schoolEntryDate): self
-    {
-        if (!$this->schoolEntryDates->contains($schoolEntryDate)) {
-            $this->schoolEntryDates[] = $schoolEntryDate;
-            $schoolEntryDate->setAcademicYear($this);
-        }
-
-        return $this;
-    }
-
-    public function removeSchoolEntryDate(SchoolEntryDate $schoolEntryDate): self
-    {
-        if ($this->schoolEntryDates->contains($schoolEntryDate)) {
-            $this->schoolEntryDates->removeElement($schoolEntryDate);
-            // set the owning side to null (unless already changed)
-            if ($schoolEntryDate->getAcademicYear() === $this) {
-                $schoolEntryDate->setAcademicYear(null);
-            }
-        }
-
-        return $this;
-    }
 
     public function getActiveForRegistration(): ?bool
     {

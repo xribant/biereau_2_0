@@ -33,7 +33,7 @@ class ContactSub
     private $parentLastName;
 
     /**
-     * @ORM\Column(type="string", length=100)
+     * @ORM\Column(type="string", length=100, nullable=true)
      * @Assert\Regex(
      *     pattern="/[0-9]{9,10}/"
      * )
@@ -65,11 +65,6 @@ class ContactSub
      * @Assert\NotBlank()
      */
     private $childBirthDate;
-
-    /**
-     * @ORM\Column(type="date")
-     */
-    private $childEntryDate;
 
     /**
      * @ORM\Column(type="string", length=100)
@@ -180,18 +175,6 @@ class ContactSub
         return $this;
     }
 
-    public function getChildEntryDate(): ?\DateTimeInterface
-    {
-        return $this->childEntryDate;
-    }
-
-    public function setChildEntryDate(\DateTimeInterface $childEntryDate): self
-    {
-        $this->childEntryDate = $childEntryDate;
-
-        return $this;
-    }
-
     public function getChildSection(): ?string
     {
         return $this->childSection;
@@ -233,4 +216,5 @@ class ContactSub
         // TODO: Implement __toString() method.
         return $this->childEntryDate;
     }
+
 }

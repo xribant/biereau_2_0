@@ -6,6 +6,7 @@ namespace App\Controller\Admin\PageContent;
 
 use App\Entity\SiteHomePageCarousel;
 use App\Form\Admin\PageContent\HomePageCarouselFormType;
+use App\Repository\SchoolValueRepository;
 use App\Repository\SiteHomePageCarouselRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Doctrine\Persistence\ObjectManager;
@@ -25,33 +26,42 @@ class HomeContentController extends AbstractController
      * @var ObjectManager
      */
     private $em;
+    /**
+     * @var SchoolValueRepository
+     */
+    private $schoolValueRepository;
 
-    public function __construct(SiteHomePageCarouselRepository $repository, EntityManagerInterface $em)
+    public function __construct(SiteHomePageCarouselRepository $repository, SchoolValueRepository $schoolValueRepository, EntityManagerInterface $em)
     {
         $this->repository = $repository;
         $this->em = $em;
+        $this->schoolValueRepository = $schoolValueRepository;
     }
 
+    /* ------------------------------------- Carousel controller -------------------------------------------------*/
+
     /**
-     * @Route("/admin/content/home_page", name="admin.content.home_page")
+     * @Route("/admin/content/home_carousel", name="admin.content.home_carousel")
      */
     public function index()
     {
         $current_user = $this->getUser();
         $homeCarouselData = $this->repository->findAll();
+        $schoolValues = $this->schoolValueRepository->findAll();
 
-        return $this->render('admin/content/home_page.html.twig', [
+        return $this->render('admin/content/home_carousel/index.html.twig', [
             'current_menu' => 'contenu',
             'current_user' => $current_user,
             'home_carousel_data' => $homeCarouselData,
+            'school_values' => $schoolValues,
         ]);
     }
 
     /**
-     * @Route("/admin/content/home_carousel_item/new", name="content.home_carousel_item.new")
+     * @Route("/admin/content/home_carousel/new", name="admin.content.home_carousel.new")
      * @return Response
      */
-    public function homeCarouselNew(Request $request)
+    public function new(Request $request)
     {
         $current_user = $this->getUser();
         $carousel = new SiteHomePageCarousel();
@@ -64,12 +74,12 @@ class HomeContentController extends AbstractController
             $this->em->persist($carousel);
             $this->em->flush();
             $this->addFlash('success', 'Un nouvel item a été ajouté au carousel');
-            return $this->redirectToRoute('admin.content.home_page', [
+            return $this->redirectToRoute('admin.content.home_carousel', [
                 'current_menu' => 'contenu'
             ]);
         }
 
-        return $this->render('admin/content/home_carousel_new.html.twig', [
+        return $this->render('admin/content/home_carousel/new.html.twig', [
             'current_menu' => 'contenu',
             'current_user' => $current_user,
             'form' => $form->createView(),
@@ -77,11 +87,11 @@ class HomeContentController extends AbstractController
     }
 
     /**
-     * @Route("/admin/content/home_carousel_item/edit/{id}", name="content.home_carousel_item.edit", methods="GET|POST")
+     * @Route("/admin/content/home_carousel/edit/{id}", name="admin.content.home_carousel.edit", methods="GET|POST")
      * @param SiteHomePageCarousel $carousel
      * @return Response
      */
-    public function homeCarouselEdit(SiteHomePageCarousel $carousel, Request $request)
+    public function edit(SiteHomePageCarousel $carousel, Request $request)
     {
         $currentUser = $this->getUser();
         $form = $this->createForm(HomePageCarouselFormType::class, $carousel);
@@ -90,10 +100,10 @@ class HomeContentController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $this->em->flush();
             $this->addFlash('success', 'La bannière principale a été modifiée');
-            return $this->redirectToRoute('admin.content.home_page');
+            return $this->redirectToRoute('admin.content.home_carousel');
         }
 
-        return $this->render('admin/content/home_carousel_edit.html.twig', [
+        return $this->render('admin/content/home_carousel/edit.html.twig', [
             'carousel' => $carousel,
             'current_menu' => 'contenu',
             'form' => $form->createView(),
@@ -102,11 +112,11 @@ class HomeContentController extends AbstractController
     }
 
     /**
-     * @Route("/admin/content/home_carousel_item/delete/{id}", name="content.home_carousel_item.delete", methods="DELETE")
+     * @Route("/admin/content/home_carousel/delete/{id}", name="admin.content.home_carousel.delete", methods="DELETE")
      * @param SiteHomePageCarousel $carousel
      * @return Response
      */
-    public function homeCarouselDelete(SiteHomePageCarousel $carousel, Request $request)
+    public function delete(SiteHomePageCarousel $carousel, Request $request)
     {
         if($this->isCsrfTokenValid('delete' . $carousel->getID(), $request->get('_token')))
         {
@@ -115,7 +125,7 @@ class HomeContentController extends AbstractController
             $this->addFlash('success', 'Elément supprimé de la bannière principale');
         }
 
-        return $this->redirectToRoute('admin.content.home_page');
+        return $this->redirectToRoute('admin.content.home_carousel');
     }
 
 }

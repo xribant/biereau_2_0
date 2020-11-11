@@ -9,7 +9,7 @@
         <div class="container">
             <div class="row no-gutters slider-text align-items-center justify-content-center">
                 <div class="col-md-9 ftco-animate text-center">
-                    <h1 class="mb-2 bread">Inscription</h1>
+                    <h1 class="mb-2 bread">Inscription {{ academicYear.year }}</h1>
                     <p class="breadcrumbs">
                         <span class="mr-2"><a href="{{ path('home.index') }}">Accueil <i class="ion-ios-arrow-forward"></i></a></span>
                         <span>Infos Pratiques <i class="ion-ios-arrow-forward"></i></span>
@@ -29,11 +29,19 @@
                             {{ message|raw }}
                         </div>
                     {% endfor %}
-                    <p>Chaque année, le collège du Biéreau organise deux séances d'informations permettant aux parents de recevoir documents et renseignements nécessaires
-                    en vue de l'inscription de leur(s) enfant(s) dans l'établissement.</p>
+                        <div class="alert alert-info">
+                            <p>Les inscriptions des petits frères et des petites sœurs des enfants déjà présents dans l'école sont
+                                gérées directement par un document remis aux institutrices puis au secrétariat de l'école en janvier 2021 pour la rentrée de septembre 2021.</p>
+                        </div>
+                </div>
+                <div class="col-md-8 text-center heading-section ftco-animate">
+                    <p>Les nouvelles familles sont invitées à nous faire part de leur demande d'inscription pour la rentrée suivante à partir du jeudi 12 novembre 2020, en complétant le formulaire ci-dessous ou par téléphone, au secrétariat : 010 45 03 06</p>
+                    <p>Lors de cette première prise de contact, les coordonnées de l'enfant et des parents, ainsi que la date et l'heure d'appel sont notées par le secrétariat de l'école.</p>
+                </div>
+                <div class="col-md-8 mt-5 text-center">
+                    <a href="#subscription_details" class="btn btn-secondary px-4 py-3">Processus en détails <span class="ion-ios-arrow-round-forward"></span></a>
                 </div>
             </div>
-
         </div>
     </section>
 
@@ -73,21 +81,12 @@
                                 {{ form_row(form.childFirstName, { 'attr' : { 'class': 'form-control', 'placeholder': 'Prénom de l\'enfant' } }) }}
                             </div>
                         </div>
+
                         <div class="d-md-flex">
-                            <div class="form-group appointment-form">
+                            <div class="form-group">
                                 {{ form_row(form.childBirthDate) }}
                             </div>
                             <div class="form-group ml-md-4">
-                                <div class="form-field">
-                                    <div class="select-wrap">
-                                        <div class="icon"><span class="ion-ios-arrow-down"></span></div>
-                                        {{ form_row(form.childEntryDate) }}
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="d-md-flex">
-                            <div class="form-group">
                                 <div class="form-field">
                                     <div class="select-wrap">
                                         <div class="icon"><span class="ion-ios-arrow-down"></span></div>
@@ -95,7 +94,10 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="form-group ml-md-4">
+                        </div>
+
+                        <div class="d-md-flex">
+                            <div class="form-group">
                                 <div class="form-field">
                                     <div class="select-wrap">
                                         <div class="icon"><span class="ion-ios-arrow-down"></span></div>
@@ -103,11 +105,18 @@
                                     </div>
                                 </div>
                             </div>
+                            <div class="form-group ml-md-4">
+                                <div class="form-field">
+                                    <div class="select-wrap">
+
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                         <div class="d-md-flex">
 
                             <div class="form-group">
-                                <input type="submit" value="Confirmer l'inscription" class="btn btn-secondary py-3 px-4">
+                                <input type="submit" value="Envoyer" class="btn btn-secondary py-3 px-4">
                             </div>
                         </div>
                     </div>
@@ -124,4 +133,64 @@
             </div>
         </div>
     </section>
+
+    <section class="ftco-section ftco-no-pt ftc-no-pb" id="subscription_details">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 order-md-last wrap-about py-5 wrap-about bg-light">
+                    <div class="text px-4 ftco-animate mt-5">
+                        <h4>1. Première prise de rendez-vous</h4>
+                        <p>Les nouvelles familles sont invitées à nous faire part de leur demande d'inscription pour la rentrée suivante, en complétant le formulaire ci-dessous ou par téléphone, à partir du {{ academicYear.startRegistrationDate|format_datetime('full', 'none', locale='fr') }} au secrétariat : 010 45 03 06 Lors de cette première prise de contact, les coordonnées de l'enfant et des parents, ainsi que la date et l'heure d'appel sont notées par le secrétariat de l'école.</p>
+                    </div>
+                    <div class="text px-4 ftco-animate mt-5">
+                        <h4>2. Soirée collective d'informations</h4>
+                        <p>Lors du premier appel téléphonique, les parents sont invités à participer à l'une des deux soirées de présentation de l'école. Ces soirées ont lieu le
+                            {{ registration_dates[0].regDate|format_datetime('full', 'none', locale='fr') }} ou le {{ registration_dates[1].regDate|format_datetime('full', 'none', locale='fr')}} à 20h dans la salle de psychomotricité de l'école maternelle (au niveau -1).
+                            Chaque famille s'inscrit au choix à l'une des soirées. Elle se déroule à l'école.
+                            Lors de cette soirée, l'équipe éducative et la direction présentent les projets éducatif, pédagogique et d'établissement du Collège du Biéreau, évoquent la vie pratique, les règles et les collaborations à l'école, et répondent à toute question posée par les parents.
+                            Lors de cette soirée, une farde de présentation, ainsi qu'un document d'inscription sont remis aux parents.
+                        </p>
+                    </div>
+                    <div class="text px-4 ftco-animate mt-5">
+                        <h4>3. Demande formelle d'inscription</h4>
+                        <p>
+                            Après la soirée d'information, les parents souhaitant inscrire leur enfant au Collège du Biéreau font leur demande officielle d'inscription,
+                            en complétant et renvoyant, dans les délais fixés, le document d'inscription qui leur a été remis lors de cette soirée.
+                        </p>
+                    </div>
+                    <div class="text px-4 ftco-animate mt-5">
+                        <h4>4. Eventuel rendez-vous individuel avec la directrice, pour des cas particuliers</h4>
+                        <p>
+                            Dans certains cas particuliers, les parents pourront être reçus individuellement par la direction. Ces rendez-vous se prennent également au secrétariat de l'école.
+                        </p>
+                    </div>
+                    <div class="text px-4 ftco-animate mt-5">
+                        <h4>5. Décision d'inscription ou mise en liste d'attente</h4>
+                        <p>
+                            Dès la réception du courrier de l'école, les familles sont invitées à confirmer l'inscription de leur enfant, à l'annuler s'ils le souhaitent, ou à confirmer leur maintien sur la liste d'attente.
+                            Pour ce faire, un formulaire plus complet d'inscription doit être renvoyé à la direction de l'école, dûment signé, et accompagné d'une composition de ménage.
+                            Les familles concernées par une place sur la liste d'attente sont averties immédiatement de la vacance d'une place, et donc de la possibilité d'être inscrit réellement au Collège du Biéreau.
+                        </p>
+                    </div>
+                    <div class="text px-4 ftco-animate mt-5">
+                        <h4>6. Confirmation par les parents</h4>
+                        <p>
+                            Dès la réception du courrier de l'école, les familles sont invitées à confirmer l'inscription de leur enfant, à l'annuler s'ils le souhaitent, ou à confirmer leur maintien sur la liste d'attente.
+                            Pour ce faire, un formulaire plus complet d'inscription doit être renvoyé à la direction de l'école, dûment signé, et accompagné d'une composition de ménage.
+                            Les familles concernées par une place sur la liste d'attente sont averties immédiatement de la vacance d'une place, et donc de la possibilité d'être inscrit réellement au Collège du Biéreau.
+
+                        </p>
+                    </div>
+                    <div class="text px-4 ftco-animate mt-5 mb-5">
+                        <h4>7. Matinée portes ouvertes</h4>
+                        <p>
+                            Tous les enfants inscrits dans une des 3 classes "accueil / 1ère maternelle" sont invités à une matinée "Portes ouvertes" en fin d’année.
+                            Tous les enfants inscrits dans les autres années scolaires, de la 2e maternelle à la 6e primaire, sont invités à une matinée de passage au mois de juin.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
 {% endblock %}

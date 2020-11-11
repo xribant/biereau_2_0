@@ -7,6 +7,7 @@ use App\Form\ContactSubType;
 use App\Notification\ContactNotification;
 use App\Repository\AcademicYearRepository;
 use App\Repository\ContactSubRepository;
+use App\Repository\RegistrationDateRepository;
 use App\Repository\SchoolDataRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Doctrine\Persistence\ObjectManager;
@@ -30,13 +31,18 @@ class SubscriptionController extends AbstractController
      * @var ObjectManager
      */
     private $em;
+    /**
+     * @var RegistrationDateRepository
+     */
+    private $registrationDateRepository;
 
-    public function __construct(ContactSubRepository $contactSubRepo, SchoolDataRepository $schoolDataRepo, AcademicYearRepository $academicYearRepo,EntityManagerInterface $em)
+    public function __construct(ContactSubRepository $contactSubRepo, SchoolDataRepository $schoolDataRepo, AcademicYearRepository $academicYearRepo, RegistrationDateRepository $registrationDateRepository, EntityManagerInterface $em)
     {
         $this->contactSubRepo = $contactSubRepo;
         $this->schoolDataRepo = $schoolDataRepo;
         $this->academicYearRepo = $academicYearRepo;
         $this->em = $em;
+        $this->registrationDateRepository = $registrationDateRepository;
     }
 
 
@@ -50,6 +56,7 @@ class SubscriptionController extends AbstractController
 
         $school = $this->schoolDataRepo->findOneBy(['id' => 1]);
         $academicYear = $this->academicYearRepo->findOneBy(['id' => 1]);
+        $regDates = $this->registrationDateRepository->findAll();
 
         $form->handleRequest($request);
 
@@ -61,7 +68,7 @@ class SubscriptionController extends AbstractController
             $notification->notify($contactSub, $school);
 
             $date = $contactSub->getSessionDate()->format('d/m/Y');
-            $this->addFlash('success', 'Votre particpiaption à la séance d\'information du '.$date.' a bien été enregistrée.
+            $this->addFlash('success', 'Votre participation à la séance d\'information du '.$date.' a bien été enregistrée.
                                                         <br> Un e-mail de confirmation vous a été envoyé.');
             return $this->redirectToRoute('subscription.index', [
             ]);
@@ -71,6 +78,7 @@ class SubscriptionController extends AbstractController
             'current_menu' => 'Inscription',
             'academicYear' => $academicYear,
             'school' => $school,
+            'registration_dates' => $regDates,
             'form' => $form->createView()
         ]);
     }

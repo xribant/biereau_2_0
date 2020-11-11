@@ -182,11 +182,6 @@
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="{{ path('admin.entrydate.index') }}">
-                                            <span class="sub-item">Dates de rentrées</span>
-                                        </a>
-                                    </li>
-                                    <li>
                                         <a href="{{ path('admin.registration.index') }}">
                                             <span class="sub-item">Séances d'info</span>
                                         </a>
@@ -208,19 +203,19 @@
                             <div class="collapse {% if current_menu == 'contenu' %}show{% endif %}" id="tables">
                                 <ul class="nav nav-collapse">
                                     <li>
-                                        <a href="{{ path('admin.content.home_page') }}">
+                                        <a href="{{ path('admin.content.home_carousel') }}">
                                             <span class="sub-item">Page d'accueil</span>
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="tables/datatables.html">
-                                            <span class="sub-item">L'école</span>
+                                        <a href={{ path('admin.content.news') }}>
+                                            <span class="sub-item">News</span>
                                         </a>
                                     </li>
                                 </ul>
                             </div>
                         </li>
-                        
+
                     </ul>
                 </div>
             </div>

@@ -39,7 +39,7 @@ class ContactNotification
         $academicYear = $this->academicYearRepo->findOneBy(['id' => 1]);
 
         $message = (new \Swift_Message('Collège du Biereau - Préinscription '.$academicYear->getYear()))
-            -> setFrom('noreply@biereau.be')
+            -> setFrom('no-reply@biereau.be')
             -> setTo($contact->getParentEmail())
             -> setReplyTo($contact->getParentEmail())
             -> setBody($this->renderer->render('emails/contactsubscriber.html.twig', [
@@ -49,8 +49,8 @@ class ContactNotification
         $this->mailer->send($message);
 
         $message = (new \Swift_Message('Biereau.be - Nouvelle préinscription '.$academicYear->getYear()))
-            -> setFrom('noreply@biereau.be')
-            -> setTo('xribant@gmail.com')
+            -> setFrom('no-reply@biereau.be')
+            -> setTo(['secretariat@biereau.be','chantal@biereau.be'])
             -> setReplyTo('xribant@gmail.com')
             -> setBody($this->renderer->render('emails/contactschoolsub.html.twig', [
                 'schoolData' => $schoolData,

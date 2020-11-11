@@ -1,0 +1,52 @@
+{% extends 'admin/adminbase.html.twig' %}
+
+{% block title %} Admin | Biereau.be - Gestion de Contenu{% endblock %}
+
+{% block content %}
+
+    <div class="main-panel">
+        <div class="content">
+            <div class="page-inner">
+                <div class="row">
+                    <div class="col-md-12">
+
+                        <div class="card">
+                            <div class="card-header">
+                                <div class="card-title">Modifier la valeur de l'école</div>
+                            </div>
+
+                            {{ form_start(form) }}
+
+                            <div class="card-body">
+                                <div class="row mt-3">
+                                    <div class="col-md-6">
+                                        <div class="form-group form-group-default">
+                                            {{ form_row(form.title) }}
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row mt-3">
+                                    <div class="col-md-6">
+                                        <div class="form-group form-group-default">
+                                            {{ form_row(form.description) }}
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="text-right mt-3 mb-3">
+                                    <a href="{{ path('admin.content.home_carousel') }}" class="btn btn-danger">Annuler</a>
+                                    <button class="btn btn-success">{{ button|default('Modifier') }}</button>
+                                </div>
+                            </div>
+
+                            {{ form_end(form) }}
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

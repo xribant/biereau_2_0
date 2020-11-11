@@ -65,6 +65,7 @@
 		});
 		$('.carousel-testimony').owlCarousel({
 			autoplay: true,
+			autoplayTimeout:10000,
 			center: true,
 			loop: true,
 			items:1,

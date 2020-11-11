@@ -11,18 +11,89 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="eb337925-03b6-4a6f-95e2-c598709ccab2" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/biereau_2_0.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/biereau_2_0.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/bundles.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/bundles.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/services.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/services.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20201106143838.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20201107144920.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20201107193228.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20201107203135.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20201108110425.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20201108170535.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20201109074106.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20201109075516.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/flaticon.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/flaticon.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/fonts/flaticon/backup.txt" beforeDir="false" afterPath="$PROJECT_DIR$/public/fonts/flaticon/backup.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/fonts/flaticon/font/Flaticon.eot" beforeDir="false" afterPath="$PROJECT_DIR$/public/fonts/flaticon/font/Flaticon.eot" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/fonts/flaticon/font/Flaticon.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/fonts/flaticon/font/Flaticon.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/fonts/flaticon/font/Flaticon.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/public/fonts/flaticon/font/Flaticon.ttf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/fonts/flaticon/font/Flaticon.woff" beforeDir="false" afterPath="$PROJECT_DIR$/public/fonts/flaticon/font/Flaticon.woff" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/fonts/flaticon/font/Flaticon.woff2" beforeDir="false" afterPath="$PROJECT_DIR$/public/fonts/flaticon/font/Flaticon.woff2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/fonts/flaticon/font/_flaticon.scss" beforeDir="false" afterPath="$PROJECT_DIR$/public/fonts/flaticon/font/_flaticon.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/fonts/flaticon/font/flaticon.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/fonts/flaticon/font/flaticon.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/fonts/flaticon/font/flaticon.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/fonts/flaticon/license/license.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/public/fonts/flaticon/license/license.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/Logo_Biereau.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/bg_1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/bg_2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/bg_3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/bg_5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/content/home_page/5fa8e896ec228100645704.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/content/home_page/5fa8e8df04916710666161.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/content/home_page/5fa8eb89a1c4d844975554.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/content/home_page/5fa902702931a516839770.JPG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/course-1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/course-2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/course-3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/course-4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/course-5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/course-6.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/dept-5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/image_1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/image_2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/image_3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/image_4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/image_5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/image_6.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/logo_biereau.ico" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/logo_biereau.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/logo_biereau.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/Admin/PageContent/HomeContentController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/Admin/PageContent/HomeContentController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/Admin/SchoolEntryDate/EntryDateController.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/HomeController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/symfony.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/SubscriptionController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/SubscriptionController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/TeachersController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/TeachersController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/AcademicYear.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/AcademicYear.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/ContactSub.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/ContactSub.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/SchoolEntryDate.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/SiteHomePageBanner.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Form/ContactSubType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/ContactSubType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Form/SchoolEntryDateType.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Notification/ContactNotification.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Notification/ContactNotification.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/AcademicYearRepository.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/ContactSubRepository.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/RegistrationDateRepository.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/ResetPasswordRequestRepository.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/SchoolDataRepository.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/SchoolEntryDateRepository.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/SchoolSectionRepository.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/SiteHomePageBannerRepository.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/SiteHomePageCarouselRepository.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/SitePageRepository.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/UserRepository.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/admin/adminbase.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/adminbase.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/admin/content/_home_carousel_form.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/content/home_carousel/_form.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/admin/content/home_carousel_edit.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/content/home_carousel/edit.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/admin/content/home_carousel_new.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/content/home_carousel/new.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/admin/content/home_page.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/content/home_carousel/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/admin/school/entrydate/_form.html.twig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/admin/school/entrydate/index.html.twig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/admin/school/entrydate/new.html.twig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/admin/school/registration/view.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/school/registration/view.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/emails/contactschoolsub.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/emails/contactschoolsub.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/emails/contactsubscriber.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/emails/contactsubscriber.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/home.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/home.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/subscription.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/subscription.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/teachers.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/teachers.html.twig" afterDir="false" />
@@ -194,10 +265,10 @@
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/Form/Admin/PageContent" />
+      <recent name="$PROJECT_DIR$/templates/admin/content/home_carousel" />
       <recent name="$PROJECT_DIR$/templates/resetpassword" />
       <recent name="$PROJECT_DIR$/src/Form/Admin" />
       <recent name="$PROJECT_DIR$/src/Controller/Admin" />
-      <recent name="$PROJECT_DIR$/src/Controller/Admin/SchoolEntryDate" />
     </key>
   </component>
   <component name="RunManager">
@@ -274,7 +345,9 @@
       <workItem from="1604673703304" duration="1225000" />
       <workItem from="1604730599231" duration="7700000" />
       <workItem from="1604822323236" duration="17922000" />
-      <workItem from="1604903793046" duration="3173000" />
+      <workItem from="1604903793046" duration="5944000" />
+      <workItem from="1605014815163" duration="14197000" />
+      <workItem from="1605084018237" duration="23043000" />
     </task>
     <servers />
   </component>
@@ -298,10 +371,10 @@
       <screen x="0" y="23" width="1920" height="987" />
     </state>
     <state x="560" y="182" key="#com.intellij.execution.impl.EditConfigurationsDialog/1920.168.1280.777/0.23.1920.987@0.23.1920.987" timestamp="1601843001616" />
-    <state x="681" y="325" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1604474026091">
+    <state x="681" y="325" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1605045591390">
       <screen x="0" y="23" width="1920" height="987" />
     </state>
-    <state x="681" y="325" key="#com.intellij.fileTypes.FileTypeChooser/1920.168.1280.777/0.23.1920.987@0.23.1920.987" timestamp="1604474026091" />
+    <state x="681" y="325" key="#com.intellij.fileTypes.FileTypeChooser/1920.168.1280.777/0.23.1920.987@0.23.1920.987" timestamp="1605045591390" />
     <state x="1078" y="236" key="#com.intellij.ide.util.MemberChooser" timestamp="1604908152960">
       <screen x="0" y="23" width="1920" height="987" />
     </state>
@@ -315,18 +388,18 @@
     </state>
     <state x="668" y="23" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/1920.168.1280.777/0.23.1920.987@0.23.1920.987" timestamp="1603436282246" />
     <state x="668" y="205" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/1920.23.1280.777/0.23.1920.987@0.23.1920.987" timestamp="1602238729944" />
-    <state x="1051" y="258" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1604863897420">
+    <state x="1051" y="258" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1605028370222">
       <screen x="0" y="23" width="1920" height="987" />
     </state>
-    <state x="1051" y="258" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/1920.168.1280.777/0.23.1920.987@0.23.1920.987" timestamp="1604863897420" />
+    <state x="1051" y="258" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/1920.168.1280.777/0.23.1920.987@0.23.1920.987" timestamp="1605028370222" />
     <state width="256" height="457" key="HiddenNamespacesPopup" timestamp="1601843046027">
       <screen x="0" y="23" width="1920" height="987" />
     </state>
     <state width="256" height="457" key="HiddenNamespacesPopup/1920.168.1280.777/0.23.1920.987@0.23.1920.987" timestamp="1601843046027" />
-    <state x="637" y="451" key="NewPhpClassDialog" timestamp="1604872046348">
+    <state x="637" y="451" key="NewPhpClassDialog" timestamp="1605045921866">
       <screen x="0" y="23" width="1920" height="987" />
     </state>
-    <state x="637" y="451" key="NewPhpClassDialog/1920.168.1280.777/0.23.1920.987@0.23.1920.987" timestamp="1604872046348" />
+    <state x="637" y="451" key="NewPhpClassDialog/1920.168.1280.777/0.23.1920.987@0.23.1920.987" timestamp="1605045921866" />
     <state x="661" y="249" key="NewPhpClassDialog/1920.23.1280.777/0.23.1920.987@0.23.1920.987" timestamp="1602238768409" />
     <state x="762" y="447" key="NewPhpFileDialog" timestamp="1602098155436">
       <screen x="0" y="23" width="1920" height="987" />

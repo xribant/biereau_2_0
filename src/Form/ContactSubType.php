@@ -10,6 +10,7 @@ use App\Form\DataTransformer\StringToDatetimeTransformer;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
+use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
@@ -31,9 +32,9 @@ class ContactSubType extends AbstractType
                 'label' => false,
                 'required' => false
             ])
-            ->add('parentEmail', TextType::class, [
+            ->add('parentEmail', EmailType::class, [
                 'label' => false,
-                'required' => false
+                'required' => true
             ])
             ->add('childFirstName', TextType::class, [
                 'label' => false
@@ -52,14 +53,6 @@ class ContactSubType extends AbstractType
                     'placeholder' => 'Date de naissance'
                 ]
             ])
-          ->add('childEntryDate', EntityType::class, [
-                 'label' => false,
-                 'multiple' => false,
-                 'expanded' => false,
-                 'placeholder' => 'Date d\'entrée à l\'école',
-                 'class' => SchoolEntryDate::class,
-                 'choice_label' => 'textDate'
-            ])
            ->add('childSection', EntityType::class, [
                  'label' => false,
                  'multiple' => false,
@@ -76,9 +69,6 @@ class ContactSubType extends AbstractType
              'class' => RegistrationDate::class,
              'choice_label' => 'textDate'
          ]);
-
-        $builder->get('childEntryDate')
-            ->addModelTransformer(new StringToDatetimeTransformer());
 
         $builder->get('sessionDate')
             ->addModelTransformer(new StringToDatetimeTransformer());

@@ -22,7 +22,7 @@ Class TeachersController extends AbstractController
     /**
      * @Route("/equipe_educative", name="teachers_page")
      */
-    public function showTeachersPage()
+    public function index()
     {
         $schoolData = $this->schoolDataRepo->findOneBy(['id' => 1]);
         return $this->render('teachers.html.twig', [

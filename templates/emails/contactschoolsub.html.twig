@@ -120,7 +120,7 @@
                                         <tbody>
                                         <tr>
                                             <td style="width:100px;">
-                                                <img height="auto" src="images/logo_biereau.png" style="border:0;display:block;outline:none;text-decoration:none;height:auto;width:100%;font-size:13px;" width="100" />
+                                                <img height="auto" src="http://dev.biereau.be/images/base/logo_biereau.png" style="border:1px;display:block;outline:none;text-decoration:none;height:auto;width:100%;font-size:13px;" width="100" />
                                             </td>
                                         </tr>
                                         </tbody>
@@ -174,7 +174,7 @@
                                         <tr>
                                             <td style="padding: 0 15px 0 0; background-color: #ccc;" align="center">
                                                 <mj-text font-family="Arial black" align="center">
-                                                    <h1>Confirmation d'inscription à l'une des séances d'infos</h1>
+                                                    <h1>Confirmation d'inscription à la séance d'info du {{ contact.sessionDate|format_datetime('medium', 'none', locale='fr') }}</h1>
                                                 </mj-text>
                                             </td>
                                         </tr>
@@ -258,8 +258,8 @@
                                             <td style="padding: 0 15px;" align="left">{{ contact.childSection }}</td>
                                         </tr>
                                         <tr>
-                                            <td style="padding: 0 15px 0 0; background-color: #ccc;" align="right">Date de rentrée : </td>
-                                            <td style="padding: 0 15px; background-color: #ccc;" align="left">{{ contact.childEntryDate|format_datetime('full', 'none', locale='fr') }}</td>
+                                            <td style="padding: 0 15px 0 0; background-color: #ccc;" align="right">Séance d'info souhaitée : </td>
+                                            <td style="padding: 0 15px; background-color: #ccc;" align="left">{{ contact.sessionDate|format_datetime('medium', 'none', locale='fr') }}</td>
                                         </tr>
                                     </table>
                                 </td>

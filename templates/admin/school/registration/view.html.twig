@@ -26,7 +26,6 @@
                                             <th>Prénom de l'enfant</th>
                                             <th>Nom de l'enfant</th>
                                             <th>Date de naissance</th>
-                                            <th>Date de rentrée</th>
                                             <th>Section</th>
                                             <th>Séance d'info</th>
                                         </tr>
@@ -41,7 +40,6 @@
                                             <th>Prénom de l'enfant</th>
                                             <th>Nom de l'enfant</th>
                                             <th>Date de naissance</th>
-                                            <th>Date de rentrée</th>
                                             <th>Section</th>
                                             <th>Séance d'info</th>
                                         </tr>
@@ -57,7 +55,6 @@
                                             <td>{{ registrant.childFirstName }}</td>
                                             <td>{{ registrant.childLastName }}</td>
                                             <td>{{ registrant.childBirthDate|format_datetime('medium', 'none', locale='fr') }}</td>
-                                            <td>{{ registrant.childEntryDate|format_datetime('medium', 'none', locale='fr') }}</td>
                                             <td>{{ registrant.childSection }}</td>
                                             <td>{{ registrant.sessionDate|format_datetime('medium', 'none', locale='fr') }}</td>
                                         </tr>

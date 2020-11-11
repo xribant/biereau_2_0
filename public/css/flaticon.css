@@ -1,13 +1,13 @@
 	/*
   	Flaticon icon font: Flaticon
-  	Creation date: 06/10/2018 08:32
+  	Creation date: 10/11/2020 19:49
   	*/
-
 
 @font-face {
   font-family: "Flaticon";
   src: url("../fonts/flaticon/font/Flaticon.eot");
   src: url("../fonts/flaticon/font/Flaticon.eot?#iefix") format("embedded-opentype"),
+       url("../fonts/flaticon/font/Flaticon.woff2") format("woff2"),
        url("../fonts/flaticon/font/Flaticon.woff") format("woff"),
        url("../fonts/flaticon/font/Flaticon.ttf") format("truetype"),
        url("../fonts/flaticon/font/Flaticon.svg#Flaticon") format("svg");
@@ -23,24 +23,22 @@
 }
 
 [class^="flaticon-"]:before, [class*=" flaticon-"]:before,
-[class^="flaticon-"]:after, [class*=" flaticon-"]:after {   
-  font-family: Flaticon;
-  font-style: normal;
-  font-weight: normal;
-  font-variant: normal;
-  text-transform: none;
-  line-height: 1;
+[class^="flaticon-"]:after, [class*=" flaticon-"]:after {
+    font-family: Flaticon;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
 
-  /* Better Font Rendering =========== */
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 .flaticon-teacher:before { content: "\f100"; }
-.flaticon-books:before { content: "\f101"; }
-.flaticon-diploma:before { content: "\f102"; }
-.flaticon-reading:before { content: "\f103"; }
-.flaticon-security:before { content: "\f104"; }
-.flaticon-education:before { content: "\f105"; }
-.flaticon-jigsaw:before { content: "\f106"; }
-.flaticon-kids:before { content: "\f107"; }
+.flaticon-save:before { content: "\f101"; }
+.flaticon-puzzle:before { content: "\f102"; }
+.flaticon-book:before { content: "\f103"; }
+.flaticon-unity:before { content: "\f104"; }
+.flaticon-newsletter:before { content: "\f105"; }
