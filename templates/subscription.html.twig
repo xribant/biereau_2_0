@@ -4,7 +4,7 @@
 
 {% block content %}
 
-    <section class="hero-wrap hero-wrap-2" style="background-image: url('images/bg_2.jpg');">
+    <section class="hero-wrap hero-wrap-2" style="background-image: url('/images/bg_2.jpg');">
         <div class="overlay"></div>
         <div class="container">
             <div class="row no-gutters slider-text align-items-center justify-content-center">
@@ -140,7 +140,8 @@
                 <div class="col-lg-12 order-md-last wrap-about py-5 wrap-about bg-light">
                     <div class="text px-4 ftco-animate mt-5">
                         <h4>1. Première prise de rendez-vous</h4>
-                        <p>Les nouvelles familles sont invitées à nous faire part de leur demande d'inscription pour la rentrée suivante, en complétant le formulaire ci-dessous ou par téléphone, à partir du {{ academicYear.startRegistrationDate|format_datetime('full', 'none', locale='fr') }} au secrétariat : 010 45 03 06 Lors de cette première prise de contact, les coordonnées de l'enfant et des parents, ainsi que la date et l'heure d'appel sont notées par le secrétariat de l'école.</p>
+                        <p>Les nouvelles familles sont invitées à nous faire part de leur demande d'inscription pour la rentrée suivante, en complétant le formulaire ci-dessus ou par téléphone, à partir du {{ academicYear.startRegistrationDate|format_datetime('full', 'none', locale='fr') }} au secrétariat : 010 45 03 06. <br>
+                            Lors de cette première prise de contact, les coordonnées de l'enfant et des parents, ainsi que la date et l'heure d'appel sont notées par le secrétariat de l'école.</p>
                     </div>
                     <div class="text px-4 ftco-animate mt-5">
                         <h4>2. Soirée collective d'informations</h4>

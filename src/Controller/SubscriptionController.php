@@ -7,6 +7,7 @@ use App\Form\ContactSubType;
 use App\Notification\ContactNotification;
 use App\Repository\AcademicYearRepository;
 use App\Repository\ContactSubRepository;
+use App\Repository\NavMenuRepository;
 use App\Repository\RegistrationDateRepository;
 use App\Repository\SchoolDataRepository;
 use Doctrine\ORM\EntityManagerInterface;
@@ -35,14 +36,19 @@ class SubscriptionController extends AbstractController
      * @var RegistrationDateRepository
      */
     private $registrationDateRepository;
+    /**
+     * @var NavMenuRepository
+     */
+    private $navMenuRepository;
 
-    public function __construct(ContactSubRepository $contactSubRepo, SchoolDataRepository $schoolDataRepo, AcademicYearRepository $academicYearRepo, RegistrationDateRepository $registrationDateRepository, EntityManagerInterface $em)
+    public function __construct(ContactSubRepository $contactSubRepo, SchoolDataRepository $schoolDataRepo, NavMenuRepository $navMenuRepository, AcademicYearRepository $academicYearRepo, RegistrationDateRepository $registrationDateRepository, EntityManagerInterface $em)
     {
         $this->contactSubRepo = $contactSubRepo;
         $this->schoolDataRepo = $schoolDataRepo;
         $this->academicYearRepo = $academicYearRepo;
         $this->em = $em;
         $this->registrationDateRepository = $registrationDateRepository;
+        $this->navMenuRepository = $navMenuRepository;
     }
 
 
@@ -57,6 +63,8 @@ class SubscriptionController extends AbstractController
         $school = $this->schoolDataRepo->findOneBy(['id' => 1]);
         $academicYear = $this->academicYearRepo->findOneBy(['id' => 1]);
         $regDates = $this->registrationDateRepository->findAll();
+        $navMenu = $this->navMenuRepository->findAll();
+        $currentMenu = $this->navMenuRepository->findOneBy(['name' => 'Infos Pratiques']);
 
         $form->handleRequest($request);
 
@@ -75,10 +83,11 @@ class SubscriptionController extends AbstractController
         }
 
         return $this->render('subscription.html.twig', [
-            'current_menu' => 'Inscription',
+            'current_menu' => $currentMenu,
             'academicYear' => $academicYear,
             'school' => $school,
             'registration_dates' => $regDates,
+            'navMenu' => $navMenu,
             'form' => $form->createView()
         ]);
     }

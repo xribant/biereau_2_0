@@ -1,6 +1,6 @@
 {%  extends "base.html.twig" %}
 
-{% block title %}Biereau.be - Accueil{% endblock %}
+{% block title %}Collège du Biereau - Accueil{% endblock %}
 
 {% block content %}
 
@@ -72,7 +72,7 @@
     </div>
 </section>
 
-    <section class="ftco-section testimony-section bg-light">
+    <section class="ftco-section testimony-section">
         <div class="container">
             <div class="row ftco-animate justify-content-center">
                 <div class="col-md-12">
@@ -96,6 +96,12 @@
                                         {% else %}
                                             <div class="col-md-8 mt-5 text-center">
                                                 <a href="{{ new.url }}" target="_blank" class="btn btn-sm btn-primary px-4 py-3">J'y vais <span class="ion-ios-arrow-round-forward"></span></a>
+                                            </div>
+                                        {% endif %}
+                                        {% if new.internalRoute is null %}
+                                        {% else %}
+                                            <div class="col-md-8 mt-5 text-center">
+                                                <a href="{{ new.internalRoute.route }}" target="_blank" class="btn btn-sm btn-primary px-4 py-3">J'y vais <span class="ion-ios-arrow-round-forward"></span></a>
                                             </div>
                                         {% endif %}
                                     </div>

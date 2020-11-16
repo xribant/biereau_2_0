@@ -4,48 +4,34 @@
     <div class="row mt-3">
         <div class="col-md-8">
             <div class="form-group form-group-default">
-                {{ form_row(form.title) }}
+                {{ form_row(form.name) }}
             </div>
         </div>
     </div>
     <div class="row mt-3">
         <div class="col-md-8">
             <div class="form-group form-group-default">
-                {{ form_row(form.article) }}
+                {{ form_row(form.route) }}
             </div>
         </div>
     </div>
     <div class="row mt-3">
         <div class="col-md-8">
             <div class="form-group form-group-default">
-                {{ form_row(form.author) }}
+                {{ form_row(form.externalLink) }}
             </div>
         </div>
     </div>
     <div class="row mt-3">
         <div class="col-md-8">
             <div class="form-group form-group-default">
-                {{ form_row(form.job) }}
-            </div>
-        </div>
-    </div>
-    <div class="row mt-3">
-        <div class="col-md-8">
-            <div class="form-group form-group-default">
-                {{ form_row(form.url) }}
-            </div>
-        </div>
-    </div>
-    <div class="row mt-3">
-        <div class="col-md-8">
-            <div class="form-group form-group-default">
-                {{ form_row(form.internalRoute) }}
+                {{ form_row(form.parentMenu) }}
             </div>
         </div>
     </div>
 
     <div class="text-right mt-3 mb-3">
-        <a href="{{ path('admin.content.news') }}" class="btn btn-danger">Annuler</a>
+        <a href="{{ path('admin.content.sub_menu') }}" class="btn btn-danger">Annuler</a>
         <button class="btn btn-success">{{ button|default('Enregistrer') }}</button>
     </div>
 </div>

@@ -3,8 +3,8 @@
 namespace App\Controller;
 
 use App\Entity\Contact;
-use App\Entity\SchoolData;
 use App\Form\Admin\School\ContactType;
+use App\Repository\NavMenuRepository;
 use App\Repository\NewsRepository;
 use App\Repository\SchoolDataRepository;
 use App\Repository\SchoolValueRepository;
@@ -40,14 +40,19 @@ Class HomeController extends AbstractController
      * @var SchoolValueRepository
      */
     private $schoolValueRepository;
+    /**
+     * @var NavMenuRepository
+     */
+    private $navMenuRepository;
 
-    public function __construct(SchoolDataRepository $schoolDataRepo, SiteHomePageCarouselRepository $carouselRepository, NewsRepository $newsRepository, SchoolValueRepository $schoolValueRepository, EntityManagerInterface $em)
+    public function __construct(SchoolDataRepository $schoolDataRepo, SiteHomePageCarouselRepository $carouselRepository, NavMenuRepository $navMenuRepository, NewsRepository $newsRepository, SchoolValueRepository $schoolValueRepository, EntityManagerInterface $em)
     {
         $this->schoolDataRepo = $schoolDataRepo;
         $this->em = $em;
         $this->carouselRepository = $carouselRepository;
         $this->newsRepository = $newsRepository;
         $this->schoolValueRepository = $schoolValueRepository;
+        $this->navMenuRepository = $navMenuRepository;
     }
 
     /**
@@ -60,13 +65,16 @@ Class HomeController extends AbstractController
         $schoolData = $this->schoolDataRepo->findOneBy(['id' => 1]);
         $news = $this->newsRepository->findAll();
         $schoolValues = $this->schoolValueRepository->findAll();
+        $navMenu = $this->navMenuRepository->findAll();
+        $currentMenu = $this->navMenuRepository->findOneBy(['name' => 'Accueil']);
 
         return $this->render('home.html.twig', [
-            'current_menu' => 'home',
+            'current_menu' => $currentMenu,
             'school' => $schoolData,
             'carousel' => $carousel,
             'news' => $news,
             'school_values' => $schoolValues,
+            'navMenu' => $navMenu,
         ]);
     }
 }

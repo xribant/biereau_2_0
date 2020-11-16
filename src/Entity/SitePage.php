@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\SitePageRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -25,27 +27,32 @@ class SitePage
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $parent_menu;
-
-    /**
-     * @ORM\Column(type="string", length=255)
-     */
-    private $route_name;
-
-    /**
-     * @ORM\Column(type="string", length=255)
-     */
-    private $route_path;
-
-    /**
-     * @ORM\Column(type="string", length=255)
-     */
     private $title;
 
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $background;
+    private $bannerImageFile;
+
+    /**
+     * @ORM\ManyToOne(targetEntity=NavMenu::class, inversedBy="sitePages")
+     */
+    private $parentNavMenu;
+
+    /**
+     * @ORM\ManyToOne(targetEntity=SubMenu::class, inversedBy="sitePages")
+     */
+    private $parentSubMenu;
+
+    /**
+     * @ORM\OneToMany(targetEntity=Article::class, mappedBy="sitePage", orphanRemoval=true)
+     */
+    private $articles;
+
+    public function __construct()
+    {
+        $this->articles = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -64,42 +71,6 @@ class SitePage
         return $this;
     }
 
-    public function getParentMenu(): ?string
-    {
-        return $this->parent_menu;
-    }
-
-    public function setParentMenu(string $parent_menu): self
-    {
-        $this->parent_menu = $parent_menu;
-
-        return $this;
-    }
-
-    public function getRouteName(): ?string
-    {
-        return $this->route_name;
-    }
-
-    public function setRouteName(string $route_name): self
-    {
-        $this->route_name = $route_name;
-
-        return $this;
-    }
-
-    public function getRoutePath(): ?string
-    {
-        return $this->route_path;
-    }
-
-    public function setRoutePath(string $route_path): self
-    {
-        $this->route_path = $route_path;
-
-        return $this;
-    }
-
     public function getTitle(): ?string
     {
         return $this->title;
@@ -112,14 +83,68 @@ class SitePage
         return $this;
     }
 
-    public function getBackground(): ?string
+    public function getBannerImageFile(): ?string
     {
-        return $this->background;
+        return $this->bannerImageFile;
     }
 
-    public function setBackground(string $background): self
+    public function setBannerImageFile(string $bannerImageFile): self
     {
-        $this->background = $background;
+        $this->bannerImageFile = $bannerImageFile;
+
+        return $this;
+    }
+
+    public function getParentNavMenu(): ?NavMenu
+    {
+        return $this->parentNavMenu;
+    }
+
+    public function setParentNavMenu(?NavMenu $parentNavMenu): self
+    {
+        $this->parentNavMenu = $parentNavMenu;
+
+        return $this;
+    }
+
+    public function getParentSubMenu(): ?SubMenu
+    {
+        return $this->parentSubMenu;
+    }
+
+    public function setParentSubMenu(?SubMenu $parentSubMenu): self
+    {
+        $this->parentSubMenu = $parentSubMenu;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Article[]
+     */
+    public function getArticles(): Collection
+    {
+        return $this->articles;
+    }
+
+    public function addArticle(Article $article): self
+    {
+        if (!$this->articles->contains($article)) {
+            $this->articles[] = $article;
+            $article->setSitePage($this);
+        }
+
+        return $this;
+    }
+
+    public function removeArticle(Article $article): self
+    {
+        if ($this->articles->removeElement($article)) {
+            // set the owning side to null (unless already changed)
+            if ($article->getSitePage() === $this) {
+                $article->setSitePage(null);
+            }
+        }
 
         return $this;
     }

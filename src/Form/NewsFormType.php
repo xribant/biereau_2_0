@@ -3,6 +3,8 @@
 namespace App\Form;
 
 use App\Entity\News;
+use App\Entity\SubMenu;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
@@ -35,7 +37,15 @@ class NewsFormType extends AbstractType
             ])
             ->add('url', TextType::class, [
                 'required' => false,
-                'label' => 'Adresse Web'
+                'label' => 'Adresse Web Externe'
+            ])
+            ->add('internalRoute', EntityType::class, [
+                'class' => SubMenu::class,
+                'required' => false,
+                'label' => 'Lien vers page interne',
+                'expanded' => false,
+                'multiple' => false,
+                'choice_label' => 'name',
             ])
         ;
     }

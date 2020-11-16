@@ -42,6 +42,21 @@ class News
      */
     private $url;
 
+    /**
+     * @ORM\ManyToOne(targetEntity=SubMenu::class, inversedBy="news")
+     */
+    private $internalRoute;
+
+    /**
+     * @ORM\Column(type="datetime")
+     */
+    private $createdAt;
+
+    public function __construct()
+    {
+        $this->created_at = new \DateTime();
+    }
+
     public function getId(): ?int
     {
         return $this->id;
@@ -103,6 +118,30 @@ class News
     public function setUrl(?string $url): self
     {
         $this->url = $url;
+
+        return $this;
+    }
+
+    public function getInternalRoute(): ?SubMenu
+    {
+        return $this->internalRoute;
+    }
+
+    public function setInternalRoute(?SubMenu $internalRoute): self
+    {
+        $this->internalRoute = $internalRoute;
+
+        return $this;
+    }
+
+    public function getCreatedAt(): ?\DateTimeInterface
+    {
+        return $this->createdAt;
+    }
+
+    public function setCreatedAt(\DateTimeInterface $createdAt): self
+    {
+        $this->createdAt = $createdAt;
 
         return $this;
     }

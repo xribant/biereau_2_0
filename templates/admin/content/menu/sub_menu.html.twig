@@ -1,0 +1,76 @@
+{% extends 'admin/adminbase.html.twig' %}
+
+{% block title %} Admin | Biereau.be - Gestion de Contenu{% endblock %}
+
+{% block content %}
+
+<div class="main-panel">
+    <div class="content">
+        <div class="page-inner">
+
+
+            <div class="row">
+                <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-title">Sous-menus de navigation</div>
+                    </div>
+                    <div class="card-body">
+                        {% for message in app.flashes('success') %}
+                            <div class="alert alert-success">
+                                {{ message|raw }}
+                            </div>
+                        {% endfor %}
+                        <table class="table table-striped mt-3">
+                            <thead>
+                            <tr>
+                                <th scope="col" style="width: 20%">Nom</th>
+                                <th scope="col" style="width: 20%">Route</th>
+                                <th scope="col" style="width: 20%">Lien Externe</th>
+                                <th scope="col" style="width: 20%">Menu Parent</th>
+                                <th style="width: 20%"></th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            {% for item in subMenu %}
+                                <tr>
+                                    <td>{{ item.name }}</td>
+                                    <td>
+                                        {% if item.externalLink == 1 %}
+                                            <a href="{{ item.route }}" target="_blank">{{ item.route }}</a>
+                                        {% else %}
+                                            {{ item.route }}
+                                        {% endif %}
+                                    </td>
+                                    <td>
+                                        {% if item.externalLink == 0 %}
+                                            Non
+                                        {% else %}
+                                            Oui
+                                        {% endif %}
+                                    </td>
+                                    <td>{{ item.parentMenu.name }}</td>
+                                    <td>
+                                        <a href="{{ path('admin.content.sub_menu.edit', {id: item.id}) }}" class="btn btn-sm btn-warning"><i class="far fa-edit"></i></a>
+                                        <form method="post" action="{{ path('admin.content.sub_menu.delete', {id: item.id}) }}" style="display: inline-block" onsubmit="return confirm('Etes-vous certain?')">
+                                            <input type="hidden" name="_method" value="DELETE">
+                                            <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ item.id) }}">
+                                            <button class="btn btn-sm btn-danger"><i class="far fa-trash-alt"></i></button>
+                                        </form>
+                                    </td>
+                                </tr>
+                            {% endfor %}
+                            </tbody>
+                        </table>
+                        <div class="text-left mt-3 mb-3">
+                            <a href="{{  path('admin.content.sub_menu.new') }}" class="btn btn-primary">Ajouter</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+{% endblock %}

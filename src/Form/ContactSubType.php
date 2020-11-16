@@ -59,7 +59,7 @@ class ContactSubType extends AbstractType
                  'expanded' => false,
                  'placeholder' => 'Section',
                  'class' => SchoolSection::class,
-                 'choice_label' => 'sectionFullName'
+                 'choice_label' => 'sectionFullName',
             ])
          ->add('sessionDate', EntityType::class, [
              'label' => false,

@@ -9324,6 +9324,10 @@ textarea.form-control {
     width: 100%;
     display: block !important; }
 
+  .appointment-form .form-group option {
+    color: rgba(0, 0, 0, 0.9);
+  }
+
 .appointment-form .form-control {
   border: transparent !important;
   border-bottom: 1px solid rgba(255, 255, 255, 0.2) !important;
@@ -9336,6 +9340,7 @@ textarea.form-control {
   border-radius: 0px;
   -webkit-box-shadow: none !important;
   box-shadow: none !important; }
+
   .appointment-form .form-control::-webkit-input-placeholder {
     /* Chrome/Opera/Safari */
     color: rgba(255, 255, 255, 0.9); }
@@ -9350,6 +9355,7 @@ textarea.form-control {
     color: rgba(255, 255, 255, 0.9); }
   .appointment-form .form-control:focus, .appointment-form .form-control:active {
     border-color: #fff; }
+
 
 .appointment-form textarea.form-control {
   height: inherit !important; }

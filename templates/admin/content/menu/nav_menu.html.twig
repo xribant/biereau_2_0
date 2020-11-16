@@ -7,11 +7,12 @@
     <div class="main-panel">
         <div class="content">
             <div class="page-inner">
+
                 <div class="row">
                     <div class="col-md-12">
                         <div class="card">
                             <div class="card-header">
-                                <div class="card-title">Gestion des news de la page d'accueil</div>
+                                <div class="card-title">Menus de navigation</div>
                             </div>
                             <div class="card-body">
                                 {% for message in app.flashes('success') %}
@@ -22,31 +23,39 @@
                                 <table class="table table-striped mt-3">
                                     <thead>
                                     <tr>
-                                        <th scope="col" style="width: 16%">Titre</th>
-                                        <th scope="col" style="width: 16%">Article</th>
-                                        <th scope="col" style="width: 16%">Initiateur</th>
-                                        <th scope="col" style="width: 16%">Fonction</th>
-                                        <th scope="col" style="width: 16%">Adresse Web Externe</th>
-                                        <th scope="col" style="width: 16%">Lien Page Interne</th>
+                                        <th scope="col" style="width: 20%">Nom</th>
+                                        <th scope="col" style="width: 20%">Route</th>
+                                        <th scope="col" style="width: 20%">Lien Externe</th>
+                                        <th scope="col" style="width: 20%">Sous-Menus</th>
                                         <th style="width: 20%"></th>
                                     </tr>
                                     </thead>
                                     <tbody>
-                                    {% for item in news %}
+                                    {% for item in navMenu %}
                                         <tr>
-                                            <td>{{ item.title }}</td>
-                                            <td>{{ item.article }}</td>
-                                            <td>{{ item.author }}</td>
-                                            <td>{{ item.job }}</td>
-                                            <td>{{ item.url }}</td>
-                                            <td>{% if item.internalRoute is empty  %}
+                                            <td>{{ item.name }}</td>
+                                            <td>
+                                                {% if item.externalLink == 1 %}
+                                                    <a href="{{ item.route }}" target="_blank">{{ item.route }}</a>
                                                 {% else %}
-                                                    {{ item.internalRoute.name }}
+                                                    {{ item.route }}
                                                 {% endif %}
                                             </td>
                                             <td>
-                                                <a href="{{ path('admin.content.news.edit', {id: item.id}) }}" class="btn btn-sm btn-warning"><i class="far fa-edit"></i></a>
-                                                <form method="post" action="{{ path('admin.content.news.delete', {id: item.id}) }}" style="display: inline-block" onsubmit="return confirm('Etes-vous certain?')">
+                                                {% if item.externalLink == 0 %}
+                                                    Non
+                                                {% else %}
+                                                    Oui
+                                                {% endif %}
+                                            </td>
+                                            <td>
+                                                {%  for subMenu in item.subMenus %}
+                                                    {{ subMenu.name }} |
+                                                {% endfor %}
+                                            </td>
+                                            <td>
+                                                <a href="{{ path('admin.content.nav_menu.edit', {id: item.id}) }}" class="btn btn-sm btn-warning"><i class="far fa-edit"></i></a>
+                                                <form method="post" action="{{ path('admin.content.nav_menu.delete', {id: item.id}) }}" style="display: inline-block" onsubmit="return confirm('Etes-vous certain?')">
                                                     <input type="hidden" name="_method" value="DELETE">
                                                     <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ item.id) }}">
                                                     <button class="btn btn-sm btn-danger"><i class="far fa-trash-alt"></i></button>
@@ -57,14 +66,13 @@
                                     </tbody>
                                 </table>
                                 <div class="text-left mt-3 mb-3">
-                                    <a href="{{  path('admin.content.news.new') }}" class="btn btn-primary">Ajouter</a>
+                                    <a href="{{  path('admin.content.nav_menu.new') }}" class="btn btn-primary">Ajouter</a>
                                 </div>
-
                             </div>
                         </div>
                     </div>
-
                 </div>
+
             </div>
         </div>
     </div>

@@ -61,6 +61,7 @@ class NewsController extends AbstractController
 
         if($form->isSubmitted() && $form->isValid())
         {
+            $news->setCreatedAt(new \DateTime());
             $this->em->persist($news);
             $this->em->flush();
             $this->addFlash('success', 'Une nouvelle news a été ajoutée');
