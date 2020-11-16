@@ -244,6 +244,22 @@
                                 </ul>
                             </div>
                         </li>
+                        <li class="nav-item" {% if current_menu == 'Pages' %}active{% endif %}>
+                            <a data-toggle="collapse" href="#pages">
+                                <i class="fas fa-file-alt"></i>
+                                <p>Pages</p>
+                                <span class="caret"></span>
+                            </a>
+                            <div class="collapse {% if current_menu == 'Pages' %}show{% endif %}" id="pages">
+                                <ul class="nav nav-collapse">
+                                    <li>
+                                        <a href="{{ path('admin.pages.index') }}">
+                                            <span class="sub-item">Pages basiques</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
 
                     </ul>
                 </div>

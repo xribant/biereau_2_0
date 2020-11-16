@@ -12,30 +12,20 @@
   <component name="ChangeListManager">
     <list default="true" id="eb337925-03b6-4a6f-95e2-c598709ccab2" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/packages/liip_imagine.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/liip_imagine.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/bg_6.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/bg_6.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/equipe_20_21.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/equipe_20_21_2.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/equipe_20_21_2.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/Admin/PageContent/NewsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/Admin/PageContent/NewsController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/HomeController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/SubscriptionController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/SubscriptionController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/TeachersController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/TeachersController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/News.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/News.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/packages/vich_uploader.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/vich_uploader.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20201111130738.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20201111130846.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20201111194650.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20201114161920.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20201115101150.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20201115212933.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Article.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/NavMenu.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/NavMenu.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Entity/SitePage.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Form/ContactSubType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/ContactSubType.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Form/NewsFormType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/NewsFormType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/SubMenu.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/SubMenu.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/ArticleRepository.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Repository/SitePageRepository.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/admin/adminbase.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/adminbase.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/admin/content/news/_form.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/content/news/_form.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/admin/content/news/edit.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/content/news/edit.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/admin/content/news/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/content/news/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/emails/contactnewuser.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/emails/contactnewuser.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/emails/contactschoolsub.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/emails/contactschoolsub.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/emails/contactsubscriber.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/emails/contactsubscriber.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/home.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/home.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/subscription.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/subscription.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -189,26 +179,26 @@
     <property name="WebServerToolWindowFactoryState" value="true" />
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="Twig" />
     <property name="com.jetbrains.php.lang.actions.generation.PhpGenerateFieldAccessorHandlerBase$MyMemberChooser.fluent.setters.last.selected" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/templates/admin/menu" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/templates/admin/content/pages" />
     <property name="php.override.implement.member.chooser.php.doc" value="NONE" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="settings.editor.selected.configurable" value="PhpAnnotations.SettingsForm" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/templates/admin/content" />
-      <recent name="$PROJECT_DIR$/src/Form/Admin/PageContent" />
-      <recent name="$PROJECT_DIR$/templates/admin/content/home_carousel" />
-      <recent name="$PROJECT_DIR$/templates/resetpassword" />
-      <recent name="$PROJECT_DIR$/src/Form/Admin" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/templates/admin/content/pages" />
       <recent name="$PROJECT_DIR$/templates/admin/menu" />
       <recent name="$PROJECT_DIR$/src/DataFixtures" />
       <recent name="$PROJECT_DIR$/templates/admin/school/details" />
       <recent name="$PROJECT_DIR$/src/Form/DataTransformer" />
-      <recent name="$PROJECT_DIR$/src/Form" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/templates/admin" />
+      <recent name="$PROJECT_DIR$/templates/admin/content" />
+      <recent name="$PROJECT_DIR$/src/Form/Admin/PageContent" />
+      <recent name="$PROJECT_DIR$/templates/admin/content/home_carousel" />
+      <recent name="$PROJECT_DIR$/templates/resetpassword" />
     </key>
   </component>
   <component name="RunManager">
@@ -292,7 +282,7 @@
       <workItem from="1605264088592" duration="9745000" />
       <workItem from="1605334105138" duration="4832000" />
       <workItem from="1605420999456" duration="25436000" />
-      <workItem from="1605518997888" duration="138000" />
+      <workItem from="1605518997888" duration="13031000" />
     </task>
     <servers />
   </component>
@@ -333,10 +323,10 @@
     </state>
     <state x="668" y="23" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/1920.168.1280.777/0.23.1920.987@0.23.1920.987" timestamp="1603436282246" />
     <state x="668" y="205" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/1920.23.1280.777/0.23.1920.987@0.23.1920.987" timestamp="1602238729944" />
-    <state x="1051" y="258" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1605450225381">
+    <state x="1051" y="258" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1605557280399">
       <screen x="0" y="23" width="1920" height="987" />
     </state>
-    <state x="1051" y="258" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/1920.168.1280.777/0.23.1920.987@0.23.1920.987" timestamp="1605450225381" />
+    <state x="1051" y="258" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/1920.168.1280.777/0.23.1920.987@0.23.1920.987" timestamp="1605557280399" />
     <state x="713" y="369" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1605447484078">
       <screen x="0" y="23" width="1920" height="987" />
     </state>
@@ -345,10 +335,10 @@
       <screen x="0" y="23" width="1920" height="987" />
     </state>
     <state width="256" height="457" key="HiddenNamespacesPopup/1920.168.1280.777/0.23.1920.987@0.23.1920.987" timestamp="1601843046027" />
-    <state x="637" y="451" key="NewPhpClassDialog" timestamp="1605436009938">
+    <state x="637" y="451" key="NewPhpClassDialog" timestamp="1605528236735">
       <screen x="0" y="23" width="1920" height="987" />
     </state>
-    <state x="637" y="451" key="NewPhpClassDialog/1920.168.1280.777/0.23.1920.987@0.23.1920.987" timestamp="1605436009938" />
+    <state x="637" y="451" key="NewPhpClassDialog/1920.168.1280.777/0.23.1920.987@0.23.1920.987" timestamp="1605528236735" />
     <state x="661" y="249" key="NewPhpClassDialog/1920.23.1280.777/0.23.1920.987@0.23.1920.987" timestamp="1602238768409" />
     <state x="762" y="447" key="NewPhpFileDialog" timestamp="1602098155436">
       <screen x="0" y="23" width="1920" height="987" />

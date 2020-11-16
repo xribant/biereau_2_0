@@ -35,19 +35,18 @@ class NavMenu
     private $externalLink;
 
     /**
-     * @ORM\OneToMany(targetEntity=SubMenu::class, mappedBy="parentMenu")
+     * @ORM\OneToMany(targetEntity=SubMenu::class, mappedBy="parentNavMenu")
      */
     private $subMenus;
 
     /**
-     * @ORM\OneToMany(targetEntity=SitePage::class, mappedBy="parentNavMenu")
+     * @ORM\OneToOne(targetEntity=BasicPage::class, mappedBy="parentNavMenu", cascade={"persist", "remove"})
      */
-    private $sitePages;
+    private $basicPage;
 
     public function __construct()
     {
         $this->subMenus = new ArrayCollection();
-        $this->sitePages = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -121,31 +120,19 @@ class NavMenu
         return $this;
     }
 
-    /**
-     * @return Collection|SitePage[]
-     */
-    public function getSitePages(): Collection
+    public function getBasicPage(): ?BasicPage
     {
-        return $this->sitePages;
+        return $this->basicPage;
     }
 
-    public function addSitePage(SitePage $sitePage): self
+    public function setBasicPage(?BasicPage $basicPage): self
     {
-        if (!$this->sitePages->contains($sitePage)) {
-            $this->sitePages[] = $sitePage;
-            $sitePage->setParentNavMenu($this);
-        }
+        $this->basicPage = $basicPage;
 
-        return $this;
-    }
-
-    public function removeSitePage(SitePage $sitePage): self
-    {
-        if ($this->sitePages->removeElement($sitePage)) {
-            // set the owning side to null (unless already changed)
-            if ($sitePage->getParentNavMenu() === $this) {
-                $sitePage->setParentNavMenu(null);
-            }
+        // set (or unset) the owning side of the relation if necessary
+        $newParentMenu = null === $basicPage ? null : $this;
+        if ($basicPage->getParentMenu() !== $newParentMenu) {
+            $basicPage->setParentMenu($newParentMenu);
         }
 
         return $this;

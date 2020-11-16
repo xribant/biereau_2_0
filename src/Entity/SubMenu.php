@@ -41,18 +41,17 @@ class SubMenu
     private $parentMenu;
 
     /**
-     * @ORM\OneToMany(targetEntity=SitePage::class, mappedBy="parentSubMenu")
-     */
-    private $sitePages;
-
-    /**
      * @ORM\OneToMany(targetEntity=News::class, mappedBy="internalRoute")
      */
     private $news;
 
+    /**
+     * @ORM\OneToOne(targetEntity=BasicPage::class, mappedBy="parentSubMenu", cascade={"persist", "remove"})
+     */
+    private $basicPage;
+
     public function __construct()
     {
-        $this->sitePages = new ArrayCollection();
         $this->news = new ArrayCollection();
     }
 
@@ -110,36 +109,6 @@ class SubMenu
     }
 
     /**
-     * @return Collection|SitePage[]
-     */
-    public function getSitePages(): Collection
-    {
-        return $this->sitePages;
-    }
-
-    public function addSitePage(SitePage $sitePage): self
-    {
-        if (!$this->sitePages->contains($sitePage)) {
-            $this->sitePages[] = $sitePage;
-            $sitePage->setParentSubMenu($this);
-        }
-
-        return $this;
-    }
-
-    public function removeSitePage(SitePage $sitePage): self
-    {
-        if ($this->sitePages->removeElement($sitePage)) {
-            // set the owning side to null (unless already changed)
-            if ($sitePage->getParentSubMenu() === $this) {
-                $sitePage->setParentSubMenu(null);
-            }
-        }
-
-        return $this;
-    }
-
-    /**
      * @return Collection|News[]
      */
     public function getNews(): Collection
@@ -164,6 +133,24 @@ class SubMenu
             if ($news->getInternalRoute() === $this) {
                 $news->setInternalRoute(null);
             }
+        }
+
+        return $this;
+    }
+
+    public function getBasicPage(): ?BasicPage
+    {
+        return $this->basicPage;
+    }
+
+    public function setBasicPage(?BasicPage $basicPage): self
+    {
+        $this->basicPage = $basicPage;
+
+        // set (or unset) the owning side of the relation if necessary
+        $newParentSubMenu = null === $basicPage ? null : $this;
+        if ($basicPage->getParentSubMenu() !== $newParentSubMenu) {
+            $basicPage->setParentSubMenu($newParentSubMenu);
         }
 
         return $this;
