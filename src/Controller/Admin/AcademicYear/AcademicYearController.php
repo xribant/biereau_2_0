@@ -42,11 +42,9 @@ class AcademicYearController extends AbstractController
     public function index()
     {
         $years = $this->repository->findAll();
-        $currentUser = $this->getUser();
 
         return $this->render('/admin/school/academicyear/index.html.twig', [
             'current_menu' => 'inscriptions',
-            'current_user' => $currentUser,
             'years' => $years
         ]);
     }
@@ -61,7 +59,6 @@ class AcademicYearController extends AbstractController
         $academicYear = new AcademicYear();
         $form = $this->createForm(AcademicYearType::class, $academicYear);
         $form->handleRequest($request);
-        $currentUser = $this->getUser();
 
         if($form->isSubmitted() && $form->isValid())
         {
@@ -76,7 +73,6 @@ class AcademicYearController extends AbstractController
 
         return $this->render('/admin/school/academicyear/new.html.twig', [
             'form' => $form->createView(),
-            'current_user' => $currentUser,
             'current_menu' => 'inscriptions'
         ]);
     }
@@ -89,7 +85,6 @@ class AcademicYearController extends AbstractController
      */
     public function edit(AcademicYear $year, Request $request)
     {
-        $currentUser = $this->getUser();
         $form = $this->createForm(AcademicYearType::class, $year);
         $form->handleRequest($request);
 
@@ -103,7 +98,6 @@ class AcademicYearController extends AbstractController
             'year' => $year,
             'current_menu' => 'inscriptions',
             'form' => $form->createView(),
-            'current_user' => $currentUser
         ]);
     }
 

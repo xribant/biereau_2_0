@@ -37,11 +37,9 @@ class RegistrationDateController extends AbstractController
     public function index()
     {
         $registrationDates = $this->repository->findAll();
-        $currentUser = $this->getUser();
 
         return $this->render('/admin/school/registration/index.html.twig', [
             'registrationDates' => $registrationDates,
-            'current_user' => $currentUser,
             'current_menu' => 'inscriptions'
         ]);
     }
@@ -55,7 +53,6 @@ class RegistrationDateController extends AbstractController
         $registrationDate = new RegistrationDate();
         $form = $this->createForm(RegistrationDateType::class, $registrationDate);
         $form->handleRequest($request);
-        $currentUser = $this->getUser();
 
         if($form->isSubmitted() && $form->isValid())
         {
@@ -69,7 +66,6 @@ class RegistrationDateController extends AbstractController
         }
 
         return $this->render('/admin/school/registration/new.html.twig', [
-            'current_user' => $currentUser,
             'current_menu' => 'inscriptions',
             'form' => $form->createView()
         ]);
@@ -83,7 +79,6 @@ class RegistrationDateController extends AbstractController
      */
     public function edit(RegistrationDate $date, Request $request)
     {
-        $currentUser = $this->getUser();
         $form = $this->createForm(RegistrationDateType::class, $date);
         $form->handleRequest($request);
 
@@ -97,7 +92,6 @@ class RegistrationDateController extends AbstractController
             'date' => $date,
             'current_menu' => 'inscriptions',
             'form' => $form->createView(),
-            'current_user' => $currentUser
         ]);
     }
 

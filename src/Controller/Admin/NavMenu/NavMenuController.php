@@ -47,12 +47,10 @@ class NavMenuController extends AbstractController
      */
     public function indexNavMenu()
     {
-        $current_user = $this->getUser();
         $navMenu = $this->navMenuRepository->findAll();
 
         return $this->render('admin/content/menu/nav_menu.html.twig', [
             'current_menu' => 'menus',
-            'current_user' => $current_user,
             'navMenu' => $navMenu,
         ]);
     }
@@ -62,12 +60,10 @@ class NavMenuController extends AbstractController
      */
     public function indexSubMenu()
     {
-        $current_user = $this->getUser();
-        $subMenu = $this->subMenuRepository->findAll();
+        $subMenu = $this->subMenuRepository->findAllOrderedByNavMenu();
 
         return $this->render('admin/content/menu/sub_menu.html.twig', [
             'current_menu' => 'menus',
-            'current_user' => $current_user,
             'subMenu' => $subMenu,
         ]);
     }
@@ -78,7 +74,6 @@ class NavMenuController extends AbstractController
      */
     public function navMenuNew(Request $request)
     {
-        $current_user = $this->getUser();
         $navMenu = new NavMenu();
 
         $form = $this->createForm(NavMenuType::class, $navMenu);
@@ -96,7 +91,6 @@ class NavMenuController extends AbstractController
 
         return $this->render('admin/content/menu/nav_menu_new.html.twig', [
             'current_menu' => 'menus',
-            'current_user' => $current_user,
             'form' => $form->createView(),
         ]);
     }
@@ -108,7 +102,6 @@ class NavMenuController extends AbstractController
      */
     public function navMenuEdit(NavMenu $navMenu, Request $request)
     {
-        $currentUser = $this->getUser();
         $form = $this->createForm(NavMenuType::class, $navMenu);
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
@@ -121,7 +114,6 @@ class NavMenuController extends AbstractController
             'navMenu' => $navMenu,
             'current_menu' => 'menus',
             'form' => $form->createView(),
-            'current_user' => $currentUser,
         ]);
     }
 
@@ -146,9 +138,8 @@ class NavMenuController extends AbstractController
      * @Route("/admin/content/menu/sub_menu/new", name="admin.content.sub_menu.new")
      * @return Response
      */
-    public function subMenuNew(Request $request)
+    public function subMenuNew(Request $request, NavMenuRepository $navMenuRepository)
     {
-        $current_user = $this->getUser();
         $subMenu = new SubMenu();
 
         $form = $this->createForm(SubMenuType::class, $subMenu);
@@ -166,7 +157,6 @@ class NavMenuController extends AbstractController
 
         return $this->render('admin/content/menu/sub_menu_new.html.twig', [
             'current_menu' => 'menus',
-            'current_user' => $current_user,
             'form' => $form->createView(),
         ]);
     }
@@ -178,7 +168,6 @@ class NavMenuController extends AbstractController
      */
     public function subMenuEdit(SubMenu $subMenu, Request $request)
     {
-        $currentUser = $this->getUser();
         $form = $this->createForm(SubMenuType::class, $subMenu);
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
@@ -191,7 +180,6 @@ class NavMenuController extends AbstractController
             'subMenu' => $subMenu,
             'current_menu' => 'menus',
             'form' => $form->createView(),
-            'current_user' => $currentUser,
         ]);
     }
 

@@ -24,16 +24,19 @@
                         <table class="table table-striped mt-3">
                             <thead>
                             <tr>
+                                <th scope="col" style="width: 20%">Menu Parent</th>
+                                <th scope="col">#</th>
                                 <th scope="col" style="width: 20%">Nom</th>
                                 <th scope="col" style="width: 20%">Route</th>
                                 <th scope="col" style="width: 20%">Lien Externe</th>
-                                <th scope="col" style="width: 20%">Menu Parent</th>
                                 <th style="width: 20%"></th>
                             </tr>
                             </thead>
                             <tbody>
                             {% for item in subMenu %}
                                 <tr>
+                                    <td>{{ item.parentMenu.name }}</td>
+                                    <td>{{ item.position }}</td>
                                     <td>{{ item.name }}</td>
                                     <td>
                                         {% if item.externalLink == 1 %}
@@ -49,7 +52,6 @@
                                             Oui
                                         {% endif %}
                                     </td>
-                                    <td>{{ item.parentMenu.name }}</td>
                                     <td>
                                         <a href="{{ path('admin.content.sub_menu.edit', {id: item.id}) }}" class="btn btn-sm btn-warning"><i class="far fa-edit"></i></a>
                                         <form method="post" action="{{ path('admin.content.sub_menu.delete', {id: item.id}) }}" style="display: inline-block" onsubmit="return confirm('Etes-vous certain?')">

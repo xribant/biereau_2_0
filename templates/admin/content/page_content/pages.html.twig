@@ -1,0 +1,53 @@
+{% extends 'admin/adminbase.html.twig' %}
+
+{% block title %} Admin | Biereau.be - Gestion de Contenu{% endblock %}
+
+{% block content %}
+
+    <div class="main-panel">
+        <div class="content">
+            <div class="page-inner">
+
+                <div class="row">
+                    <div class="col-md-12">
+
+                        <div class="card">
+                            <div class="card-header">
+                                <div class="card-title">Pages Standards</div>
+                            </div>
+                            <div class="card-body">
+                                {% for message in app.flashes('success') %}
+                                    <div class="alert alert-success">
+                                        {{ message|raw }}
+                                    </div>
+                                {% endfor %}
+                                <table class="table table-striped mt-3" >
+                                    <thead>
+                                    <tr>
+                                        <th scope="col" style="width: 19%">Titre</th>
+                                        <th style="width: 19%"></th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    {% for page in pages %}
+                                        <tr>
+                                            <td>{{ page.title }}</td>
+                                            <td>
+                                                <a href="{{ path('admin.content.basic_page.edit', {id: page.id}) }}" class="btn btn-sm btn-warning"><i class="far fa-edit"></i></a>
+                                            </td>
+                                        </tr>
+                                    {% endfor %}
+                                    </tbody>
+                                </table>
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

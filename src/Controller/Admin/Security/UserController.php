@@ -39,16 +39,14 @@ class UserController extends AbstractController
     }
 
     /**
-     * @Route("/admin/users", name="admin.users.index")
+     * @Route("/admin/users/list", name="admin.users.index")
      */
     public function index()
     {
-        $currentUser = $this ->getUser();
         $users = $this->repository->findAll();
 
         return $this->render('/admin/security/users/index.html.twig', [
             'current_menu' => 'users',
-            'current_user' => $currentUser,
             'users' => $users
         ]);
     }
@@ -59,8 +57,6 @@ class UserController extends AbstractController
      */
     public function new(Request $request,  PasswordNotification $notification)
     {
-        $currentUser = $this->getUser();
-
         $user = new User();
         $form = $this->createForm(UserType::class, $user);
         $form->handleRequest($request);
@@ -94,7 +90,6 @@ class UserController extends AbstractController
             'user' => $user,
             'current_menu' => 'users',
             'form' => $form->createView(),
-            'current_user' => $currentUser,
         ]);
 
     }
@@ -106,7 +101,6 @@ class UserController extends AbstractController
      */
     public function edit(User $user, Request $request)
     {
-        $currentUser = $this->getUser();
         $form = $this->createForm(UserType::class, $user);
         $form->handleRequest($request);
 
@@ -120,7 +114,6 @@ class UserController extends AbstractController
             'user' => $user,
             'current_menu' => 'users',
             'form' => $form->createView(),
-            'current_user' => $currentUser,
         ]);
     }
 

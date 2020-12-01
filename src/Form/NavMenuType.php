@@ -31,6 +31,10 @@ class NavMenuType extends AbstractType
                     'Oui' => 1
                 ],
             ])
+            ->add('position', TextType::class, [
+                'label' => 'Position',
+                'required' => true,
+            ])
         ;
     }
 

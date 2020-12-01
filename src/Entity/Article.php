@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\ArticleRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
@@ -11,6 +13,7 @@ use Vich\UploaderBundle\Mapping\Annotation as Vich;
 
 /**
  * @ORM\Entity(repositoryClass=ArticleRepository::class)
+ * @Vich\Uploadable()
  */
 class Article
 {
@@ -55,7 +58,7 @@ class Article
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
      */
-    private $filename;
+    private $filename = null;
 
     /**
      * @var File|null
@@ -66,9 +69,20 @@ class Article
      */
     private $imageFile;
 
+    /**
+     * @ORM\OneToMany(targetEntity=SubArticle::class, mappedBy="parentArticle")
+     */
+    private $subArticles;
+
+    /**
+     * @ORM\Column(type="datetime", nullable=true)
+     */
+    private $updated_at;
+
     public function __construct()
     {
         $this->created_at = new \DateTime();
+        $this->subArticles = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -188,4 +202,47 @@ class Article
         }
         return $this;
     }
+
+    /**
+     * @return Collection|SubArticle[]
+     */
+    public function getSubArticles(): Collection
+    {
+        return $this->subArticles;
+    }
+
+    public function addSubArticle(SubArticle $subArticle): self
+    {
+        if (!$this->subArticles->contains($subArticle)) {
+            $this->subArticles[] = $subArticle;
+            $subArticle->setParentArticle($this);
+        }
+
+        return $this;
+    }
+
+    public function removeSubArticle(SubArticle $subArticle): self
+    {
+        if ($this->subArticles->removeElement($subArticle)) {
+            // set the owning side to null (unless already changed)
+            if ($subArticle->getParentArticle() === $this) {
+                $subArticle->setParentArticle(null);
+            }
+        }
+
+        return $this;
+    }
+
+    public function getUpdatedAt(): ?\DateTimeInterface
+    {
+        return $this->updated_at;
+    }
+
+    public function setUpdatedAt(?\DateTimeInterface $updated_at): self
+    {
+        $this->updated_at = $updated_at;
+
+        return $this;
+    }
+
 }

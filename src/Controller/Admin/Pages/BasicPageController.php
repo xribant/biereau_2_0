@@ -37,12 +37,10 @@ class BasicPageController extends AbstractController
      */
     public function index()
     {
-        $current_user = $this->getUser();
         $pages = $this->basicPageRepository->findAll();
 
         return $this->render('admin/pages/index.html.twig', [
             'current_menu' => 'Pages',
-            'current_user' => $current_user,
             'pages' => $pages,
         ]);
     }
@@ -53,7 +51,6 @@ class BasicPageController extends AbstractController
      */
     public function new(Request $request)
     {
-        $current_user = $this->getUser();
         $page = new BasicPage();
 
         $form = $this->createForm(BasicPageFormType::class, $page);
@@ -71,7 +68,6 @@ class BasicPageController extends AbstractController
 
         return $this->render('admin/pages/new.html.twig', [
             'current_menu' => 'Pages',
-            'current_user' => $current_user,
             'form' => $form->createView(),
         ]);
     }
@@ -83,7 +79,6 @@ class BasicPageController extends AbstractController
      */
     public function edit(BasicPage $page, Request $request)
     {
-        $currentUser = $this->getUser();
         $form = $this->createForm(BasicPageFormType::class, $page);
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
@@ -96,7 +91,6 @@ class BasicPageController extends AbstractController
             'page' => $page,
             'current_menu' => 'Pages',
             'form' => $form->createView(),
-            'current_user' => $currentUser,
         ]);
     }
 
@@ -114,7 +108,7 @@ class BasicPageController extends AbstractController
             $this->addFlash('success', 'Page supprimée avec succès');
         }
 
-        return $this->redirectToRoute('admin.pages.delete');
+        return $this->redirectToRoute('admin.pages.index');
     }
 
 

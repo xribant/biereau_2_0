@@ -19,11 +19,6 @@ use Symfony\Component\Routing\Annotation\Route;
 class SubscriptionController extends AbstractController
 {
     /**
-     * @var SchoolDataRepository
-     */
-    private $schoolDataRepo;
-
-    /**
      * @var AcademicYearRepository
      */
     private $academicYearRepo;
@@ -40,15 +35,19 @@ class SubscriptionController extends AbstractController
      * @var NavMenuRepository
      */
     private $navMenuRepository;
+    /**
+     * @var SchoolDataRepository
+     */
+    private $schoolDataRepository;
 
-    public function __construct(ContactSubRepository $contactSubRepo, SchoolDataRepository $schoolDataRepo, NavMenuRepository $navMenuRepository, AcademicYearRepository $academicYearRepo, RegistrationDateRepository $registrationDateRepository, EntityManagerInterface $em)
+    public function __construct(ContactSubRepository $contactSubRepo, SchoolDataRepository $schoolDataRepository, NavMenuRepository $navMenuRepository, AcademicYearRepository $academicYearRepo, RegistrationDateRepository $registrationDateRepository, EntityManagerInterface $em)
     {
         $this->contactSubRepo = $contactSubRepo;
-        $this->schoolDataRepo = $schoolDataRepo;
         $this->academicYearRepo = $academicYearRepo;
         $this->em = $em;
         $this->registrationDateRepository = $registrationDateRepository;
         $this->navMenuRepository = $navMenuRepository;
+        $this->schoolDataRepository = $schoolDataRepository;
     }
 
 
@@ -60,10 +59,11 @@ class SubscriptionController extends AbstractController
         $contactSub = new ContactSub();
         $form = $this->createForm(ContactSubType::class, $contactSub);
 
-        $school = $this->schoolDataRepo->findOneBy(['id' => 1]);
+        $schoolData = $this->schoolDataRepository->findOneBy(['id' => 1]);
+
         $academicYear = $this->academicYearRepo->findOneBy(['id' => 1]);
         $regDates = $this->registrationDateRepository->findAll();
-        $navMenu = $this->navMenuRepository->findAll();
+        $navMenu = $this->navMenuRepository->findBy(array(), ['id' => 'asc'] );
         $currentMenu = $this->navMenuRepository->findOneBy(['name' => 'Infos Pratiques']);
 
         $form->handleRequest($request);
@@ -73,7 +73,7 @@ class SubscriptionController extends AbstractController
             $this->em->persist($contactSub);
             $this->em->flush();
 
-            $notification->notify($contactSub, $school);
+            $notification->notify($contactSub, $schoolData);
 
             $date = $contactSub->getSessionDate()->format('d/m/Y');
             $this->addFlash('success', 'Votre participation à la séance d\'information du '.$date.' a bien été enregistrée.
@@ -85,7 +85,6 @@ class SubscriptionController extends AbstractController
         return $this->render('subscription.html.twig', [
             'current_menu' => $currentMenu,
             'academicYear' => $academicYear,
-            'school' => $school,
             'registration_dates' => $regDates,
             'navMenu' => $navMenu,
             'form' => $form->createView()

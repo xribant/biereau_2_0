@@ -1,0 +1,16 @@
+{{ form_start(form) }}
+
+<div class="card-body">
+    <div class="row mt-3">
+        <div class="col-md-8">
+            {{ form_row(form.name) }}
+        </div>
+    </div>
+
+    <div class="text-right mt-3 mb-3">
+        <a href="{{ path('admin.ecole.staff.fonction') }}" class="btn btn-danger">Annuler</a>
+        <button class="btn btn-success">{{ button|default('Enregistrer') }}</button>
+    </div>
+</div>
+
+{{ form_end(form) }}

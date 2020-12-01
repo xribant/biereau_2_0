@@ -29,7 +29,7 @@ class PasswordNotification
     {
         $message = (new \Swift_Message('Collège du Biereau - Confirmation de création de votre compte'))
             -> setFrom('noreply@biereau.be')
-            -> setTo('xribant@gmail.com')
+            -> setTo($user->getEmail())
             -> setReplyTo($user->getEmail())
             -> setBody($this->renderer->render('emails/contactnewuser.html.twig', [
                 'user' => $user

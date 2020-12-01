@@ -36,12 +36,10 @@ class SectionsController extends AbstractController
      */
     public function index()
     {
-        $currentUser = $this->getUser();
         $sections = $this->repository->findAll();
         return $this->render('/admin/school/sections/index.html.twig', [
             'current_menu' => 'schoolSections',
             'sections' => $sections,
-            'current_user' => $currentUser,
         ]);
     }
 
@@ -51,7 +49,6 @@ class SectionsController extends AbstractController
      */
     public function new(Request $request)
     {
-        $currentUser = $this->getUser();
         $section = new SchoolSection();
         $form = $this->createForm(SchoolSectionType::class, $section);
         $form->handleRequest($request);
@@ -69,7 +66,6 @@ class SectionsController extends AbstractController
         return $this->render('/admin/school/sections/new.html.twig', [
             'form' => $form->createView(),
             'current_menu' => 'schoolSections',
-            'current_user' => $currentUser
         ]);
     }
 
@@ -81,7 +77,6 @@ class SectionsController extends AbstractController
      */
     public function edit(SchoolSection $section, Request $request)
     {
-        $currentUser = $this->getUser();
         $form = $this->createForm(SchoolSectionType::class, $section);
         $form->handleRequest($request);
 
@@ -95,7 +90,6 @@ class SectionsController extends AbstractController
             'section' => $section,
             'current_menu' => 'schoolSections',
             'form' => $form->createView(),
-            'current_user' => $currentUser,
         ]);
     }
 

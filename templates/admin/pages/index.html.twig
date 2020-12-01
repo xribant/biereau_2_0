@@ -39,7 +39,7 @@
                                             <td>{{ item.parentSubMenu.name }}</td>
                                             <td>
                                                 {% if item.filename %}
-                                                    <img src="{{ vich_uploader_asset(item, 'bannerImageFile') | imagine_filter('thumb') }}" style="width: 30%; height: auto;">
+                                                    <img src="{{ vich_uploader_asset(item, 'bannerImageFile') | imagine_filter('mini_thumbs') }}">
                                                 {% endif %}
                                             </td>
                                             <td>

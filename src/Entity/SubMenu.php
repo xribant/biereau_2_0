@@ -46,9 +46,14 @@ class SubMenu
     private $news;
 
     /**
-     * @ORM\OneToOne(targetEntity=BasicPage::class, mappedBy="parentSubMenu", cascade={"persist", "remove"})
+     * @ORM\OneToOne(targetEntity=BasicPage::class, mappedBy="parentSubMenu")
      */
     private $basicPage;
+
+    /**
+     * @ORM\Column(type="integer")
+     */
+    private $position;
 
     public function __construct()
     {
@@ -152,6 +157,18 @@ class SubMenu
         if ($basicPage->getParentSubMenu() !== $newParentSubMenu) {
             $basicPage->setParentSubMenu($newParentSubMenu);
         }
+
+        return $this;
+    }
+
+    public function getPosition(): ?int
+    {
+        return $this->position;
+    }
+
+    public function setPosition(int $position): self
+    {
+        $this->position = $position;
 
         return $this;
     }

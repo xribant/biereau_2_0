@@ -36,7 +36,7 @@
                                             <td>{{ item.linkToMenu }}</td>
                                             <td>
                                                 {% if item.filename %}
-                                                    <img src="{{ vich_uploader_asset(item, 'backgroundImageFile') | imagine_filter('thumb') }}" style="width: 20%; height: auto;">
+                                                    <img src="{{ vich_uploader_asset(item, 'backgroundImageFile') | imagine_filter('mini_thumbs') }}">
                                                 {% endif %}
                                             </td>
                                             <td>
@@ -70,7 +70,6 @@
                                 <table class="table table-striped mt-3">
                                     <thead>
                                     <tr>
-                                        <th scope="col" style="width: 20%"></th>
                                         <th scope="col" style="width: 20%">Valeur</th>
                                         <th scope="col" style="width: 40%">Description</th>
                                         <th style="width: 20%"></th>
@@ -79,7 +78,6 @@
                                     <tbody>
                                     {% for item in school_values %}
                                         <tr>
-                                            <td bgcolor="#c71585"></td>
                                             <td>{{ item.title}}</td>
                                             <td>{{ item.description }}</td>
                                             <td>

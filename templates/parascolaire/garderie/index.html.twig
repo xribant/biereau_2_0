@@ -3,7 +3,7 @@
 {% block title %}Collège du Biéreau - Garderie{% endblock %}
 
 {% block content %}
-    <section class="hero-wrap hero-wrap-2" style="background-image: url('/images/content/garderie/garderie.jpg');">
+    <section class="hero-wrap hero-wrap-2" style="background-image: url({{ vich_uploader_asset(page, 'bannerImageFile') }});">
         <div class="overlay"></div>
         <div class="container">
             <div class="row no-gutters slider-text align-items-center justify-content-center">
@@ -11,8 +11,8 @@
                     <h1 class="mb-2 bread">Garderie</h1>
                     <p class="breadcrumbs">
                         <span class="mr-2"><a href="{{ path('home.index') }}">Accueil <i class="ion-ios-arrow-forward"></i></a></span>
-                        <span>Parascolaire <i class="ion-ios-arrow-forward"></i></span>
-                        <span>Garderie <i class="ion-ios-arrow-forward"></i></span>
+                        <span>{{ page.parentNavMenu.name }} <i class="ion-ios-arrow-forward"></i></span>
+                        <span>{{ page.title }} <i class="ion-ios-arrow-forward"></i></span>
                     </p>
                 </div>
             </div>
@@ -21,81 +21,31 @@
 
     <section class="ftco-section">
         <div class="container">
-            <div class="row">
-                <div class="col-md-12 course d-lg-flex ftco-animate">
-                    <div class="img" style="background-image: url({{ asset('/images/content/garderie/chevalier.jpg') }});"></div>
-                    <div class="text bg-light p-4">
-                        <h3 style="color: #1eaaf1;">Le matin</h3>
-                        <p>Ouverture de l’école à 7h25 pour une garderie commune maternelles/primaires organisée jusque 8h00 au sous-sol de l’école maternelle.</p>
-                        <p>Les enfants de l'école maternelle, s'ils arrivent entre 8h00 et 8h30, sont accueillis dans le réfectoire de l'école MATERNELLE.</p>
-                        <p>Les enfants de l'école primaire, s'ils arrivent entre 8h00 et 8h20, doivent rejoindre le réfectoire primaire ou la cour de l’école s’il fait clair et beau. Ils doivent toutefois toujours se présenter à la surveillante.</p>
-                        <p>A partir de 8h20, les enfants de l'école primaire peuvent arriver « hors-garderie » et jouer dans la cour de l'école primaire.</p>
-                        <div class="alert alert-danger text-center mt-3">Aucun enfant n’est autorisé à rester seul dans la cour de l’école avant l’ouverture des portes.</div>
+
+            {% for key, article in articles %}
+                {% if key%2 == 0 %}
+                    <div class="row">
+                        <div class="col-md-12 course d-lg-flex ftco-animate">
+                            <div class="img" style="background-image: url({{ vich_uploader_asset(article, 'imageFile') }});"></div>
+                            <div class="text bg-light p-4">
+                                <h3 style="color: #1eaaf1;">{{ article.title }}</h3>
+                                {{ article.text|raw }}
+                            </div>
+                        </div>
                     </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-12 course d-lg-flex ftco-animate">
-                    <div class="text bg-light p-4">
-                        <h3 style="color: #1eaaf1;">Garderie gratuite</h3>
-                        <p>La garderie est gratuite tous les jours entre 7h25 et 8h40, après les cours entre 15h30 et 16h15 et le mercredi de 12h20 à 12h45.</p>
-                        <p>Gratuite car financée par la Commune dans le cadre des Avantages sociaux.</p>
+                {% else %}
+                    <div class="row">
+                        <div class="col-md-12 course d-lg-flex ftco-animate">
+                            <div class="text bg-light p-4">
+                                <h3 style="color: #1eaaf1;">{{ article.title }}</h3>
+                                {{ article.text|raw }}
+                            </div>
+                            <div class="img" style="background-image: url({{ vich_uploader_asset(article, 'imageFile') }});"></div>
+                        </div>
                     </div>
-                    <div class="img" style="background-image: url({{ asset('/images/content/garderie/bricolage.jpg') }});"></div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-12 course d-lg-flex ftco-animate">
-                    <div class="img" style="background-image: url({{ asset('/images/content/garderie/garderie2.jpg') }});"></div>
-                    <div class="text bg-light p-4">
-                        <h3 style="color: #1eaaf1;">Garderie payante</h3>
-                        <p>La garderie est payante selon des tranches horaires définies.</p>
-                        <table class="table table-striped table-striped-bg-default mt-3">
-                            <thead>
-                            <tr>
-                                <th scope="col" colspan="2">Lundi, Mardi, Jeudi, Vendredi</th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            <tr>
-                                <td>16h15 à 16h45</td>
-                                <td>1.20 €</td>
-                            </tr>
-                            <tr>
-                                <td>16h45 à 17h15</td>
-                                <td>1.20 €</td>
-                            </tr>
-                            <tr>
-                                <td>17h15 à 18h00</td>
-                                <td>1.00 €</td>
-                            </tr>
-                            </tbody>
-                            <tfoot>
-                            <tr>
-                                <td colspan="2"><h6>Après 18h00 : Amende de retard forfaitaire fixée à 15.00 €</h6></td>
-                            </tr>
-                            </tfoot>
-                        </table>
-                        <table class="table table-striped table-striped-bg-default mt-3">
-                            <thead>
-                            <tr>
-                                <th scope="col" colspan="2">Mercredi</th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            <tr>
-                                <td>12h45 à 14h00</td>
-                                <td>2.10 €</td>
-                            </tr>
-                            <tr>
-                                <td>14h00 à 16h00</td>
-                                <td>2.00 €</td>
-                            </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
+                {% endif %}
+            {% endfor %}
+
         </div>
     </section>
 {% endblock %}

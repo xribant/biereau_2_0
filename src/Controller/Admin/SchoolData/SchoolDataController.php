@@ -46,12 +46,10 @@ class SchoolDataController extends AbstractController
      */
     public function index()
     {
-        $currentUser = $this->getUser();
         $school = $this->schoolDataRepo->findOneBy(['id' => 1]);
         $section = $this->schoolSectionRepo->findAll();
 
         return $this->render('/admin/school/data/index.html.twig', [
-            'current_user' => $currentUser,
             'school' => $school,
             'sections' => $section,
             'current_menu' => 'schoolData'
@@ -64,7 +62,6 @@ class SchoolDataController extends AbstractController
      */
     public function edit(Request $request)
     {
-        $currentUser = $this->getUser();
         $school = $this->schoolDataRepo->findOneBy(['id' => 1]);
         $form = $this->createForm(SchoolDataType::class, $school);
         $form->handleRequest($request);
@@ -76,7 +73,6 @@ class SchoolDataController extends AbstractController
         }
 
         return $this->render('admin/school/data/edit.html.twig', [
-            'current_user' => $currentUser,
             'school' => $school,
             'form' => $form->createView(),
             'current_menu' => 'schoolData'

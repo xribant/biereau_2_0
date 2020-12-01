@@ -18,12 +18,6 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 Class HomeController extends AbstractController
 {
-
-    /**
-     * @var SchoolDataRepository
-     */
-    private $schoolDataRepo;
-
     /**
      * @var ObjectManager
      */
@@ -45,9 +39,8 @@ Class HomeController extends AbstractController
      */
     private $navMenuRepository;
 
-    public function __construct(SchoolDataRepository $schoolDataRepo, SiteHomePageCarouselRepository $carouselRepository, NavMenuRepository $navMenuRepository, NewsRepository $newsRepository, SchoolValueRepository $schoolValueRepository, EntityManagerInterface $em)
+    public function __construct( SiteHomePageCarouselRepository $carouselRepository, NavMenuRepository $navMenuRepository, NewsRepository $newsRepository, SchoolValueRepository $schoolValueRepository, EntityManagerInterface $em)
     {
-        $this->schoolDataRepo = $schoolDataRepo;
         $this->em = $em;
         $this->carouselRepository = $carouselRepository;
         $this->newsRepository = $newsRepository;
@@ -62,7 +55,6 @@ Class HomeController extends AbstractController
     public function index()
     {
         $carousel = $this->carouselRepository->findAll();
-        $schoolData = $this->schoolDataRepo->findOneBy(['id' => 1]);
         $news = $this->newsRepository->findAll();
         $schoolValues = $this->schoolValueRepository->findAll();
         $navMenu = $this->navMenuRepository->findAll();
@@ -70,7 +62,6 @@ Class HomeController extends AbstractController
 
         return $this->render('home.html.twig', [
             'current_menu' => $currentMenu,
-            'school' => $schoolData,
             'carousel' => $carousel,
             'news' => $news,
             'school_values' => $schoolValues,

@@ -10,7 +10,7 @@ use Doctrine\Migrations\AbstractMigration;
 /**
  * Auto-generated Migration: Please modify to your needs!
  */
-final class Version20201116214627 extends AbstractMigration
+final class Version20201129132050 extends AbstractMigration
 {
     public function getDescription() : string
     {
@@ -22,7 +22,9 @@ final class Version20201116214627 extends AbstractMigration
         // this up() migration is auto-generated, please modify it to your needs
         $this->abortIf($this->connection->getDatabasePlatform()->getName() !== 'mysql', 'Migration can only be executed safely on \'mysql\'.');
 
-        $this->addSql('ALTER TABLE basic_page CHANGE filename filename VARCHAR(255) NOT NULL');
+        $this->addSql('ALTER TABLE member ADD fonction_id INT DEFAULT NULL');
+        $this->addSql('ALTER TABLE member ADD CONSTRAINT FK_70E4FA7857889920 FOREIGN KEY (fonction_id) REFERENCES fonction (id)');
+        $this->addSql('CREATE INDEX IDX_70E4FA7857889920 ON member (fonction_id)');
     }
 
     public function down(Schema $schema) : void
@@ -30,6 +32,8 @@ final class Version20201116214627 extends AbstractMigration
         // this down() migration is auto-generated, please modify it to your needs
         $this->abortIf($this->connection->getDatabasePlatform()->getName() !== 'mysql', 'Migration can only be executed safely on \'mysql\'.');
 
-        $this->addSql('ALTER TABLE basic_page CHANGE filename filename VARCHAR(255) CHARACTER SET utf8mb4 DEFAULT NULL COLLATE `utf8mb4_unicode_ci`');
+        $this->addSql('ALTER TABLE member DROP FOREIGN KEY FK_70E4FA7857889920');
+        $this->addSql('DROP INDEX IDX_70E4FA7857889920 ON member');
+        $this->addSql('ALTER TABLE member DROP fonction_id');
     }
 }

@@ -38,7 +38,6 @@ class SchoolValuesController extends AbstractController
      */
     public function new(Request $request)
     {
-        $current_user = $this->getUser();
         $value = new SchoolValue();
 
         $form = $this->createForm(SchoolValueFormType::class, $value);
@@ -56,7 +55,6 @@ class SchoolValuesController extends AbstractController
 
         return $this->render('admin/content/school_values/new.html.twig', [
             'current_menu' => 'contenu',
-            'current_user' => $current_user,
             'form' => $form->createView(),
         ]);
     }
@@ -68,7 +66,6 @@ class SchoolValuesController extends AbstractController
      */
     public function edit(SchoolValue $value, Request $request)
     {
-        $currentUser = $this->getUser();
         $form = $this->createForm(SchoolValueFormType::class, $value);
         $form->handleRequest($request);
 
@@ -82,7 +79,6 @@ class SchoolValuesController extends AbstractController
             'value' => $value,
             'current_menu' => 'contenu',
             'form' => $form->createView(),
-            'current_user' => $currentUser,
         ]);
     }
 

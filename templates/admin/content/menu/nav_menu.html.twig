@@ -23,6 +23,7 @@
                                 <table class="table table-striped mt-3">
                                     <thead>
                                     <tr>
+                                        <th scope="col">#</th>
                                         <th scope="col" style="width: 20%">Nom</th>
                                         <th scope="col" style="width: 20%">Route</th>
                                         <th scope="col" style="width: 20%">Lien Externe</th>
@@ -33,6 +34,7 @@
                                     <tbody>
                                     {% for item in navMenu %}
                                         <tr>
+                                            <td>{{ item.position }}</td>
                                             <td>{{ item.name }}</td>
                                             <td>
                                                 {% if item.externalLink == 1 %}

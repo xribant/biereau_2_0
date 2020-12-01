@@ -37,10 +37,7 @@ class RegistrationController extends AbstractController
     {
         $registrants = $this->repository->findAll();
 
-
-        $currentUser = $this->getUser();
         return $this->render('/admin/school/registration/view.html.twig',[
-            'current_user' => $currentUser,
             'registrants' => $registrants,
             'current_menu' => 'inscriptions'
         ]);

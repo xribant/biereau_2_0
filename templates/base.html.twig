@@ -1,6 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-RWPC9BEPZM"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-RWPC9BEPZM');
+    </script>
     <title>{% block title %}{% endblock %}</title>
     <meta name="description" content="Bienvenue sur le site du collège du Biéreau, une école fondamentale maternelle et primaire au coeur de la ville universitaire de Louvain-La-Neuve.">
     <meta charset="utf-8">
@@ -25,6 +34,7 @@
         <link rel="stylesheet" href="{{ asset('css/icomoon.css') }}">
         <link rel="stylesheet" href="{{ asset('css/style.css') }}">
         <link rel="stylesheet" href="{{ asset('css/bootstrap/bootstrap-datepicker.min.css') }}">
+        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.css" />
     {%  endblock %}
 </head>
 <body>
@@ -39,16 +49,16 @@
                             <span class="icon-map"></span>
                         </div>
                         <span class="text">
-                            {{ school.street }} {{ school.streetNum }}, {{ school.postalCode }} {{ school.city }}
+                            {{ entity.schoolData.street }} {{ entity.schoolData.streetNum }}, {{ entity.schoolData.postalCode }} {{ entity.schoolData.city }}
                         </span>
                     </div>
                     <div class="col-md pr-4 d-flex topper align-items-center">
                         <div class="icon bg-secondary mr-2 d-flex justify-content-center align-items-center"><span class="icon-paper-plane"></span></div>
-                        <span class="text">{{ school.email1 }}</span>
+                        <span class="text">{{ entity.schoolData.email1 }}</span>
                     </div>
                     <div class="col-md pr-4 d-flex topper align-items-center">
                         <div class="icon bg-tertiary mr-2 d-flex justify-content-center align-items-center"><span class="icon-phone2"></span></div>
-                        <span class="text">{{ school.phone1 }}</span>
+                        <span class="text">{{ entity.schoolData.phone1 }}</span>
                     </div>
                 </div>
             </div>
@@ -63,15 +73,14 @@
         </button>
         <div class="collapse navbar-collapse" id="ftco-nav">
             <ul class="navbar-nav ml-auto">
-
-                {% for navItem in navMenu %}
+                {% for navItem in navMenu|sort((a, b) => a.position <=> b.position) %}
                     {% if navItem.subMenus is empty %}
                         <li class="nav-item {% if current_menu.name == navItem.name %}active{% endif %}"><a href="{{ navItem.route }}" class="nav-link">{{ navItem.name }}</a></li>
                     {% else %}
                         <li class="nav-item dropdown {% if current_menu.name == navItem.name %}active{% endif %}">
                             <a class="nav-link dropdown-toggle" href="#" id="{{ navItem.id }}" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{ navItem.name }}</a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            {% for subMenu in navItem.subMenus %}
+                            {% for subMenu in navItem.subMenus|sort((a, b) => a.position <=> b.position) %}
                                     <a class="dropdown-item" href="{{ subMenu.route }}" {% if subMenu.externalLink %}target="_blank"{% endif %} >{{ subMenu.name }}</a>
                             {% endfor %}
                             </div>
@@ -97,8 +106,8 @@
                     <h2 class="ftco-heading-2">Contact</h2>
                     <div class="block-23 mb-3">
                         <ul>
-                            <li><span class="icon icon-map-marker"></span><span class="text">{{ school.street }} {{ school.streetnum }} <br>{{ school.postalCode }} {{ school.city }}</span></li>
-                            <li><span class="icon icon-phone"></span><span class="text">+32 {{  school.phone1 }}</span></a></li>
+                            <li><span class="icon icon-map-marker"></span><span class="text">{{ entity.schoolData.street }} {{ entity.schoolData.streetnum }} <br>{{ entity.schoolData.postalCode }} {{ entity.schoolData.city }}</span></li>
+                            <li><span class="icon icon-phone"></span><span class="text">+32 {{  entity.schoolData.phone1 }}</span></a></li>
                             <li><span class="icon icon-envelope"></span><span class="text">direction@biereau.be</span></a></li>
 
                         </ul>
@@ -193,6 +202,26 @@
             });
         });
     </script>
+    <script src="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.js" data-cfasync="false"></script>
+<script>
+window.cookieconsent.initialise({
+  "palette": {
+    "popup": {
+      "background": "#252e39"
+    },
+    "button": {
+      "background": "#14a7d0"
+    }
+  },
+  "position": "top",
+  "static": true,
+  "content": {
+    "message": "Ce site web utilise des cookies pour améliorer l'expérience utilisateur. Ceux-ci nous permettent de mieux comprendre comment le site est utilisé. En continuant sur ce site, vous acceptez cette politique",
+    "dismiss": "J'ai compris!",
+    "link": "En savoir plus"
+  }
+});
+</script>
 {% endblock %}
 
 </body>

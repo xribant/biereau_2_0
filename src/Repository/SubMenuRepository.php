@@ -19,6 +19,15 @@ class SubMenuRepository extends ServiceEntityRepository
         parent::__construct($registry, SubMenu::class);
     }
 
+    public function findAllOrderedByNavMenu(){
+        return $this->createQueryBuilder('p')
+            ->leftJoin('p.parentMenu','c')
+            ->orderBy('c.position', 'asc')
+            ->addOrderBy('p.position', 'asc')
+            ->getQuery()
+            ->getResult();
+    }
+
     // /**
     //  * @return SubMenu[] Returns an array of SubMenu objects
     //  */

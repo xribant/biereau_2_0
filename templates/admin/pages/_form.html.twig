@@ -18,13 +18,6 @@
     <div class="row mt-3">
         <div class="col-md-8">
             <div class="form-group form-group-default">
-                {{ form_row(form.bannerImageFile) }}
-            </div>
-        </div>
-    </div>
-    <div class="row mt-3">
-        <div class="col-md-8">
-            <div class="form-group form-group-default">
                 {{ form_row(form.parentNavMenu) }}
             </div>
         </div>
@@ -32,7 +25,9 @@
     <div class="row mt-3">
         <div class="col-md-8">
             <div class="form-group form-group-default">
-                {{ form_row(form.parentSubMenu) }}
+                {% if form.parentSubMenu is defined %}
+                    {{ form_row(form.parentSubMenu) }}
+                {% endif %}
             </div>
         </div>
     </div>
@@ -41,6 +36,16 @@
             <div class="form-group form-group-default">
                 {{ form_row(form.bannerImageFile) }}
             </div>
+        </div>
+    </div>
+    <div class="row mt-3">
+        <div class="col-md-8">
+            {% if page.filename is not null %}
+                <div class="form-group">
+                    <span class="form-check-label">Supprimer l'image courante : </span>
+                    <input type="checkbox" id="basic_page_form_bannerImageFile_delete" name="basic_page_form[bannerImageFile][delete]" class="ml-1 form-check-input" value="1" />
+                </div>
+            {% endif %}
         </div>
     </div>
 

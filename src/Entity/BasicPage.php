@@ -35,12 +35,7 @@ class BasicPage
     private $title;
 
     /**
-     * @ORM\OneToOne(targetEntity=NavMenu::class, inversedBy="basicPage", cascade={"persist", "remove"})
-     */
-    private $parentNavMenu;
-
-    /**
-     * @ORM\OneToOne(targetEntity=SubMenu::class, inversedBy="basicPage", cascade={"persist", "remove"})
+     * @ORM\OneToOne(targetEntity=SubMenu::class, inversedBy="basicPage")
      */
     private $parentSubMenu;
 
@@ -56,7 +51,7 @@ class BasicPage
 
     /**
      * @var string|null
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $filename;
 
@@ -68,6 +63,21 @@ class BasicPage
      * @Vich\UploadableField(mapping="basic_page_banner_image", fileNameProperty="filename")
      */
     private $bannerImageFile;
+
+    /**
+     * @ORM\OneToOne(targetEntity=Pageintro::class, mappedBy="parentPage")
+     */
+    private $pageintro;
+
+    /**
+     * @ORM\ManyToOne(targetEntity=NavMenu::class, inversedBy="basicPages")
+     */
+    private $parentNavMenu;
+
+    /**
+     * @ORM\Column(type="datetime", nullable=true)
+     */
+    private $updated_at;
 
     public function __construct()
     {
@@ -100,18 +110,6 @@ class BasicPage
     public function setTitle(string $title): self
     {
         $this->title = $title;
-
-        return $this;
-    }
-
-    public function getParentNavMenu(): ?NavMenu
-    {
-        return $this->parentNavMenu;
-    }
-
-    public function setParentNavMenu(?NavMenu $parentNavMenu): self
-    {
-        $this->parentNavMenu = $parentNavMenu;
 
         return $this;
     }
@@ -208,6 +206,48 @@ class BasicPage
         if ($this->bannerImageFile instanceof UploadedFile) {
             $this->updated_at = new \DateTime('now');
         }
+        return $this;
+    }
+
+    public function getPageintro(): ?Pageintro
+    {
+        return $this->pageintro;
+    }
+
+    public function setPageintro(?Pageintro $pageintro): self
+    {
+        $this->pageintro = $pageintro;
+
+        // set (or unset) the owning side of the relation if necessary
+        $newParentPage = null === $pageintro ? null : $this;
+        if ($pageintro->getParentPage() !== $newParentPage) {
+            $pageintro->setParentPage($newParentPage);
+        }
+
+        return $this;
+    }
+
+    public function getParentNavMenu(): ?NavMenu
+    {
+        return $this->parentNavMenu;
+    }
+
+    public function setParentNavMenu(?NavMenu $parentNavMenu): self
+    {
+        $this->parentNavMenu = $parentNavMenu;
+
+        return $this;
+    }
+
+    public function getUpdatedAt(): ?\DateTimeInterface
+    {
+        return $this->updated_at;
+    }
+
+    public function setUpdatedAt(\DateTimeInterface $updated_at): self
+    {
+        $this->updated_at = $updated_at;
+
         return $this;
     }
 }

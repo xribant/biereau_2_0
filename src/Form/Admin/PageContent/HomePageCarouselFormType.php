@@ -8,6 +8,7 @@ use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Vich\UploaderBundle\Form\Type\VichImageType;
 
 class HomePageCarouselFormType extends AbstractType
 {
@@ -22,9 +23,13 @@ class HomePageCarouselFormType extends AbstractType
                 'label' => 'Lien vers contenu existant',
                 'required' => false,
             ])
-            ->add('backgroundImageFile', FileType::class, [
-                'label' => 'Image de fond',
-                'required' => true,
+            ->add('backgroundImageFile', VichImageType::class, [
+                'label' => 'Nouvelle image',
+                'delete_label' => false,
+                'download_uri' => false,
+                'download_link' => false,
+                'required' => false,
+                'imagine_pattern' => 'article_creation_preview',
             ])
         ;
     }

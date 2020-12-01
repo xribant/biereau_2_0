@@ -19,6 +19,20 @@ class BasicPageRepository extends ServiceEntityRepository
         parent::__construct($registry, BasicPage::class);
     }
 
+    /**
+     * @return BasicPage
+     */
+    public function findFirst()
+    {
+        return $this->createQueryBuilder('b')
+        ->orderBy('b.id', 'ASC')
+            ->setFirstResult(0)
+            ->setMaxResults(1)
+            ->getQuery()
+            ->getResult()
+    ;
+    }
+
     // /**
     //  * @return BasicPage[] Returns an array of BasicPage objects
     //  */

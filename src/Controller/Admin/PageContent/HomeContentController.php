@@ -45,13 +45,11 @@ class HomeContentController extends AbstractController
      */
     public function index()
     {
-        $current_user = $this->getUser();
         $homeCarouselData = $this->repository->findAll();
         $schoolValues = $this->schoolValueRepository->findAll();
 
         return $this->render('admin/content/home_carousel/index.html.twig', [
             'current_menu' => 'contenu',
-            'current_user' => $current_user,
             'home_carousel_data' => $homeCarouselData,
             'school_values' => $schoolValues,
         ]);
@@ -63,7 +61,6 @@ class HomeContentController extends AbstractController
      */
     public function new(Request $request)
     {
-        $current_user = $this->getUser();
         $carousel = new SiteHomePageCarousel();
 
         $form = $this->createForm(HomePageCarouselFormType::class, $carousel);
@@ -81,7 +78,6 @@ class HomeContentController extends AbstractController
 
         return $this->render('admin/content/home_carousel/new.html.twig', [
             'current_menu' => 'contenu',
-            'current_user' => $current_user,
             'form' => $form->createView(),
         ]);
     }
@@ -93,7 +89,6 @@ class HomeContentController extends AbstractController
      */
     public function edit(SiteHomePageCarousel $carousel, Request $request)
     {
-        $currentUser = $this->getUser();
         $form = $this->createForm(HomePageCarouselFormType::class, $carousel);
         $form->handleRequest($request);
 
@@ -107,7 +102,6 @@ class HomeContentController extends AbstractController
             'carousel' => $carousel,
             'current_menu' => 'contenu',
             'form' => $form->createView(),
-            'current_user' => $currentUser,
         ]);
     }
 

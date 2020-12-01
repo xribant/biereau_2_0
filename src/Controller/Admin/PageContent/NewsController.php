@@ -37,12 +37,10 @@ class NewsController extends AbstractController
      */
     public function index()
     {
-        $current_user = $this->getUser();
         $news = $this->repository->findAll();
 
         return $this->render('admin/content/news/index.html.twig', [
             'current_menu' => 'contenu',
-            'current_user' => $current_user,
             'news' => $news,
         ]);
     }
@@ -53,7 +51,6 @@ class NewsController extends AbstractController
      */
     public function new(Request $request)
     {
-        $current_user = $this->getUser();
         $news = new News();
 
         $form = $this->createForm(NewsFormType::class, $news);
@@ -72,7 +69,6 @@ class NewsController extends AbstractController
 
         return $this->render('admin/content/news/new.html.twig', [
             'current_menu' => 'contenu',
-            'current_user' => $current_user,
             'form' => $form->createView(),
         ]);
     }
@@ -84,7 +80,6 @@ class NewsController extends AbstractController
      */
     public function edit(News $news, Request $request)
     {
-        $currentUser = $this->getUser();
         $form = $this->createForm(NewsFormType::class, $news);
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
@@ -97,7 +92,6 @@ class NewsController extends AbstractController
             'news' => $news,
             'current_menu' => 'contenu',
             'form' => $form->createView(),
-            'current_user' => $currentUser,
         ]);
     }
 

@@ -19,6 +19,7 @@ class NavMenuRepository extends ServiceEntityRepository
         parent::__construct($registry, NavMenu::class);
     }
 
+
     // /**
     //  * @return NavMenu[] Returns an array of NavMenu objects
     //  */

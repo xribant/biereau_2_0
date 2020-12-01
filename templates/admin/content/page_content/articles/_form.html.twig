@@ -1,0 +1,61 @@
+{{ form_start(form) }}
+
+<div class="card-body">
+    <div class="row mt-3">
+        <div class="col-md-8">
+            {{ form_row(form.name) }}
+        </div>
+    </div>
+    <div class="row mt-3">
+        <div class="col-md-8">
+            <div class="form-group">
+                {{ form_row(form.title) }}
+            </div>
+        </div>
+    </div>
+    <div class="row mt-3">
+        <div class="col-md-8">
+            <div class="form-group">
+                {{ form_row(form.subTitle) }}
+            </div>
+        </div>
+    </div>
+    <div class="row mt-3">
+        <div class="col-md-8">
+            <div class="form-group">
+                {{ form_row(form.text) }}
+            </div>
+        </div>
+    </div>
+    <div class="row mt-3">
+        <div class="col-md-8">
+            <div class="form-group">
+                {{ form_row(form.parentPage) }}
+            </div>
+        </div>
+    </div>
+    <div class="row mt-3">
+        <div class="col-md-8">
+            <div class="form-group">
+                {{ form_row(form.imageFile) }}
+            </div>
+        </div>
+    </div>
+    <div class="row mt-3">
+        <div class="col-md-8">
+            {% if article.filename is not null %}
+                <div class="form-group">
+                    <span class="form-check-label">Supprimer l'image courante : </span>
+                    <input type="checkbox" id="article_form_imageFile_delete" name="article_form[imageFile][delete]" class="ml-1 form-check-input" value="1" />
+                </div>
+            {% endif %}
+        </div>
+    </div>
+
+    <div class="text-right mt-3 mb-3">
+        <a href="{{ path('admin.content.basic_page.edit', { id: pageid }) }}" class="btn btn-danger">Annuler</a>
+        <button class="btn btn-success">{{ button|default('Enregistrer') }}</button>
+    </div>
+</div>
+
+{{ form_end(form) }}

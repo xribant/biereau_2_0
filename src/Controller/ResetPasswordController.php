@@ -160,8 +160,8 @@ class ResetPasswordController extends AbstractController
 
         $message = (new \Swift_Message('Collège du Biereau - Reset de mot de passe'))
             -> setFrom('noreply@biereau.be')
-            -> setTo('xribant@gmail.com')
-            -> setReplyTo('xribant@gmail.com')
+            -> setTo($user->getEmail())
+            -> setReplyTo($user->getEmail())
             -> setBody($this->renderer->render('emails/contact_reset_password.html.twig', [
                 'resetToken' => $resetToken,
                 'tokenLifetime' => $this->resetPasswordHelper->getTokenLifetime(),

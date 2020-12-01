@@ -6,16 +6,43 @@ vich_uploader:
             uri_prefix: /images/content/home_page
             upload_destination: '%kernel.project_dir%/public/images/content/home_page'
             namer: Vich\UploaderBundle\Naming\UniqidNamer
+            delete_on_update: true
+            delete_on_remove: true
 
         basic_page_banner_image:
             uri_prefix: /images/content/basic_page
             upload_destination: '%kernel.project_dir%/public/images/content/basic_page'
             namer: Vich\UploaderBundle\Naming\UniqidNamer
+            delete_on_update: true
+            delete_on_remove: true
 
         article_image:
             uri_prefix: /images/content/article
             upload_destination: '%kernel.project_dir%/public/images/content/article'
             namer: Vich\UploaderBundle\Naming\UniqidNamer
+            delete_on_update: true
+            delete_on_remove: true
+
+        intro_image:
+            uri_prefix: /images/content/intro
+            upload_destination: '%kernel.project_dir%/public/images/content/intro'
+            namer: Vich\UploaderBundle\Naming\UniqidNamer
+            delete_on_update: true
+            delete_on_remove: true
+
+        sub_article_image:
+            uri_prefix: /images/content/sub_article
+            upload_destination: '%kernel.project_dir%/public/images/content/sub_article'
+            namer: Vich\UploaderBundle\Naming\UniqidNamer
+            delete_on_update: true
+            delete_on_remove: true
+
+        member_image:
+            uri_prefix: /images/school/staff
+            upload_destination: '%kernel.project_dir%/public/images/school/staff'
+            namer: Vich\UploaderBundle\Naming\UniqidNamer
+            delete_on_update: true
+            delete_on_remove: true
 
     #mappings:
     #    products:

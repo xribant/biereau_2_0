@@ -40,6 +40,10 @@ class SubMenuType extends AbstractType
                 'multiple' => false,
                 'choice_label' => 'name',
             ])
+            ->add('position', TextType::class, [
+                'label' => 'Position',
+                'required' => true,
+            ])
         ;
     }
 

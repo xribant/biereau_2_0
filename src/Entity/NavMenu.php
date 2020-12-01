@@ -35,18 +35,24 @@ class NavMenu
     private $externalLink;
 
     /**
-     * @ORM\OneToMany(targetEntity=SubMenu::class, mappedBy="parentNavMenu")
+     * @ORM\OneToMany(targetEntity=SubMenu::class, mappedBy="parentMenu")
      */
     private $subMenus;
 
     /**
-     * @ORM\OneToOne(targetEntity=BasicPage::class, mappedBy="parentNavMenu", cascade={"persist", "remove"})
+     * @ORM\OneToMany(targetEntity=BasicPage::class, mappedBy="parentNavMenu")
      */
-    private $basicPage;
+    private $basicPages;
+
+    /**
+     * @ORM\Column(type="integer", unique=true)
+     */
+    private $position;
 
     public function __construct()
     {
         $this->subMenus = new ArrayCollection();
+        $this->basicPages = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -120,20 +126,44 @@ class NavMenu
         return $this;
     }
 
-    public function getBasicPage(): ?BasicPage
+    /**
+     * @return Collection|BasicPage[]
+     */
+    public function getBasicPages(): Collection
     {
-        return $this->basicPage;
+        return $this->basicPages;
     }
 
-    public function setBasicPage(?BasicPage $basicPage): self
+    public function addBasicPage(BasicPage $basicPage): self
     {
-        $this->basicPage = $basicPage;
-
-        // set (or unset) the owning side of the relation if necessary
-        $newParentMenu = null === $basicPage ? null : $this;
-        if ($basicPage->getParentMenu() !== $newParentMenu) {
-            $basicPage->setParentMenu($newParentMenu);
+        if (!$this->basicPages->contains($basicPage)) {
+            $this->basicPages[] = $basicPage;
+            $basicPage->setParentNavMenu($this);
         }
+
+        return $this;
+    }
+
+    public function removeBasicPage(BasicPage $basicPage): self
+    {
+        if ($this->basicPages->removeElement($basicPage)) {
+            // set the owning side to null (unless already changed)
+            if ($basicPage->getParentNavMenu() === $this) {
+                $basicPage->setParentNavMenu(null);
+            }
+        }
+
+        return $this;
+    }
+
+    public function getPosition(): ?int
+    {
+        return $this->position;
+    }
+
+    public function setPosition(int $position): self
+    {
+        $this->position = $position;
 
         return $this;
     }
