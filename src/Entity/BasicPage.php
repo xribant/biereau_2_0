@@ -40,7 +40,7 @@ class BasicPage
     private $parentSubMenu;
 
     /**
-     * @ORM\OneToMany(targetEntity=Article::class, mappedBy="parentPage", orphanRemoval=true)
+     * @ORM\OneToMany(targetEntity=Article::class, mappedBy="parentPage")
      */
     private $articles;
 

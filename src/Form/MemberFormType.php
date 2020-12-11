@@ -23,7 +23,7 @@ class MemberFormType extends AbstractType
             ])
             ->add('lastName', TextType::class, [
                 'label' => 'Nom',
-                'required' => true,
+                'required' => false,
             ])
             ->add('gender', ChoiceType::class, [
                 'label' => 'Sexe',

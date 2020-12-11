@@ -29,6 +29,11 @@ class Fonction
      */
     private $members;
 
+    /**
+     * @ORM\ManyToOne(targetEntity=StaffGroup::class, inversedBy="fonctions")
+     */
+    private $staffGroup;
+
     public function __construct()
     {
         $this->members = new ArrayCollection();
@@ -77,6 +82,18 @@ class Fonction
                 $member->setFonction(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getStaffGroup(): ?StaffGroup
+    {
+        return $this->staffGroup;
+    }
+
+    public function setStaffGroup(?StaffGroup $staffGroup): self
+    {
+        $this->staffGroup = $staffGroup;
 
         return $this;
     }

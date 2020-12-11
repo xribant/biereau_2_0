@@ -37,4 +37,4 @@ liip_imagine:
         portrait_thumbs:
             quality: 75
             filters:
-                thumbnail: { size: [ 120, 76 ], mode: outbound }
+                thumbnail: { size: [ 160, 128 ], mode: outbound }

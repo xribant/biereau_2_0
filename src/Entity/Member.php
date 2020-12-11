@@ -28,7 +28,7 @@ class Member
     private $firstName;
 
     /**
-     * @ORM\Column(type="string", length=100)
+     * @ORM\Column(type="string", length=100, nullable=true)
      */
     private $lastName;
 
@@ -75,6 +75,7 @@ class Member
     public function __construct()
     {
         $this->created_at = new \DateTime();
+        $this->updated_at = new \DateTime();
     }
 
     public function getId(): ?int

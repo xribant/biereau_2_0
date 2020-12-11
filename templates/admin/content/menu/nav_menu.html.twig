@@ -32,7 +32,7 @@
                                     </tr>
                                     </thead>
                                     <tbody>
-                                    {% for item in navMenu %}
+                                    {% for item in navMenu|sort((a, b) => a.position <=> b.position) %}
                                         <tr>
                                             <td>{{ item.position }}</td>
                                             <td>{{ item.name }}</td>

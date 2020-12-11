@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "99ba53e51c621e8148af09148f5f43c7",
+    "content-hash": "74766520dc9b9c6c150f8d0693214898",
     "packages": [
         {
             "name": "cocur/slugify",
@@ -254,59 +254,6 @@
                 }
             ],
             "time": "2020-08-25T05:50:16+00:00"
-        },
-        {
-            "name": "connectholland/cookie-consent-bundle",
-            "version": "0.9.6",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/ConnectHolland/cookie-consent-bundle.git",
-                "reference": "e370861c4e0f7db2964e91d214b88f3b98ee9be3"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/ConnectHolland/cookie-consent-bundle/zipball/e370861c4e0f7db2964e91d214b88f3b98ee9be3",
-                "reference": "e370861c4e0f7db2964e91d214b88f3b98ee9be3",
-                "shasum": ""
-            },
-            "require": {
-                "doctrine/annotations": "^1.6",
-                "doctrine/doctrine-bundle": "^1.10 || ^2.0",
-                "doctrine/orm": "^2.5",
-                "php": "^7.2",
-                "symfony/asset": "^3.4 || ^4.2 || ^5.0",
-                "symfony/dependency-injection": "^3.4 || ^4.2 || ^5.0",
-                "symfony/doctrine-bridge": "^3.4 || ^4.2 || ^5.0",
-                "symfony/expression-language": "^3.4 || ^4.2 || ^5.0",
-                "symfony/form": "^3.4 || ^4.2 || ^5.0",
-                "symfony/framework-bundle": "^3.4 || ^4.2 || ^5.0",
-                "symfony/http-foundation": "^3.4 || ^4.2 || ^5.0",
-                "symfony/templating": "^3.4 || ^4.2 || ^5.0",
-                "symfony/translation": "^3.4 || ^4.2 || ^5.0",
-                "symfony/twig-bridge": "^3.4 || ^4.2 || ^5.0",
-                "symfony/twig-bundle": "^3.4 || ^4.2 || ^5.0",
-                "twig/twig": "^2.6 || ^3.0"
-            },
-            "require-dev": {
-                "friendsofphp/php-cs-fixer": "^2.14",
-                "phpunit/phpunit": "^7.5",
-                "symfony/yaml": "^3.4 || ^4.2 || ^5.0"
-            },
-            "type": "symfony-bundle",
-            "autoload": {
-                "exclude-from-classmap": [
-                    "/Tests/"
-                ],
-                "psr-4": {
-                    "ConnectHolland\\CookieConsentBundle\\": ""
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "description": "Symfony bundle for implementing Cookie Consent to comply to AVG/GDPR.",
-            "time": "2020-11-18T15:32:20+00:00"
         },
         {
             "name": "doctrine/annotations",
@@ -8014,6 +7961,64 @@
             "time": "2020-04-18T00:37:02+00:00"
         },
         {
+            "name": "tattali/calendar-bundle",
+            "version": "v1.2.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/tattali/CalendarBundle.git",
+                "reference": "5ca748bc646967f3de154bb241b517fddb339977"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/tattali/CalendarBundle/zipball/5ca748bc646967f3de154bb241b517fddb339977",
+                "reference": "5ca748bc646967f3de154bb241b517fddb339977",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.1",
+                "symfony/dependency-injection": "^3.4 || ^4.4 || ^5.0",
+                "symfony/event-dispatcher": "^3.4 || ^4.4 || ^5.0",
+                "symfony/framework-bundle": "^3.4 || ^4.4 || ^5.0"
+            },
+            "require-dev": {
+                "phpspec/prophecy": "^1.8",
+                "phpunit/phpunit": "^7.5",
+                "symfony/dotenv": "^4.4",
+                "symfony/phpunit-bridge": "^4.4",
+                "symfony/yaml": "^4.4"
+            },
+            "suggest": {
+                "doctrine/mongodb-odm-bundle": "To support MongoDB.",
+                "symfony/orm-pack": "To support Doctrine ORM and Migration."
+            },
+            "type": "symfony-bundle",
+            "autoload": {
+                "psr-4": {
+                    "CalendarBundle\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Théo Attali",
+                    "email": "theoattali@gmail.com",
+                    "homepage": "https://theoattali.fr"
+                }
+            ],
+            "description": "Provides event calendar for your Symfony 4/5 project. Compatible with Doctrine ORM & ODM, and API like Google Calendar.",
+            "homepage": "https://github.com/tattali/CalendarBundle",
+            "keywords": [
+                "calendar",
+                "fullcalendar",
+                "symfony",
+                "symfony calendar"
+            ],
+            "time": "2020-07-05T18:42:35+00:00"
+        },
+        {
             "name": "twig/extra-bundle",
             "version": "v3.1.1",
             "source": {
@@ -8367,6 +8372,59 @@
         }
     ],
     "packages-dev": [
+        {
+            "name": "connectholland/cookie-consent-bundle",
+            "version": "0.9.6",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ConnectHolland/cookie-consent-bundle.git",
+                "reference": "e370861c4e0f7db2964e91d214b88f3b98ee9be3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/ConnectHolland/cookie-consent-bundle/zipball/e370861c4e0f7db2964e91d214b88f3b98ee9be3",
+                "reference": "e370861c4e0f7db2964e91d214b88f3b98ee9be3",
+                "shasum": ""
+            },
+            "require": {
+                "doctrine/annotations": "^1.6",
+                "doctrine/doctrine-bundle": "^1.10 || ^2.0",
+                "doctrine/orm": "^2.5",
+                "php": "^7.2",
+                "symfony/asset": "^3.4 || ^4.2 || ^5.0",
+                "symfony/dependency-injection": "^3.4 || ^4.2 || ^5.0",
+                "symfony/doctrine-bridge": "^3.4 || ^4.2 || ^5.0",
+                "symfony/expression-language": "^3.4 || ^4.2 || ^5.0",
+                "symfony/form": "^3.4 || ^4.2 || ^5.0",
+                "symfony/framework-bundle": "^3.4 || ^4.2 || ^5.0",
+                "symfony/http-foundation": "^3.4 || ^4.2 || ^5.0",
+                "symfony/templating": "^3.4 || ^4.2 || ^5.0",
+                "symfony/translation": "^3.4 || ^4.2 || ^5.0",
+                "symfony/twig-bridge": "^3.4 || ^4.2 || ^5.0",
+                "symfony/twig-bundle": "^3.4 || ^4.2 || ^5.0",
+                "twig/twig": "^2.6 || ^3.0"
+            },
+            "require-dev": {
+                "friendsofphp/php-cs-fixer": "^2.14",
+                "phpunit/phpunit": "^7.5",
+                "symfony/yaml": "^3.4 || ^4.2 || ^5.0"
+            },
+            "type": "symfony-bundle",
+            "autoload": {
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ],
+                "psr-4": {
+                    "ConnectHolland\\CookieConsentBundle\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "Symfony bundle for implementing Cookie Consent to comply to AVG/GDPR.",
+            "time": "2020-11-18T15:32:20+00:00"
+        },
         {
             "name": "doctrine/data-fixtures",
             "version": "1.4.4",

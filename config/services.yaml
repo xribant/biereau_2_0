@@ -5,6 +5,9 @@
 # https://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
 parameters:
     locale: 'fr'
+    maintenance:
+        statut: false
+        ipAuthorized: ['192.168.1.101']
 
 services:
     # default configuration for services in *this* file
@@ -34,3 +37,8 @@ services:
     App\Listener\ImageCacheSubscriber:
         tags:
         - { name: doctrine.event_subscriber }
+
+    App\Listener\MaintenanceListener:
+        tags:
+            - { name: kernel.event_listener, event: kernel.request }
+        arguments: ['%maintenance%']

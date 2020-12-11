@@ -77,6 +77,9 @@ class ResetPasswordController extends AbstractController
      */
     public function reset(Request $request, UserPasswordEncoderInterface $passwordEncoder, string $token = null): Response
     {
+        $token = "abracadabrea";
+        var_dump($token);
+
         if ($token) {
             // We store the token in session and remove it from the URL, to avoid the URL being
             // loaded in a browser and potentially leaking the token to 3rd party JavaScript.
@@ -124,7 +127,7 @@ class ResetPasswordController extends AbstractController
             return $this->redirectToRoute('admin.dashboard');
         }
 
-        return $this->render('resetpassword/reset.html.twig', [
+        return $this->render('/resetpassword/reset.html.twig', [
             'resetForm' => $form->createView(),
         ]);
     }

@@ -53,7 +53,7 @@
                                                 <td>{{ user.email }}</td>
                                                 <td>
                                                     {% for role in user.roles %}
-                                                        {% if role == 'ROLE_ADMIN' %}Admin, {% else %}Standard {% endif %}
+                                                        {{ role }}
                                                     {% endfor %}
                                                 </td>
                                                 <td>{{ user.createdAt|format_datetime('medium', 'medium',locale='fr') }}</td>

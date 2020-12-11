@@ -34,11 +34,13 @@
         <link rel="stylesheet" href="{{ asset('css/icomoon.css') }}">
         <link rel="stylesheet" href="{{ asset('css/style.css') }}">
         <link rel="stylesheet" href="{{ asset('css/bootstrap/bootstrap-datepicker.min.css') }}">
+        <link rel="stylesheet" href="{{ asset('css/overlay.css') }}">
         <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.css" />
     {%  endblock %}
 </head>
 <body>
 {%  block body %}
+
 <div class="py-2 bg-primary">
     <div class="container">
         <div class="row no-gutters d-flex align-items-start align-items-center px-3 px-md-0">
@@ -204,6 +206,7 @@
     </script>
     <script src="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.js" data-cfasync="false"></script>
 <script>
+
 window.cookieconsent.initialise({
   "palette": {
     "popup": {

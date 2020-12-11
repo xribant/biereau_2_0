@@ -3,6 +3,8 @@
 namespace App\Form;
 
 use App\Entity\Fonction;
+use App\Entity\StaffGroup;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
@@ -16,6 +18,14 @@ class FonctionFormType extends AbstractType
             ->add('name', TextType::class, [
                 'label' => 'Fonction',
                 'required' => true,
+            ])
+            ->add('staffGroup', EntityType::class, [
+                'class' => StaffGroup::class,
+                'label' => 'Groupe',
+                'required' => true,
+                'choice_label' => 'name',
+                'multiple' => false,
+                'expanded' => false,
             ])
         ;
     }

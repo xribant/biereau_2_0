@@ -43,7 +43,7 @@
     </div>
     <div class="row mt-3">
         <div class="col-md-8">
-            {% if article.filename is not null %}
+            {% if article.filename is defined %}
                 <div class="form-group">
                     <span class="form-check-label">Supprimer l'image courante : </span>
                     <input type="checkbox" id="article_form_imageFile_delete" name="article_form[imageFile][delete]" class="ml-1 form-check-input" value="1" />

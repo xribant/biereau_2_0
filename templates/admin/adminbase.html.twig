@@ -22,7 +22,7 @@
 
         <!-- CSS Files -->
         <link rel="stylesheet" href="{{ asset('admin/assets/css/bootstrap.min.css') }}">
-        <link rel="stylesheet" href="{{ asset('admin/assets/css/azzara.min.css') }}">
+        <link rel="stylesheet" href="{{ asset('admin/assets/css/azzara.css') }}">
     {% endblock %}
 </head>
 <body>
@@ -174,6 +174,11 @@
                                             <span class="sub-item">Fonctions</span>
                                         </a>
                                     </li>
+                                    <li>
+                                        <a href={{ path('admin.ecole.staff.group') }}>
+                                            <span class="sub-item">Groupes</span>
+                                        </a>
+                                    </li>
                                 </ul>
                             </div>
                         </li>
@@ -231,50 +236,52 @@
                             </div>
                         </li>
 
+                        {% if is_granted('ROLE_SUPER_ADMIN') %}
 
-                        <li class="nav-section">
-							<span class="sidebar-mini-icon">
-								<i class="fa fa-ellipsis-h"></i>
-							</span>
-                            <h4 class="text-section">Super Admin</h4>
-                        </li>
-                        <li class="nav-item" {% if current_menu == 'menus' %}active{% endif %}>
-                            <a data-toggle="collapse" href="#menus">
-                                <i class="fas fa-bars"></i>
-                                <p>Menus</p>
-                                <span class="caret"></span>
-                            </a>
-                            <div class="collapse {% if current_menu == 'menus' %}show{% endif %}" id="menus">
-                                <ul class="nav nav-collapse">
-                                    <li>
-                                        <a href="{{ path('admin.content.nav_menu') }}">
-                                            <span class="sub-item">Menu de Navigation</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href={{ path('admin.content.sub_menu') }}>
-                                            <span class="sub-item">Sous-Menus</span>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </li>
-                        <li class="nav-item" {% if current_menu == 'Pages' %}active{% endif %}>
-                            <a data-toggle="collapse" href="#pages">
-                                <i class="fas fa-file-alt"></i>
-                                <p>Pages</p>
-                                <span class="caret"></span>
-                            </a>
-                            <div class="collapse {% if current_menu == 'Pages' %}show{% endif %}" id="pages">
-                                <ul class="nav nav-collapse">
-                                    <li>
-                                        <a href="{{ path('admin.pages.index') }}">
-                                            <span class="sub-item">Pages basiques</span>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </li>
+                            <li class="nav-section">
+                                <span class="sidebar-mini-icon">
+                                    <i class="fa fa-ellipsis-h"></i>
+                                </span>
+                                <h4 class="text-section">Super Admin</h4>
+                            </li>
+                            <li class="nav-item" {% if current_menu == 'menus' %}active{% endif %}>
+                                <a data-toggle="collapse" href="#menus">
+                                    <i class="fas fa-bars"></i>
+                                    <p>Menus</p>
+                                    <span class="caret"></span>
+                                </a>
+                                <div class="collapse {% if current_menu == 'menus' %}show{% endif %}" id="menus">
+                                    <ul class="nav nav-collapse">
+                                        <li>
+                                            <a href="{{ path('admin.content.nav_menu') }}">
+                                                <span class="sub-item">Menu de Navigation</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href={{ path('admin.content.sub_menu') }}>
+                                                <span class="sub-item">Sous-Menus</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="nav-item" {% if current_menu == 'Pages' %}active{% endif %}>
+                                <a data-toggle="collapse" href="#pages">
+                                    <i class="fas fa-file-alt"></i>
+                                    <p>Pages</p>
+                                    <span class="caret"></span>
+                                </a>
+                                <div class="collapse {% if current_menu == 'Pages' %}show{% endif %}" id="pages">
+                                    <ul class="nav nav-collapse">
+                                        <li>
+                                            <a href="{{ path('admin.pages.index') }}">
+                                                <span class="sub-item">Pages basiques</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                        {% endif %}
 
                     </ul>
                 </div>

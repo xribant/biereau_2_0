@@ -22,6 +22,8 @@ security:
                 path: /logout
                 target: login
 
+            entry_point: App\Security\AuthenticationEntryPoint
+
             # activate different ways to authenticate
             # https://symfony.com/doc/current/security.html#firewalls-authentication
 
@@ -32,7 +34,7 @@ security:
     # Note: Only the *first* access control that matches will be used
     access_control:
         - { path: ^/login, roles: IS_AUTHENTICATED_ANONYMOUSLY }
-        - { path: ^/admin, roles: ROLE_ADMIN }
+        - { path: ^/admin, roles: [ROLE_ADMIN, ROLE_SUPER_ADMIN] }
         # - { path: ^/profile, roles: ROLE_USER }
 
     encoders:

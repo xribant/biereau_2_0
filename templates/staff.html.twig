@@ -1,0 +1,54 @@
+{%  extends "base.html.twig" %}
+
+{% block title %}Equipe éducative{% endblock %}
+
+{% block content %}
+    <section class="hero-wrap hero-wrap-2" style="background-image: url('images/equipe_20_21_2.jpg');">
+        <div class="overlay"></div>
+        <div class="container">
+            <div class="row no-gutters slider-text align-items-center justify-content-center">
+                <div class="col-md-9 ftco-animate text-center">
+                    <h1 class="mb-2 bread">Notre Equipe</h1>
+                    <p class="breadcrumbs">
+                        <span class="mr-2"><a href="{{ path('home.index') }}">Accueil <i class="ion-ios-arrow-forward"></i></a></span>
+                        <span>Equipe éducative <i class="ion-ios-arrow-forward"></i></span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="ftco-section ftco-no-pb">
+
+        <div class="container">
+            {% for groupe in groupes %}
+                <h2 class="mb-4" style="color: #34aaf1;">{{ groupe.name }}</h2>
+                <div class="row">
+                {% for fonction in groupe.fonctions %}
+                    {% for member in fonction.members %}
+                        <div class="col-md-6 col-lg-3 ftco-animate">
+                            <div class="staff">
+                                <div class="img-wrap d-flex align-items-stretch">
+                                    {% if member.fileName %}
+                                        <div class="img align-self-stretch" style="background-image: url({{ vich_uploader_asset(member, 'imageFile') }});"></div>
+                                    {% else %}
+                                        <div class="img align-self-stretch" style="background-image: url({{ asset('/images/school/staff/no_photo.jpg') }});"></div>
+                                    {% endif %}
+                                </div>
+                                <div class="text pt-3 text-center">
+                                    <h3>{{  member.firstName }} {{ member.lastName }}</h3>
+                                    <div class="faded">
+                                        <ul class="ftco-social text-center">
+                                            <li class="ftco-animate"><a href="#">{{  member.fonction.name }}</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                {% endfor %}
+                </div>
+            {% endfor %}
+
+    </section>
+{% endblock %}

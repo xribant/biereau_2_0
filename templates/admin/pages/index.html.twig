@@ -36,7 +36,11 @@
                                             <td>{{ item.name }}</td>
                                             <td>{{ item.title }}</td>
                                             <td>{{ item.parentNavMenu.name }}</td>
-                                            <td>{{ item.parentSubMenu.name }}</td>
+                                            <td>
+                                                {%  if item.parentSubMenu %}
+                                                    {{ item.parentSubMenu.name }}
+                                                {% endif %}
+                                            </td>
                                             <td>
                                                 {% if item.filename %}
                                                     <img src="{{ vich_uploader_asset(item, 'bannerImageFile') | imagine_filter('mini_thumbs') }}">

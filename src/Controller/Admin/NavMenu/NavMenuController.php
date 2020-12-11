@@ -13,10 +13,17 @@ use App\Repository\NavMenuRepository;
 use App\Repository\SubMenuRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Doctrine\Persistence\ObjectManager;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+
+ /**
+  * Require ROLE_SUPER_ADMIN for *every* controller method in this class.
+  *
+  * @IsGranted("ROLE_SUPER_ADMIN")
+  */
 
 class NavMenuController extends AbstractController
 {
