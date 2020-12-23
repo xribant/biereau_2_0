@@ -42,3 +42,5 @@ services:
         tags:
             - { name: kernel.event_listener, event: kernel.request }
         arguments: ['%maintenance%']
+
+    App\EventSubscriber\CalendarSubscriber:

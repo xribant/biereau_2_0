@@ -1,0 +1,71 @@
+{% extends 'admin/adminbase.html.twig' %}
+
+{% block title %}Admin | Biereau.be - Agenda{% endblock %}
+
+{% block content %}
+
+    <div class="main-panel">
+        <div class="content">
+            <div class="page-inner">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <div class="card-title">Gestion des évènements de l'agenda</div>
+                            </div>
+                            <div class="card-body">
+                                {% for message in app.flashes('success') %}
+                                    <div class="alert alert-success">
+                                        {{ message|raw }}
+                                    </div>
+                                {% endfor %}
+                                <table class="table table-striped mt-3">
+                                    <thead>
+                                    <tr>
+                                        <th>Début</th>
+                                        <th>Fin</th>
+                                        <th>Titre</th>
+                                        <th>Localisation</th>
+                                        <th>Clickable</th>
+                                        <th style="width: 20%"></th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    {% for event in agendas %}
+                                        <tr>
+                                            <td>{{ event.beginAt|format_datetime('medium', 'medium',locale='fr') }}</td>
+                                            <td>{{ event.endAt|format_datetime('medium', 'medium',locale='fr') }}</td>
+                                            <td>{{ event.title }}</td>
+                                            <td>{{ event.location }}</td>
+                                            <td>{% if event.click == 1  %}
+                                                    Oui
+                                                {% else %}
+                                                    Non
+                                                {% endif %}
+                                            </td>
+                                            <td>
+                                                <a href="{{ path('admin.agenda.edit', {id: event.id}) }}" class="btn btn-sm btn-warning"><i class="far fa-edit"></i></a>
+                                                <form method="post" action="{{ path('admin.agenda.delete', {id: event.id}) }}" style="display: inline-block" onsubmit="return confirm('Etes-vous certain?')">
+                                                    <input type="hidden" name="_method" value="DELETE">
+                                                    <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ event.id) }}">
+                                                    <button class="btn btn-sm btn-danger"><i class="far fa-trash-alt"></i></button>
+                                                </form>
+                                            </td>
+                                        </tr>
+                                    {% endfor %}
+                                    </tbody>
+                                </table>
+                                <div class="text-left mt-3 mb-3">
+                                    <a href="{{  path('admin.agenda.new') }}" class="btn btn-primary">Créer un évènement</a>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

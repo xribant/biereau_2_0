@@ -4,6 +4,7 @@ namespace App\Form;
 
 use App\Entity\Article;
 use App\Entity\BasicPage;
+use FOS\CKEditorBundle\Form\Type\CKEditorType;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
@@ -36,13 +37,11 @@ class ArticleFormType extends AbstractType
                     'class' => 'form-control',
                 ],
             ])
-            ->add('text', TextareaType::class, [
+            ->add('text',CKEditorType::class, [
                 'label' => 'Contenu',
                 'required' => true,
-                'attr' => [
-                    'rows' => 10,
-                    'cols' => 40,
-                    'class' => 'form-control',
+                'config' => [
+                    'toolbar' => 'basic',
                 ]
             ])
             ->add('imageFile', VichImageType::class, [

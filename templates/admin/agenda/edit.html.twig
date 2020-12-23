@@ -12,10 +12,9 @@
 
                         <div class="card">
                             <div class="card-header">
-                                <div class="card-title">Ajouter une news</div>
+                                <div class="card-title">Editer un évènement</div>
                             </div>
-
-                            {{ include ('admin/content/news/_form.html.twig', {form: form, button: 'Ajouter'}) }}
+                            {{ include('admin/agenda/_form.html.twig', {form: form, button: 'Modifier'}) }}
 
                         </div>
 
@@ -26,4 +25,3 @@
     </div>
 
 {% endblock %}
-

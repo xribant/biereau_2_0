@@ -7,6 +7,7 @@
     {% block stylesheets %}
         <link rel="shortcut icon" type="image/ico" href="{{ asset('images/logo_biereau.ico') }}"/>
         <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.38.0/css/tempusdominus-bootstrap-4.min.css" crossorigin="anonymous" />
 
         <!-- Fonts and icons -->
         <script src="{{ asset('admin/assets/js/plugin/webfont/webfont.min.js') }}"></script>
@@ -23,6 +24,7 @@
         <!-- CSS Files -->
         <link rel="stylesheet" href="{{ asset('admin/assets/css/bootstrap.min.css') }}">
         <link rel="stylesheet" href="{{ asset('admin/assets/css/azzara.css') }}">
+        <link rel="stylesheet" href="{{ asset('css/bootstrap/bootstrap-datepicker.min.css') }}">
     {% endblock %}
 </head>
 <body>
@@ -232,6 +234,11 @@
                                             <span class="sub-item">News</span>
                                         </a>
                                     </li>
+                                    <li>
+                                        <a href={{ path('admin.agenda.index') }}>
+                                            <span class="sub-item">Agenda</span>
+                                        </a>
+                                    </li>
                                 </ul>
                             </div>
                         </li>
@@ -339,6 +346,18 @@
 
         <!-- Azzara JS -->
         <script src="{{ asset('admin/assets/js/ready.min.js') }}"></script>
+
+        <script src="{{  asset('js/bootstrap-datepicker.min.js') }}"></script>
+        <script src="{{  asset('js/bootstrap-datepicker.fr.min.js') }}"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.38.0/js/tempusdominus-bootstrap-4.min.js" crossorigin="anonymous"></script>
+    <script>
+        jQuery(document).ready(function() {
+            $('.js-datepicker').datepicker({
+                language: "fr",
+                format: 'dd-mm-yyyy',
+            });
+        });
+    </script>
     <script>
 
         $.fn.previewImage = function() {
@@ -363,3 +382,4 @@
 
 </body>
 </html>
+

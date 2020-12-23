@@ -1,0 +1,114 @@
+{%  extends "base.html.twig" %}
+
+{% block title %}Collège du Biéreau - Agenda{% endblock %}
+
+{% block content %}
+    <section class="hero-wrap hero-wrap-2" style="background-image: url('/images/agenda/calendrier.jpg');">
+        <div class="overlay"></div>
+        <div class="container">
+            <div class="row no-gutters slider-text align-items-center justify-content-center">
+                <div class="col-md-9 ftco-animate text-center">
+                    <h1 class="mb-2 bread">Agenda</h1>
+                    <p class="breadcrumbs">
+                        <span class="mr-2"><a href="{{ path('home.index') }}">Accueil <i class="ion-ios-arrow-forward"></i></a></span>
+                        <span>Agenda <i class="ion-ios-arrow-forward"></i></span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="ftco-section">
+        <div class="container">
+            {%  if(event is defined and event.url) %}
+                <div class="ftco-animate text-left bg-light p-4">
+                    <h2 style="color: #34aaf1;">{{ event.title }}</h2>
+                    <p class="breadcrumbs ml-1">
+                        <i class="fas fa-calendar-alt"></i> {{ event.beginAt|format_datetime('full', 'none', locale='fr') }}
+                        {% if(event.location) %}<span class="ml-2"><i class="fas fa-map-marker-alt"></i> {{ event.location }} </span>{% endif %}
+                    </p>
+                    <p class="breadcrumbs mb-5 ml-1">
+                        {{ event.description|raw }}
+                    </p>
+                </div>
+            {% endif %}
+            <div id="calendrier" class="mt-5 p-4">
+
+            </div>
+
+        </div>
+    </section>
+{% endblock %}
+
+{% block javascript %}
+<script src="{{ asset('js/jquery.min.js') }}"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
+    <script src="{{ asset('js/jquery-migrate-3.0.1.min.js') }}"></script>
+    <script src="{{ asset('js/popper.min.js') }}"></script>
+    <script src="{{ asset('js/bootstrap.min.js') }}"></script>
+    <script src="{{ asset('js/jquery.easing.1.3.js') }}"></script>
+    <script src="{{ asset('js/jquery.waypoints.min.js') }}"></script>
+    <script src="{{ asset('js/jquery.stellar.min.js') }}"></script>
+    <script src="{{ asset('js/owl.carousel.min.js') }}"></script>
+    <script src="{{ asset('js/jquery.magnific-popup.min.js') }}"></script>
+    <script src="{{ asset('js/aos.js') }}"></script>
+    <script src="{{ asset('js/jquery.animateNumber.min.js') }}"></script>
+    <script src="{{ asset('js/scrollax.min.js') }}"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
+    <script src="{{ asset('js/google-map.js') }}"></script>
+    <script src="{{ asset('js/main.js') }}"></script>
+    <script src="{{ asset('js/custom.js') }}"></script>
+    <script src="{{  asset('js/bootstrap-datepicker.min.js') }}"></script>
+    <script src="{{  asset('js/bootstrap-datepicker.fr.min.js') }}"></script>
+    <script>
+        jQuery(document).ready(function() {
+            $('.js-datepicker').datepicker({
+                language: "fr",
+                format: 'dd-mm-yyyy',
+            });
+        });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.js" data-cfasync="false"></script>
+    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.4.0/main.min.js" integrity="sha256-oenhI3DRqaPoTMAVBBzQUjOKPEdbdFFtTCNIosGwro0=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.4.0/locales-all.min.js" integrity="sha256-o+Kyw2gfzvG9f4D8cJQ6Ffkt6ZroHCNbjGUHH9qwnxE=" crossorigin="anonymous"></script>
+<script>
+
+window.cookieconsent.initialise({
+  "palette": {
+    "popup": {
+      "background": "#252e39"
+    },
+    "button": {
+      "background": "#14a7d0"
+    }
+  },
+  "position": "top",
+  "static": true,
+  "content": {
+    "message": "Ce site web utilise des cookies pour améliorer l'expérience utilisateur. Ceux-ci nous permettent de mieux comprendre comment le site est utilisé. En continuant sur ce site, vous acceptez cette politique",
+    "dismiss": "J'ai compris!",
+    "link": "En savoir plus"
+  }
+});
+    window.onload = () => {
+    let calendarElt = document.querySelector("#calendrier")
+
+    let calendar = new FullCalendar.Calendar(calendarElt, {
+
+        initialView: 'dayGridMonth',
+        locale: 'fr',
+        timeZone: 'Europe/Brussels',
+        themeSystem: 'bootstrap',
+        events: {{ data|raw }},
+        eventClick: function(info) {
+
+            if (info.event.url) {
+                window.open(info.event.url, "_self");
+            }
+        }
+
+    })
+        calendar.render()
+}
+</script>
+{% endblock %}
