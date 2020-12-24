@@ -49,7 +49,7 @@ class ViewAgendaController extends AbstractController
                     'description' => $event->getDescription(),
                     'location' => $event->getLocation(),
                     'click' => $event->getClick(),
-                    'url' => '/agenda/evenement/'.$event->getId().'-'.$event->getSlug(),
+                    'url' => $event->getUrl(),
                 ];
             } else {
                 $rdvs[] = [
@@ -74,16 +74,16 @@ class ViewAgendaController extends AbstractController
     }
 
     /**
-     * @Route("/evenement/{id}-{slug}", name="agenda.event.show", requirements={"slug": "[a-z0-9\-]*"})
+     * @Route("/evenement/{slug}", name="agenda.event.show", requirements={"slug": "[a-z0-9\-]*"})
      * @return Response
      */
-    public function showEvent($id, string $slug): Response {
+    public function showEvent(string $slug): Response {
 
         $navMenu = $this->navMenuRepository->findBy(array(), ['id' => 'asc'] );
         $currentMenu = $this->navMenuRepository->findOneBy(['name' => 'Agenda']);
 
         $events = $this->agendaRepository->findAll();
-        $clickedEvent = $this->agendaRepository->findOneBy(['id' => $id]);
+        $clickedEvent = $this->agendaRepository->findOneBy(['url' => '/agenda/evenement/'.$slug]);
 
         foreach($events as $event) {
             if($event->getClick()){
@@ -95,7 +95,7 @@ class ViewAgendaController extends AbstractController
                     'description' => $event->getDescription(),
                     'location' => $event->getLocation(),
                     'click' => $event->getClick(),
-                    'url' => '/agenda/evenement/'.$event->getId().'-'.$event->getSlug(),
+                    'url' => $event->getUrl(),
                 ];
             } else {
                 $rdvs[] = [
@@ -112,12 +112,12 @@ class ViewAgendaController extends AbstractController
 
         $data = json_encode($rdvs);
 
-        if ($event->getSlug() !== $slug ) {
+        /* if ($event->getSlug() !== $slug ) {
             return $this->redirectToRoute('agenda.event.show', [
                'id' => $event->getId(),
                'slug' => $event->getSlug(),
             ], 301);
-        }
+        } */
 
         return $this->render('agenda/index.html.twig', [
             'navMenu' => $navMenu,

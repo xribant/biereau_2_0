@@ -38,7 +38,7 @@ class AgendaController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $entityManager = $this->getDoctrine()->getManager();
             if ($agenda->getClick() == true) {
-                $agenda->setUrl('agenda/'.$agenda->getId());
+                $agenda->setUrl('/agenda/evenement/'.$agenda->getSlug());
             }
             $entityManager->persist($agenda);
             $entityManager->flush();
