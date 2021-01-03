@@ -8,6 +8,7 @@ use FOS\CKEditorBundle\Form\Type\CKEditorType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\CallbackTransformer;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
+use Symfony\Component\Form\Extension\Core\Type\ColorType;
 use Symfony\Component\Form\Extension\Core\Type\DateTimeType;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
@@ -52,6 +53,10 @@ class AgendaType extends AbstractType
                     'Oui' => 1,
                     'Non' => 0,
                 ]
+            ])
+            ->add('color',ColorType::class, [
+                'label' => 'Couleur',
+                'required' => false,
             ]);
 
     }

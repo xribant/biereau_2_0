@@ -43,7 +43,13 @@
             </div>
         </div>
     </div>
-
+    <div class="row mt-3">
+        <div class="col-md-2">
+            <div class="form-group form-group-default">
+                {{ form_row(form.color) }}
+            </div>
+        </div>
+    </div>
     <div class="text-right mt-3 mb-3">
         <a href="{{ path('admin.agenda.index') }}" class="btn btn-danger">Annuler</a>
         <button class="btn btn-success">{{ button|default('Enregistrer') }}</button>

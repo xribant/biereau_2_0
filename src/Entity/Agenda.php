@@ -56,6 +56,11 @@ class Agenda
      */
     private $click;
 
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $color;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -146,6 +151,18 @@ class Agenda
     public function setClick(bool $click): self
     {
         $this->click = $click;
+
+        return $this;
+    }
+
+    public function getColor(): ?string
+    {
+        return $this->color;
+    }
+
+    public function setColor(string $color): self
+    {
+        $this->color = $color;
 
         return $this;
     }
