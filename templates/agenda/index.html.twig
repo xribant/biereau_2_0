@@ -32,7 +32,6 @@
                     </p>
                 </div>
             {% endif %}
-
             <div id="calendrier" class="mt-5 p-4">
 
             </div>
@@ -101,7 +100,7 @@ window.cookieconsent.initialise({
         timeZone: 'Europe/Brussels',
         themeSystem: 'bootstrap',
         events: {{ data|raw }},
-        eventColor: '#34aaf1',
+
         eventClick: function(info) {
 
             if (info.event.url) {

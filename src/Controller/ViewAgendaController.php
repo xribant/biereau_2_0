@@ -96,6 +96,7 @@ class ViewAgendaController extends AbstractController
                     'location' => $event->getLocation(),
                     'click' => $event->getClick(),
                     'url' => $event->getUrl(),
+                    'allDay' => $event->getAllDay(),
                 ];
             } else {
                 $rdvs[] = [
@@ -105,7 +106,9 @@ class ViewAgendaController extends AbstractController
                     'title' => $event->getTitle(),
                     'description' => $event->getDescription(),
                     'location' => $event->getLocation(),
-                    'click' => $event->getClick()
+                    'click' => $event->getClick(),
+                    'url' => $event->getUrl(),
+                    'allDay' => $event->getAllDay(),
                 ];
             }
         }

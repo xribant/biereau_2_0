@@ -12,9 +12,14 @@
   <component name="ChangeListManager">
     <list default="true" id="eb337925-03b6-4a6f-95e2-c598709ccab2" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/Admin/Agenda/AgendaController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/Admin/Agenda/AgendaController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/ViewAgendaController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/ViewAgendaController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Entity/Agenda.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Agenda.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Form/AgendaType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/AgendaType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/ContactSubRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/ContactSubRepository.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/admin/agenda/_form.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/agenda/_form.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/admin/agenda/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/agenda/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/admin/school/registration/view.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/school/registration/view.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/agenda/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/agenda/index.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -322,6 +327,11 @@
       <workItem from="1608752748471" duration="1526000" />
       <workItem from="1608788817012" duration="3428000" />
       <workItem from="1608908941364" duration="592000" />
+      <workItem from="1609675767606" duration="1032000" />
+      <workItem from="1609793555629" duration="2667000" />
+      <workItem from="1609837862339" duration="1934000" />
+      <workItem from="1609933580700" duration="185000" />
+      <workItem from="1609935548379" duration="2752000" />
     </task>
     <servers />
   </component>

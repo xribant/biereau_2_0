@@ -19,6 +19,14 @@ class ContactSubRepository extends ServiceEntityRepository
         parent::__construct($registry, ContactSub::class);
     }
 
+    public function findAllRegistrantByCreationDate(){
+        return $this->createQueryBuilder('p')
+            ->orderBy('p.created_at', 'desc')
+            ->addOrderBy('p.created_at', 'desc')
+            ->getQuery()
+            ->getResult();
+    }
+
     // /**
     //  * @return ContactSub[] Returns an array of ContactSub objects
     //  */

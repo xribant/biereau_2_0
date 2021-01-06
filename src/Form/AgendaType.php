@@ -20,17 +20,27 @@ class AgendaType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
-            ->add('begin_at',DateTimeType::class, [
-                'label' => 'Début',
-                'required' => true,
-                'data' => new \DateTime(),
-                'error_bubbling' => true,
+            ->add('begin_at',DateType::class, [
+                'label' => false,
+                'widget' => 'single_text',
+                'html5' => false,
+                'format' => 'd-M-y',
+                'input' => 'datetime',
+                'attr' => [
+                    'class' => 'js-datepicker',
+                    'placeholder' => 'Début'
+                ]
             ])
-            ->add('end_at',DateTimeType::class, [
-                'label' => 'Fin',
-                'required' => true,
-                'data' => new \DateTime(),
-                'error_bubbling' => true,
+            ->add('end_at',DateType::class, [
+                'label' => false,
+                'widget' => 'single_text',
+                'html5' => false,
+                'format' => 'd-M-y',
+                'input' => 'datetime',
+                'attr' => [
+                    'class' => 'js-datepicker',
+                    'placeholder' => 'Fin'
+                ]
             ])
             ->add('title',TextType::class, [
                 'label' => 'Titre',
@@ -53,10 +63,6 @@ class AgendaType extends AbstractType
                     'Oui' => 1,
                     'Non' => 0,
                 ]
-            ])
-            ->add('color',ColorType::class, [
-                'label' => 'Couleur',
-                'required' => false,
             ]);
 
     }

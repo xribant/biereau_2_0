@@ -33,8 +33,8 @@
                                     <tbody>
                                     {% for event in agendas %}
                                         <tr>
-                                            <td>{{ event.beginAt|format_datetime('medium', 'medium',locale='fr') }}</td>
-                                            <td>{{ event.endAt|format_datetime('medium', 'medium',locale='fr') }}</td>
+                                            <td>{{ event.beginAt|format_datetime('full', 'none',locale='fr') }}</td>
+                                            <td>{{ event.endAt|format_datetime('full', 'none',locale='fr') }}</td>
                                             <td>{{ event.title }}</td>
                                             <td>{{ event.location }}</td>
                                             <td>{% if event.click == 1  %}

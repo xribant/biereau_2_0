@@ -21,13 +21,13 @@ class Agenda
 
     /**
      * @ORM\Column(type="datetime")
-     * @Assert\GreaterThan("today")
+     * @Assert\GreaterThanOrEqual ("today")
      */
     private $beginAt;
 
     /**
      * @ORM\Column(type="datetime", nullable=true)
-     * @Assert\GreaterThan("today")
+     * @Assert\GreaterThanOrEqual(propertyPath="begin_at")
      */
     private $endAt;
 
@@ -57,9 +57,9 @@ class Agenda
     private $click;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="boolean")
      */
-    private $color;
+    private $allDay;
 
     public function getId(): ?int
     {
@@ -155,14 +155,14 @@ class Agenda
         return $this;
     }
 
-    public function getColor(): ?string
+    public function getAllDay(): ?bool
     {
-        return $this->color;
+        return $this->allDay;
     }
 
-    public function setColor(string $color): self
+    public function setAllDay(bool $allDay): self
     {
-        $this->color = $color;
+        $this->allDay = $allDay;
 
         return $this;
     }
