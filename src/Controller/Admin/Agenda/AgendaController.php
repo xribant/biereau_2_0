@@ -40,6 +40,7 @@ class AgendaController extends AbstractController
             if ($agenda->getClick() == true) {
                 $agenda->setUrl('/agenda/evenement/'.$agenda->getSlug());
             }
+
             $agenda->setAllDay(true);
             $entityManager->persist($agenda);
             $entityManager->flush();
@@ -63,6 +64,10 @@ class AgendaController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+            if ($agenda->getClick() == true) {
+                $agenda->setUrl('/agenda/evenement/'.$agenda->getSlug());
+            }
+
             $this->getDoctrine()->getManager()->flush();
 
             return $this->redirectToRoute('admin.agenda.index');

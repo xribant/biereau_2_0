@@ -11,14 +11,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="eb337925-03b6-4a6f-95e2-c598709ccab2" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/biereau_2_0.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/biereau_2_0.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/Admin/Agenda/AgendaController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/Admin/Agenda/AgendaController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/ViewAgendaController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/ViewAgendaController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Entity/Agenda.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Agenda.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Form/AgendaType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/AgendaType.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repository/ContactSubRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/ContactSubRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/admin/agenda/_form.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/agenda/_form.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/admin/agenda/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/agenda/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/symfony.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/admin/school/registration/view.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/school/registration/view.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/agenda/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/agenda/index.html.twig" afterDir="false" />
     </list>
@@ -160,6 +161,16 @@
       <path value="$PROJECT_DIR$/vendor/friendsofsymfony/ckeditor-bundle" />
       <path value="$PROJECT_DIR$/vendor/zendframework/zend-code" />
       <path value="$PROJECT_DIR$/vendor/symfony/deprecation-contracts" />
+      <path value="$PROJECT_DIR$/vendor/maennchen/zipstream-php" />
+      <path value="$PROJECT_DIR$/vendor/psr/http-message" />
+      <path value="$PROJECT_DIR$/vendor/psr/http-client" />
+      <path value="$PROJECT_DIR$/vendor/psr/http-factory" />
+      <path value="$PROJECT_DIR$/vendor/psr/simple-cache" />
+      <path value="$PROJECT_DIR$/vendor/markbaker/matrix" />
+      <path value="$PROJECT_DIR$/vendor/markbaker/complex" />
+      <path value="$PROJECT_DIR$/vendor/phpoffice/phpspreadsheet" />
+      <path value="$PROJECT_DIR$/vendor/ezyang/htmlpurifier" />
+      <path value="$PROJECT_DIR$/vendor/myclabs/php-enum" />
     </include_path>
   </component>
   <component name="ProjectId" id="1iQQ6mJZnZK6Zb5L3X943fHCRuY" />
@@ -331,7 +342,8 @@
       <workItem from="1609793555629" duration="2667000" />
       <workItem from="1609837862339" duration="1934000" />
       <workItem from="1609933580700" duration="185000" />
-      <workItem from="1609935548379" duration="2752000" />
+      <workItem from="1609935548379" duration="3397000" />
+      <workItem from="1610010947601" duration="10576000" />
     </task>
     <servers />
   </component>

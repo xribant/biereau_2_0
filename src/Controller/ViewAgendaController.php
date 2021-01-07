@@ -43,23 +43,25 @@ class ViewAgendaController extends AbstractController
             if($event->getClick()){
                 $rdvs[] = [
                     'id' => $event->getId(),
-                    'start' => $event->getBeginAt()->format('Y-m-d'),
-                    'end' => $event->getEndAt()->format('Y-m-d'),
+                    'start' => $event->getBeginAt()->format('Y-m-d H:i:s'),
+                    'end' => $event->getEndAt()->format('Y-m-d H:i:s'),
                     'title' => $event->getTitle(),
                     'description' => $event->getDescription(),
                     'location' => $event->getLocation(),
                     'click' => $event->getClick(),
                     'url' => $event->getUrl(),
+
                 ];
             } else {
                 $rdvs[] = [
                     'id' => $event->getId(),
-                    'start' => $event->getBeginAt()->format('Y-m-d'),
-                    'end' => $event->getEndAt()->format('Y-m-d'),
+                    'start' => $event->getBeginAt()->format('Y-m-d H:i:s'),
+                    'end' => $event->getEndAt()->format('Y-m-d H:i:s'),
                     'title' => $event->getTitle(),
                     'description' => $event->getDescription(),
                     'location' => $event->getLocation(),
-                    'click' => $event->getClick()
+                    'click' => $event->getClick(),
+
                 ];
             }
         }
@@ -89,26 +91,26 @@ class ViewAgendaController extends AbstractController
             if($event->getClick()){
                 $rdvs[] = [
                     'id' => $event->getId(),
-                    'start' => $event->getBeginAt()->format('Y-m-d'),
-                    'end' => $event->getEndAt()->format('Y-m-d'),
+                    'start' => $event->getBeginAt()->format('Y-m-d H:i:s'),
+                    'end' => $event->getEndAt()->format('Y-m-d H:i:s'),
                     'title' => $event->getTitle(),
                     'description' => $event->getDescription(),
                     'location' => $event->getLocation(),
                     'click' => $event->getClick(),
                     'url' => $event->getUrl(),
-                    'allDay' => $event->getAllDay(),
+
                 ];
             } else {
                 $rdvs[] = [
                     'id' => $event->getId(),
-                    'start' => $event->getBeginAt()->format('Y-m-d'),
-                    'end' => $event->getEndAt()->format('Y-m-d'),
+                    'start' => $event->getBeginAt()->format('Y-m-d H:i:s'),
+                    'end' => $event->getEndAt()->format('Y-m-d H:i:s'),
                     'title' => $event->getTitle(),
                     'description' => $event->getDescription(),
                     'location' => $event->getLocation(),
                     'click' => $event->getClick(),
                     'url' => $event->getUrl(),
-                    'allDay' => $event->getAllDay(),
+
                 ];
             }
         }

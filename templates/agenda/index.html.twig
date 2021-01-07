@@ -24,7 +24,12 @@
                 <div class="ftco-animate text-left bg-light p-4">
                     <h2 style="color: #34aaf1;">{{ event.title }}</h2>
                     <p class="breadcrumbs ml-1">
-                        <i class="fas fa-calendar-alt"></i> {{ event.beginAt|format_datetime('full', 'none', locale='fr') }}
+                        <i class="fas fa-calendar-alt"></i>
+                        {% if(event.beginAt == event.endAt) %}
+                            Le {{ event.beginAt|format_datetime('full', 'none', locale='fr') }}
+                        {% else %}
+                            Du {{ event.beginAt|format_datetime('full', 'none', locale='fr') }} au {{ event.endAt|format_datetime('full', 'none', locale='fr') }}
+                        {% endif %}
                         {% if(event.location) %}<span class="ml-2"><i class="fas fa-map-marker-alt"></i> {{ event.location }} </span>{% endif %}
                     </p>
                     <p class="breadcrumbs mb-5 ml-1">
@@ -33,7 +38,7 @@
                 </div>
             {% endif %}
             <div id="calendrier" class="mt-5 p-4">
-
+{{ dump(data) }}
             </div>
 
         </div>
@@ -99,6 +104,7 @@ window.cookieconsent.initialise({
         locale: 'fr',
         timeZone: 'Europe/Brussels',
         themeSystem: 'bootstrap',
+        displayEventTime: false,
         events: {{ data|raw }},
 
         eventClick: function(info) {

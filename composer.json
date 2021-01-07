@@ -17,6 +17,7 @@
         "hackzilla/password-generator": "^1.5",
         "liip/imagine-bundle": "^2.3",
         "phpdocumentor/reflection-docblock": "^4.3",
+        "phpoffice/phpspreadsheet": "^1.16",
         "sensio/framework-extra-bundle": "^5.5",
         "swiftmailer/swiftmailer": "^6.2",
         "symfony/apache-pack": "^1.0",

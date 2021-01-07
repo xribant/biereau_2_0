@@ -4,6 +4,7 @@ namespace App\Entity;
 
 use App\Repository\AgendaRepository;
 use Cocur\Slugify\Slugify;
+use DateInterval;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
 
@@ -85,7 +86,7 @@ class Agenda
 
     public function setEndAt(?\DateTimeInterface $endAt): self
     {
-        $this->endAt = $endAt;
+        $this->endAt = $endAt->add(new DateInterval('PT23H59M'));
 
         return $this;
     }

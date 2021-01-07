@@ -11,7 +11,13 @@
                     <div class="col-md-12">
                         <div class="card">
                             <div class="card-header">
-                                <h4 class="card-title"><strong>{{ registrants|length }}</strong> Inscrits aux journées d'informations</h4>
+                                <div class="d-flex align-items-center">
+                                    <h4 class="card-title"><strong>{{ registrants|length }}</strong> Inscrits aux journées d'informations</h4>
+                                    <a href="{{ path("export.registrations") }}" class="btn btn-primary btn-round ml-auto">
+                                        <i class="fas fa-file-import"></i>
+                                        Export Excel
+                                    </a>
+                                </div>
                             </div>
                             <div class="card-body">
                                 <div class="table-responsive">
