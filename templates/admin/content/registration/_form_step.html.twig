@@ -1,0 +1,25 @@
+{{ form_start(form) }}
+
+<div class="card-body">
+    <div class="row mt-3">
+        <div class="col-md-6">
+            <div class="form-group form-group-default">
+                {{ form_row(form.title) }}
+            </div>
+        </div>
+    </div>
+    <div class="row mt-3">
+        <div class="col-md-6">
+            <div class="form-group form-group-default">
+                {{ form_row(form.text) }}
+            </div>
+        </div>
+    </div>
+
+    <div class="text-right mt-3 mb-3">
+        <a href="{{ path('admin.content.registration_page.index') }}" class="btn btn-danger">Annuler</a>
+        <button class="btn btn-success">{{ button|default('Enregistrer') }}</button>
+    </div>
+</div>
+
+{{ form_end(form) }}

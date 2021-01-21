@@ -11,17 +11,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="eb337925-03b6-4a6f-95e2-c598709ccab2" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/biereau_2_0.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/biereau_2_0.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/Admin/Agenda/AgendaController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/Admin/Agenda/AgendaController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/ViewAgendaController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/ViewAgendaController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Agenda.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Agenda.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/symfony.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/admin/school/registration/view.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/school/registration/view.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/agenda/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/agenda/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/SubscriptionController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/SubscriptionController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Form/PageIntroFormType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/PageIntroFormType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Form/SubArticleFormType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/SubArticleFormType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/admin/adminbase.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/adminbase.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/admin/content/page_content/sub_article/_form.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/content/page_content/sub_article/_form.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/emails/contactsubscriber.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/emails/contactsubscriber.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/subscription.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/subscription.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -188,7 +185,7 @@
     <property name="WebServerToolWindowFactoryState" value="true" />
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="Twig" />
     <property name="com.jetbrains.php.lang.actions.generation.PhpGenerateFieldAccessorHandlerBase$MyMemberChooser.fluent.setters.last.selected" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/templates/espace-parents/la-chore-viva-for-life" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/templates/admin/content/registration" />
     <property name="php.override.implement.member.chooser.php.doc" value="NONE" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="settings.editor.selected.configurable" value="PhpAnnotations.SettingsForm" />
@@ -196,11 +193,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/templates/admin/content/registration" />
+      <recent name="$PROJECT_DIR$/src/Form" />
       <recent name="$PROJECT_DIR$/templates/espace-parents/la-chore-viva-for-life" />
       <recent name="$PROJECT_DIR$/templates/ecole/viva-for-life" />
       <recent name="$PROJECT_DIR$/templates/ecole/reglement-ordre-interieur" />
-      <recent name="$PROJECT_DIR$/templates/ecole/charte-internet" />
-      <recent name="$PROJECT_DIR$/templates/ecole/vivre-ensemble" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/Controller/Admin/Agenda" />
@@ -343,7 +340,13 @@
       <workItem from="1609837862339" duration="1934000" />
       <workItem from="1609933580700" duration="185000" />
       <workItem from="1609935548379" duration="3397000" />
-      <workItem from="1610010947601" duration="10576000" />
+      <workItem from="1610010947601" duration="12571000" />
+      <workItem from="1610098031879" duration="1526000" />
+      <workItem from="1610878640291" duration="689000" />
+      <workItem from="1610879989589" duration="571000" />
+      <workItem from="1611067875797" duration="2291000" />
+      <workItem from="1611128104195" duration="5168000" />
+      <workItem from="1611217553205" duration="15756000" />
     </task>
     <servers />
   </component>

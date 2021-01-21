@@ -6,9 +6,9 @@ use App\Entity\Article;
 use App\Entity\SubArticle;
 use App\Repository\ArticleRepository;
 use App\Repository\BasicPageRepository;
+use FOS\CKEditorBundle\Form\Type\CKEditorType;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
-use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
@@ -48,11 +48,11 @@ class SubArticleFormType extends AbstractType
                 'label' => 'Sous-Titre',
                 'required' => false,
             ])
-            ->add('text', TextareaType::class, [
-                'label' => 'Texte',
+            ->add('text',CKEditorType::class, [
+                'label' => 'Contenu',
                 'required' => true,
-                'attr' => [
-                    'rows' => 10,
+                'config' => [
+                    'toolbar' => 'basic',
                 ]
             ])
             ->add('imageFile', VichImageType::class, [

@@ -3,11 +3,13 @@
 namespace App\Controller;
 
 use App\Entity\ContactSub;
+use App\Entity\RegistrationContent;
 use App\Form\ContactSubType;
 use App\Notification\ContactNotification;
 use App\Repository\AcademicYearRepository;
 use App\Repository\ContactSubRepository;
 use App\Repository\NavMenuRepository;
+use App\Repository\RegistrationContentRepository;
 use App\Repository\RegistrationDateRepository;
 use App\Repository\SchoolDataRepository;
 use Doctrine\ORM\EntityManagerInterface;
@@ -40,7 +42,23 @@ class SubscriptionController extends AbstractController
      */
     private $schoolDataRepository;
 
-    public function __construct(ContactSubRepository $contactSubRepo, SchoolDataRepository $schoolDataRepository, NavMenuRepository $navMenuRepository, AcademicYearRepository $academicYearRepo, RegistrationDateRepository $registrationDateRepository, EntityManagerInterface $em)
+    /**
+     * @var RegistrationContent
+     */
+    private $registrationContentRepository;
+
+    /**
+     * SubscriptionController constructor.
+     * @param ContactSubRepository $contactSubRepo
+     * @param SchoolDataRepository $schoolDataRepository
+     * @param NavMenuRepository $navMenuRepository
+     * @param AcademicYearRepository $academicYearRepo
+     * @param RegistrationDateRepository $registrationDateRepository
+     * @param EntityManagerInterface $em
+     * @param RegistrationContent $registrationContentRepository
+     */
+
+    public function __construct(ContactSubRepository $contactSubRepo, SchoolDataRepository $schoolDataRepository, NavMenuRepository $navMenuRepository, AcademicYearRepository $academicYearRepo, RegistrationDateRepository $registrationDateRepository, EntityManagerInterface $em, RegistrationContentRepository $registrationContentRepository)
     {
         $this->contactSubRepo = $contactSubRepo;
         $this->academicYearRepo = $academicYearRepo;
@@ -48,6 +66,7 @@ class SubscriptionController extends AbstractController
         $this->registrationDateRepository = $registrationDateRepository;
         $this->navMenuRepository = $navMenuRepository;
         $this->schoolDataRepository = $schoolDataRepository;
+        $this->registrationContentRepository = $registrationContentRepository;
     }
 
 
@@ -65,6 +84,7 @@ class SubscriptionController extends AbstractController
         $regDates = $this->registrationDateRepository->findAll();
         $navMenu = $this->navMenuRepository->findBy(array(), ['id' => 'asc'] );
         $currentMenu = $this->navMenuRepository->findOneBy(['name' => 'Infos Pratiques']);
+        $registrationContent = $this->registrationContentRepository->findOneBy(['id' => 1]);
 
         $form->handleRequest($request);
 
@@ -86,6 +106,7 @@ class SubscriptionController extends AbstractController
             'current_menu' => $currentMenu,
             'academicYear' => $academicYear,
             'registration_dates' => $regDates,
+            'pageContent' => $registrationContent,
             'navMenu' => $navMenu,
             'form' => $form->createView()
         ]);
