@@ -93,6 +93,7 @@ class SubscriptionController extends AbstractController
             $this->em->persist($contactSub);
             $this->em->flush();
 
+            $notificationCategory = "Inscription";
             $notification->notify($contactSub, $schoolData);
 
             $date = $contactSub->getSessionDate()->format('d/m/Y');
