@@ -3,6 +3,7 @@
 namespace App\Entity;
 
 use App\Repository\SubMenuRepository;
+use Cocur\Slugify\Slugify;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
@@ -75,6 +76,10 @@ class SubMenu
         $this->name = $name;
 
         return $this;
+    }
+
+    public function getSlug(): string {
+        return $slugify = (new Slugify())->slugify($this->name);
     }
 
     public function getRoute(): ?string

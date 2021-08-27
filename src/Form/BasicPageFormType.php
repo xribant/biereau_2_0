@@ -43,10 +43,6 @@ class BasicPageFormType extends AbstractType
     {
 
         $builder
-            ->add('name', TextType::class, [
-                'label' => 'Nom de la page',
-                'required' => true,
-            ])
             ->add('title', TextType::class, [
                 'label' => 'Titre de la page',
                 'required' => true,
@@ -65,14 +61,6 @@ class BasicPageFormType extends AbstractType
                 'label' => 'Menu de Navigation Parent',
                 'required' => false,
                 'choice_label' => 'name',
-            ])
-            ->add('parentNavMenu', EntityType::class, [
-                'class' => NavMenu::class,
-                'label' => 'Menu de Navigation Parent',
-                'choice_label' => 'name',
-                'expanded' => false,
-                'multiple' => false,
-                'required' => false,
             ])
             ->add('parentSubMenu', EntityType::class, [
                 'class' => SubMenu::class,

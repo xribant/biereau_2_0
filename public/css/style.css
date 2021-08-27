@@ -8037,7 +8037,7 @@ h1, h2, h3, h4, h5,
   padding: 0; }
   @media (max-width: 991.98px) {
     .ftco-navbar-light {
-      background: #000000 !important;
+      background: #FFF !important;
       position: relative;
       top: 0;
       padding: 10px 15px; } }
@@ -8068,9 +8068,9 @@ h1, h2, h3, h4, h5,
         padding-right: 0;
         padding-top: .9rem;
         padding-bottom: .9rem;
-        color: rgba(255, 255, 255, 0.7); }
+        color: #000000; }
         .ftco-navbar-light .navbar-nav > .nav-item > .nav-link:hover {
-          color: #fff; } }
+          color: #007bff; } }
   .ftco-navbar-light .navbar-nav > .nav-item .dropdown-menu {
     border: none;
     background: #fff;
@@ -8115,10 +8115,10 @@ h1, h2, h3, h4, h5,
     color: #1eaaf1; }
     @media (max-width: 991.98px) {
       .ftco-navbar-light .navbar-nav > .nav-item.active > a {
-        color: #fff; } }
+        color: #1eaaf1; } }
   .ftco-navbar-light .navbar-toggler {
     border: none;
-    color: rgba(255, 255, 255, 0.5) !important;
+    color: rgba(0, 0, 0, 0.8) !important;
     cursor: pointer;
     padding-right: 0;
     text-transform: uppercase;
@@ -8738,7 +8738,7 @@ h1, h2, h3, h4, h5,
     font-weight: 500; }
   .pricing-entry p .price {
     font-weight: 900;
-    font-size: 28px;
+    font-size: 20px;
     color: #1eaaf1;
     -moz-transition: all 0.3s ease;
     -o-transition: all 0.3s ease;

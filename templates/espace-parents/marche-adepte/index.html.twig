@@ -1,0 +1,81 @@
+{%  extends "base.html.twig" %}
+
+{% block title %}Collège du Biéreau - La vraie fausse marche adeptes 2021 {% endblock %}
+
+{% block content %}
+    <section class="hero-wrap hero-wrap-2" style="background-image: url('/images/balade_famille.jpeg');">
+        <div class="overlay"></div>
+        <div class="container">
+            <div class="row no-gutters slider-text align-items-center justify-content-center">
+                <div class="col-md-9 ftco-animate text-center">
+                    <h1 class="mb-2 bread">La fausse vraie marche "Adeptes" 2021</h1>
+                    <p class="breadcrumbs">
+                        <span class="mr-2"><a href="{{ path('home.index') }}">Accueil <i class="ion-ios-arrow-forward"></i></a></span>
+                        <span>La fausse vraie marche "Adeptes" 2021 <i class="ion-ios-arrow-forward"></i></span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+            <section class="ftco-section ftco-counter img" id="section-counter">
+                <div class="container">
+                    <div class="row justify-content-center mb-5 pb-2">
+                        <div class="col-md-8 text-center heading-section heading-section-black ftco-animate">
+                            <h2 class="mb-4"><span>L'école marche</span> pour le fun</h2>
+                            <p>Les 4 cycles du Collège marchent en famille et ensemble, ils ont déjà parcouru <strong style="color:#1eaaf1;">{{ totalKm }} </strong>km.
+                                <br>Tu peux comptabiliser tes km du 13 au 30 Mai en amenant ton <a href="/images/la_fausse_vraie_marche_2021.pdf" target="_blank">carnet du petit marcheur</a>
+                                en classe ou en envoyant la photo de ton parcours à <a href="mailto:presidencecf@gmail.com">presidencecf@gmail.com</a>.
+                                <br>Voici le cumul des km accomplis par tous les élèves et tous les professeurs de chaque cycle.<br>
+                            Mais alors?... Où pourraient-ils se rendre en parcourant tous ces km depuis l'école? 🤓<br>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="row d-md-flex align-items-center justify-content-center">
+                        <div class="col-lg-10">
+                            <div class="row d-md-flex align-items-start">
+                                {% for cycle in cycles %}
+                                    <div class="col-md d-flex justify-content-center counter-wrap ftco-animate">
+                                        <div class="block-18">
+                                            <div class="text bg-light pt-3">
+                                                {% set distanceTotale = 0 %}
+                                                {% for adeptCycleKm in cycle.adeptCycleKms %}
+                                                    {% set distanceTotale = distanceTotale + adeptCycleKm.distance %}
+                                                {% endfor %}
+                                                <h4>{{ cycle.name }}</h4>
+                                                <strong class="number" data-number="{{ distanceTotale }}"></strong>
+                                                <strong style="color:#1eaaf1;">km</strong>
+                                            </div>
+                                            {% if (distanceTotale > 0) and (distanceTotale > locations[0].distance) %}
+                                                {% set closestLocation = locations[0] %}
+                                                {% for location in locations %}
+                                                    {% if (distanceTotale > location.distance) and (location.distance > closestLocation.distance) %}
+                                                        {% set closestLocation = location %}
+                                                    {% endif %}
+                                                {% endfor %}
+                                                    <div class="pricing-entry bg-light pb-4 text-center">
+                                                        <div>
+                                                            <h5 class="mb-3">{{ closestLocation.name }}</h5>
+                                                            <p>{{ closestLocation.city }} <span style="font-size: 10px;">({{ closestLocation.distance }}Km)</span></p>
+                                                        </div>
+                                                        <div class="img" style="background-image: url({{ vich_uploader_asset(closestLocation, 'imageFile') }});"></div>
+                                                        <div class="px-4">
+                                                        </div>
+                                                            {% if closestLocation.url %}
+                                                                <p class="button text-center"><a href="{{ closestLocation.url }}" target="_blank" class="btn btn-sm btn-primary px-4 py-3"><i class="fas fa-info"></i></a></p>
+                                                            {% endif %}
+                                                    </div>
+                                            {% endif %}
+                                        </div>
+                                    </div>
+                                {% endfor %}
+                            </div>
+
+
+
+                        </div>
+                    </div>
+                </div>
+            </section>
+{% endblock %}

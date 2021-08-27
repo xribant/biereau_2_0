@@ -18,7 +18,7 @@ class SecurityController extends AbstractController
     {
         if($this->getUser())
         {
-            return $this->redirectToRoute("admin.dashboard");
+            return $this->redirectToRoute("parent_space");
         }
 
         $error = $authenticationUtils->getLastAuthenticationError();

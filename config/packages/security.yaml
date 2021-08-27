@@ -16,7 +16,7 @@ security:
                 login_path: login
                 check_path: login
                 default_target_path: /admin/dashboard
-                always_use_default_target_path: true
+                always_use_default_target_path: false
 
             logout:
                 path: /logout
@@ -34,7 +34,8 @@ security:
     # Note: Only the *first* access control that matches will be used
     access_control:
         - { path: ^/login, roles: IS_AUTHENTICATED_ANONYMOUSLY }
-        - { path: ^/admin, roles: [ROLE_ADMIN, ROLE_SUPER_ADMIN] }
+        - { path: ^/admin, roles: [ROLE_ADMIN, ROLE_SUPER_ADMIN, ROLE_COMITARD] }
+        - { path: ^/parent, roles: [ROLE_ADMIN, ROLE_SUPER_ADMIN, ROLE_PARENT] }
         # - { path: ^/profile, roles: ROLE_USER }
 
     encoders:

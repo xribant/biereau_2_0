@@ -6,6 +6,7 @@ use App\Repository\NavMenuRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use Cocur\Slugify\Slugify;
 
 /**
  * @ORM\Entity(repositoryClass=NavMenuRepository::class)
@@ -49,10 +50,16 @@ class NavMenu
      */
     private $position;
 
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $slug;
+
     public function __construct()
     {
         $this->subMenus = new ArrayCollection();
         $this->basicPages = new ArrayCollection();
+        $this->basePages = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -70,6 +77,10 @@ class NavMenu
         $this->name = $name;
 
         return $this;
+    }
+
+    public function getSlug(): string {
+        return $slugify = (new Slugify())->slugify($this->name);
     }
 
     public function getRoute(): ?string
@@ -164,6 +175,13 @@ class NavMenu
     public function setPosition(int $position): self
     {
         $this->position = $position;
+
+        return $this;
+    }
+
+    public function setSlug(string $slug): self
+    {
+        $this->slug = $slug;
 
         return $this;
     }

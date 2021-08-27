@@ -7,7 +7,6 @@ namespace App\Controller;
 use App\Repository\ArticleRepository;
 use App\Repository\BasicPageRepository;
 use App\Repository\NavMenuRepository;
-use Cocur\Slugify;
 use Doctrine\ORM\EntityManagerInterface;
 use Doctrine\Persistence\ObjectManager;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -41,17 +40,17 @@ class BasicPageController extends AbstractController
     }
 
     /**
-     * @Route("/{mainMenu}/{subMenu}", name="show.page")
+     * @Route("/{navMenu}/{subMenu}", name="show.page", requirements={"subMenu": "[a-z0-9\-]*"})
      */
-    public function index($mainMenu, $subMenu)
+    public function index($subMenu)
     {
         $navMenu = $this->navMenuRepository->findBy(array(), ['id' => 'asc'] );
-        $currentMenu = $this->navMenuRepository->findOneBy(['route' => $mainMenu]);
         $page = $this->basicPageRepository->findOneBy(['name' => $subMenu]);
+        $currentMenu = $page->getParentNavMenu();
         $articles = $this->articleRepository->findBy(['parentPage' => $page]);
 
 
-        return $this->render($mainMenu.'/'.$subMenu.'/index.html.twig', [
+        return $this->render('/basic-page/index.html.twig', [
             'current_menu' => $currentMenu,
             'navMenu' => $navMenu,
             'articles' => $articles,

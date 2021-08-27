@@ -1,0 +1,119 @@
+{%  extends "base.html.twig" %}
+
+{% block title %}Collège du Biéreau - {{ page.title }}{% endblock %}
+
+{% block content %}
+    <section class="hero-wrap hero-wrap-2" style="background-image: url({{ vich_uploader_asset(page, 'bannerImageFile') }});">
+        <div class="overlay"></div>
+        <div class="container">
+            <div class="row no-gutters slider-text align-items-center justify-content-center">
+                <div class="col-md-9 ftco-animate text-center">
+                    <h1 class="mb-2 bread">{{ page.title }}</h1>
+                    <p class="breadcrumbs">
+                        <span class="mr-2"><a href="{{ path('home.index') }}">Accueil <i class="ion-ios-arrow-forward"></i></a></span>
+                        <span>{{ page.parentNavMenu.name }} <i class="ion-ios-arrow-forward"></i></span>
+                        <span>{{ page.title }} <i class="ion-ios-arrow-forward"></i></span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="ftco-section">
+        <div class="container">
+            <!---------------------------------- Affiche l'intro si il y en a ---------------------------------------------->
+
+            {% if page.pageIntro %}
+                <div class="row">
+                    <div class="col-md-12 course d-lg-flex ftco-animate">
+                        {% if page.pageIntro.fileName %}
+                            <div class="img" style="background-image: url({{ vich_uploader_asset(page.pageIntro, 'imageFile') }});"></div>
+                        {% endif %}
+                        <div class="text bg-light p-4">
+                            <h3 style="color: #1eaaf1;">{{ page.pageIntro.title }}</h3>
+                            {{ page.pageIntro.text|raw }}
+                        </div>
+                    </div>
+                </div>
+            {% endif %}
+
+            <!---------------------------------- Affiche la table des matières ---------------------------------------------->
+
+            {% for item in articles %}
+                <div class="col-md-12 mt-3 text-center ftco-animate d-flex">
+                    <a href="#art{{ item.id }}" class="btn btn-sm btn-primary px-3 py-1">{{ item.title }} <span class="ion-ios-arrow-round-forward"></span></a>
+                </div>
+                {% if item.subArticles %}
+                    {% for subArticle in item.subArticles %}
+                        <div class="col-md-12 mt-3 text-center ftco-animate d-flex">
+                            <a href="#subart{{ subArticle.id }}" class="btn btn-sm btn-outline-primary px-3 py-1">{{ subArticle.title}} <span class="ion-ios-arrow-round-forward"></span></a>
+                        </div>
+                    {% endfor %}
+                {% endif %}
+            {% endfor %}
+            <div class="col-md-12 mb-5">
+
+            </div>
+            <!---------------------------------- Affiche les articles et sous-articles --------------------------------------->
+
+            {% for key, article in articles %}
+                {% if not key%2 == 0 %}
+                    <div class="row" id="art{{ article.id }}">
+                        <div class="col-md-12 mt-3 course d-lg-flex ftco-animate">
+                            <div class="{% if article.fileName is not null %}col-md-8{% else %}col-md-12{% endif %} text bg-light p-4">
+                                <h3 style="color: #1eaaf1;">{{ article.title }}</h3>
+                                {{ article.text|raw }}
+                            </div>
+                            {% if article.fileName is not null %}
+                                <div class="col-md-4 img" style="background-image: url({{ vich_uploader_asset(article, 'imageFile') }}); width: 20%; height: auto;"></div>
+                            {% endif %}
+                        </div>
+                    </div>
+                    {% if article.subArticles %}
+                        {% for subArticle in article.SubArticles %}
+                            <div class="row" id="subart{{ subArticle.id }}">
+                                <div class="col-md-12 mt-3 course d-lg-flex ftco-animate">
+                                    {% if subArticle.fileName is not null %}
+                                        <div class="col-md-4 img" style="background-image: url({{ vich_uploader_asset(subArticle, 'imageFile') }}); width: 20%px; height: auto;"></div>
+                                    {% endif %}
+                                    <div class="{% if subArticle.fileName is not null %}col-md-8{% else %}col-md-12{% endif %} text bg-light p-4">
+                                        <h3 style="color: #1eaaf1;">{{ subArticle.title }}</h3>
+                                        {{ subArticle.text|raw }}
+                                    </div>
+                                </div>
+                            </div>
+                        {% endfor %}
+                    {% endif %}
+                {% else %}
+                    <div class="row" id="art{{ article.id }}">
+                        <div class="col-md-12 course d-lg-flex ftco-animate">
+                            {% if article.fileName is not null %}
+                                <div class="col-md-4 img" style="background-image: url({{ vich_uploader_asset(article, 'imageFile') }});"></div>
+                            {% endif %}
+                            <div class="{% if article.fileName is not null %}col-md-8{% else %}col-md-12{% endif %} text bg-light p-4">
+                                <h3 style="color: #1eaaf1;">{{ article.title }}</h3>
+                                {{ article.text|raw }}
+                            </div>
+                        </div>
+                    </div>
+                    {% if article.subArticles %}
+                        {% for subArticle in article.SubArticles %}
+                            <div class="row" id="subart{{ subArticle.id }}">
+                                <div class="col-md-12 mt-3 course d-lg-flex ftco-animate">
+                                    {% if subArticle.fileName is not null %}
+                                        <div class="col-md-4 img" style="background-image: url({{ vich_uploader_asset(subArticle, 'imageFile') }});"></div>
+                                    {% endif %}
+                                    <div class="{% if subArticle.fileName is not null %}col-md-8{% else %}col-md-12{% endif %} text bg-light p-4">
+                                        <h3 style="color: #1eaaf1;">{{ subArticle.title }}</h3>
+                                        {{ subArticle.text|raw }}
+                                    </div>
+                                </div>
+                            </div>
+                        {% endfor %}
+                    {% endif %}
+                {% endif %}
+            {% endfor %}
+
+        </div>
+    </section>
+{% endblock %}

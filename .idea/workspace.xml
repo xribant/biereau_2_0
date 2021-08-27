@@ -11,12 +11,48 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="eb337925-03b6-4a6f-95e2-c598709ccab2" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/symfony2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/symfony2.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/biereau_2_0.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/biereau_2_0.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/cc6a938f-712f-4ba3-a6a4-2c7c6abf5a86.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/cc6a938f-712f-4ba3-a6a4-2c7c6abf5a86.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/SubscriptionController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/SubscriptionController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Notification/ContactNotification.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Notification/ContactNotification.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/require-built.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/require-built.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/require.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/require.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/bundles.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/bundles.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/packages/routing.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/routing.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/packages/security.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/security.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/routes.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/routes.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/AboutController.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/BasicPageController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/BasicPageController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/ResetPasswordController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/ResetPasswordController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/SecurityController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/SecurityController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/BasicPage.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/BasicPage.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/NavMenu.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/NavMenu.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/SubMenu.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/SubMenu.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Form/Admin/UserType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/Admin/UserType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Form/BasicPageFormType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/BasicPageFormType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/symfony.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/about.html.twig" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/admin/adminbase.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/adminbase.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/emails/contactsubscriber.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/emails/contactsubscriber.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/admin/pages/_form.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/pages/_form.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/admin/pages/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/pages/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/admin/pages/new.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/pages/new.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/contact.html.twig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/ecole/charte-internet/index.html.twig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/ecole/plan-de-pilotage/index.html.twig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/ecole/presentation/index.html.twig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/ecole/projet-educatif-et-pedagogique/index.html.twig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/ecole/reglement-des-etudes/index.html.twig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/ecole/reglement-ordre-interieur/index.html.twig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/ecole/roi/index.html.twig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/ecole/vivre-ensemble/index.html.twig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/emails/contact_reset_password.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/emails/contact_reset_password.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/resetpassword/check_email.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/resetpassword/check_email.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/subscription.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/subscription.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -167,6 +203,12 @@
       <path value="$PROJECT_DIR$/vendor/phpoffice/phpspreadsheet" />
       <path value="$PROJECT_DIR$/vendor/ezyang/htmlpurifier" />
       <path value="$PROJECT_DIR$/vendor/myclabs/php-enum" />
+      <path value="$PROJECT_DIR$/vendor/laminas/laminas-code" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-php81" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/deprecations" />
+      <path value="$PROJECT_DIR$/vendor/friendsofphp/proxy-manager-lts" />
+      <path value="$PROJECT_DIR$/vendor/artgris/filemanager-bundle" />
+      <path value="$PROJECT_DIR$/vendor/oomphinc/composer-installers-extender" />
     </include_path>
   </component>
   <component name="ProjectId" id="1iQQ6mJZnZK6Zb5L3X943fHCRuY" />
@@ -184,26 +226,27 @@
     <property name="WebServerToolWindowFactoryState" value="true" />
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="Twig" />
     <property name="com.jetbrains.php.lang.actions.generation.PhpGenerateFieldAccessorHandlerBase$MyMemberChooser.fluent.setters.last.selected" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/templates/admin/notifications" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="php.override.implement.member.chooser.php.doc" value="NONE" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
-    <property name="settings.editor.selected.configurable" value="PhpAnnotations.SettingsForm" />
+    <property name="settings.editor.selected.configurable" value="vcs.Git" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/templates/admin/notifications" />
-      <recent name="$PROJECT_DIR$/templates/admin/content/registration" />
+      <recent name="$PROJECT_DIR$/templates/admin/marche-adepte/location" />
       <recent name="$PROJECT_DIR$/src/Form" />
-      <recent name="$PROJECT_DIR$/templates/espace-parents/la-chore-viva-for-life" />
-      <recent name="$PROJECT_DIR$/templates/ecole/viva-for-life" />
+      <recent name="$PROJECT_DIR$/templates/espace-parents/marche-adepte" />
+      <recent name="$PROJECT_DIR$/templates/admin/marche-adepte" />
+      <recent name="$PROJECT_DIR$/templates/basic-page" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/Controller/Admin/Agenda" />
-      <recent name="$PROJECT_DIR$/templates/admin" />
-      <recent name="$PROJECT_DIR$/templates/admin/school/staff" />
-      <recent name="$PROJECT_DIR$/templates/admin/school" />
-      <recent name="$PROJECT_DIR$/templates/admin/content/page_content" />
+      <recent name="$PROJECT_DIR$/config/packages" />
+      <recent name="$PROJECT_DIR$/src/Controller/ParentSpace" />
+      <recent name="$PROJECT_DIR$/templates/bundles/TwigBundle/Exception" />
+      <recent name="$PROJECT_DIR$/templates/espace-parents" />
+      <recent name="$PROJECT_DIR$/src/Form/Admin/Page" />
     </key>
   </component>
   <component name="RunManager">
@@ -348,7 +391,43 @@
       <workItem from="1611217553205" duration="16513000" />
       <workItem from="1611298585509" duration="14881000" />
       <workItem from="1611479320192" duration="772000" />
-      <workItem from="1611480863225" duration="4066000" />
+      <workItem from="1611480863225" duration="5501000" />
+      <workItem from="1611565643550" duration="13197000" />
+      <workItem from="1611650118807" duration="9000" />
+      <workItem from="1611650734875" duration="4259000" />
+      <workItem from="1611659232667" duration="8689000" />
+      <workItem from="1611741534768" duration="10880000" />
+      <workItem from="1611831876399" duration="2982000" />
+      <workItem from="1611904367647" duration="498000" />
+      <workItem from="1611924343894" duration="4191000" />
+      <workItem from="1611953977660" duration="2131000" />
+      <workItem from="1612090677464" duration="6686000" />
+      <workItem from="1612164413920" duration="8084000" />
+      <workItem from="1612253176882" duration="477000" />
+      <workItem from="1612475551437" duration="190000" />
+      <workItem from="1612511777239" duration="612000" />
+      <workItem from="1612686565380" duration="226000" />
+      <workItem from="1620630903756" duration="2903000" />
+      <workItem from="1620640533881" duration="15144000" />
+      <workItem from="1620715647725" duration="3914000" />
+      <workItem from="1620734976913" duration="17182000" />
+      <workItem from="1620801837675" duration="13376000" />
+      <workItem from="1620894553503" duration="4315000" />
+      <workItem from="1620931101146" duration="378000" />
+      <workItem from="1620991894569" duration="4278000" />
+      <workItem from="1620998359052" duration="2080000" />
+      <workItem from="1623673065027" duration="750000" />
+      <workItem from="1624294806745" duration="590000" />
+      <workItem from="1624517785045" duration="586000" />
+      <workItem from="1625024801538" duration="1744000" />
+      <workItem from="1629796745718" duration="280000" />
+      <workItem from="1629797723308" duration="13552000" />
+      <workItem from="1629837682787" duration="2000000" />
+      <workItem from="1629874412900" duration="614000" />
+      <workItem from="1629880556621" duration="5305000" />
+      <workItem from="1629916325224" duration="5032000" />
+      <workItem from="1629966953460" duration="3856000" />
+      <workItem from="1629981789978" duration="16280000" />
     </task>
     <servers />
   </component>
@@ -366,5 +445,9 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>

@@ -39,6 +39,8 @@ class UserType extends AbstractType
                     'Standard'      => 'ROLE_USER',
                     'Admin'         => 'ROLE_ADMIN',
                     'Super Admin'   => 'ROLE_SUPER_ADMIN',
+                    'Comitard'      => 'ROLE_COMITARD',
+                    'Parent'        => 'ROLE_PARENT'
                 ]
             ]);
 

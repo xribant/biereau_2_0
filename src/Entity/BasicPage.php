@@ -3,6 +3,7 @@
 namespace App\Entity;
 
 use App\Repository\BasicPageRepository;
+use Cocur\Slugify\Slugify;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
@@ -79,10 +80,16 @@ class BasicPage
      */
     private $updated_at;
 
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $route;
+
     public function __construct()
     {
         $this->articles = new ArrayCollection();
         $this->created_at = new \DateTime();
+        $this->name = (new Slugify())->slugify($this->title);
     }
 
     public function getId(): ?int
@@ -112,6 +119,10 @@ class BasicPage
         $this->title = $title;
 
         return $this;
+    }
+
+    public function getSlug(): string {
+        return $slugify = (new Slugify())->slugify($this->title);
     }
 
     public function getParentSubMenu(): ?SubMenu
@@ -247,6 +258,18 @@ class BasicPage
     public function setUpdatedAt(\DateTimeInterface $updated_at): self
     {
         $this->updated_at = $updated_at;
+
+        return $this;
+    }
+
+    public function getRoute(): ?string
+    {
+        return $this->route;
+    }
+
+    public function setRoute(string $route): self
+    {
+        $this->route = $route;
 
         return $this;
     }

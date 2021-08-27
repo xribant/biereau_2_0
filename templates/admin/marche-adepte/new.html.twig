@@ -1,0 +1,29 @@
+{% extends 'admin/adminbase.html.twig' %}
+
+{% block title %} Admin | Biereau.be - La vraie fausse marche adepte{% endblock %}
+
+{% block content %}
+
+    <div class="main-panel">
+        <div class="content">
+            <div class="page-inner">
+                <div class="row">
+                    <div class="col-md-12">
+
+                        <div class="card">
+                            <div class="card-header">
+                                <div class="card-title">Ajouter un parcour pour un Cycle <h5>(Si vous entrez un nombre décimal, la distance sera arrondie)</h5></div>
+                            </div>
+
+                            {{ include ('admin/marche-adepte/_form.html.twig', {form: form, button: 'Ajouter'}) }}
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
+

@@ -15,7 +15,45 @@
                                 <div class="card-title">Ajouter une Page</div>
                             </div>
 
-                            {{ include ('admin/pages/_form.html.twig', {form: form, button: 'Ajouter'}) }}
+                            {{ form_start(form) }}
+
+                            <div class="card-body">
+                                <div class="row mt-3">
+                                    <div class="col-md-8">
+                                        <div class="form-group form-group-default">
+                                            {{ form_row(form.title) }}
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row mt-3">
+                                    <div class="col-md-8">
+                                        <div class="form-group form-group-default">
+                                            {{ form_row(form.parentNavMenu) }}
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row mt-3">
+                                    <div class="col-md-8">
+                                        <div class="form-group form-group-default">
+                                            {{ form_row(form.parentSubMenu) }}
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row mt-3">
+                                    <div class="col-md-8">
+                                        <div class="form-group form-group-default">
+                                            {{ form_row(form.bannerImageFile) }}
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="text-left mt-3 mb-3">
+                                    <a href="{{ path('admin.pages.index') }}" class="btn btn-danger">Annuler</a>
+                                    <button class="btn btn-success">{{ button|default('Ajouter') }}</button>
+                                </div>
+                            </div>
+
+                            {{ form_end(form) }}
 
                         </div>
 

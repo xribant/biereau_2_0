@@ -67,7 +67,7 @@
         </div>
     </div>
 </div>
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark ftco_navbar ftco-navbar-light" id="ftco-navbar">
+<nav class="navbar navbar-expand-lg ftco_navbar ftco-navbar-light" id="ftco-navbar">
     <div class="container d-flex align-items-center">
         <a class="navbar-brand" href="{{ path('home.index') }}"><img src="{{ asset('images/base/logo_biereau.png') }}"></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
@@ -75,16 +75,18 @@
         </button>
         <div class="collapse navbar-collapse" id="ftco-nav">
             <ul class="navbar-nav ml-auto">
+
                 {% for navItem in navMenu|sort((a, b) => a.position <=> b.position) %}
+
                     {% if navItem.subMenus is empty %}
-                        <li class="nav-item {% if current_menu.name == navItem.name %}active{% endif %}"><a href="{{ navItem.route }}" class="nav-link">{{ navItem.name }}</a></li>
+                        <li class="nav-item {% if current_menu.name == navItem.name %}active{% endif %}"><a href="{{ navItem.route }}" {% if navItem.externalLink %}target="_blank"{% endif %} class="nav-link">{{ navItem.name }}</a></li>
                     {% else %}
                         <li class="nav-item dropdown {% if current_menu.name == navItem.name %}active{% endif %}">
                             <a class="nav-link dropdown-toggle" href="#" id="{{ navItem.id }}" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{ navItem.name }}</a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            {% for subMenu in navItem.subMenus|sort((a, b) => a.position <=> b.position) %}
+                                {% for subMenu in navItem.subMenus|sort((a, b) => a.position <=> b.position) %}
                                     <a class="dropdown-item" href="{{ subMenu.route }}" {% if subMenu.externalLink %}target="_blank"{% endif %} >{{ subMenu.name }}</a>
-                            {% endfor %}
+                                {% endfor %}
                             </div>
                         </li>
                     {% endif %}

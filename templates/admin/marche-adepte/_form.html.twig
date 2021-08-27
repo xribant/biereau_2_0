@@ -1,0 +1,31 @@
+{{ form_start(form) }}
+
+<div class="card-body">
+    <div class="row mt-3">
+        <div class="col-md-8">
+            <div class="form-group form-group-default">
+                {{ form_row(form.cycle) }}
+            </div>
+        </div>
+    </div>
+    <div class="row mt-3">
+        <div class="col-md-8">
+            <div class="form-group form-group-default">
+                {{ form_row(form.distance) }}
+            </div>
+        </div>
+    </div>
+    <div class="row mt-3">
+        <div class="col-md-8">
+            <div class="form-group form-group-default">
+                {{ form_row(form.walked_at) }}
+            </div>
+        </div>
+    </div>
+    <div class="text-right mt-3 mb-3">
+        <a href="{{ path('admin.marche_adepte.index') }}" class="btn btn-danger">Annuler</a>
+        <button class="btn btn-success">{{ button|default('Enregistrer') }}</button>
+    </div>
+</div>
+
+{{ form_end(form) }}

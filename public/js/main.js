@@ -168,7 +168,7 @@
 					$this.animateNumber(
 					  {
 					    number: num,
-					    numberStep: comma_separator_number_step
+					    numberStep:comma_separator_number_step,
 					  }, 7000
 					);
 				});

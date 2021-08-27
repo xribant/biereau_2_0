@@ -1,0 +1,72 @@
+{% extends 'admin/adminbase.html.twig' %}
+
+{% block title %} Admin | Biereau.be - La vraie fausse marche adepte{% endblock %}
+
+{% block content %}
+
+    <div class="main-panel">
+        <div class="content">
+            <div class="page-inner">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <div class="card-title">Ajouter des lieux à la vraie fausse marche adepte</div>
+                            </div>
+                            <div class="card-body">
+                                {% for message in app.flashes('success') %}
+                                    <div class="alert alert-success">
+                                        {{ message|raw }}
+                                    </div>
+                                {% endfor %}
+
+                                <table class="table table-striped mt-3">
+                                    <thead>
+                                    <tr>
+                                        <th scope="col" style="width: 16%">N°</th>
+                                        <th scope="col" style="width: 16%">Nom</th>
+                                        <th scope="col" style="width: 16%">Ville</th>
+                                        <th scope="col" style="width: 16%">Distance au Biéreau (Km)</th>
+                                        <th scope="col" style="width: 16%">Image</th>
+                                        <th style="width: 20%"></th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    {% for item in locations %}
+                                        <tr>
+                                            <td>{{ loop.index }}</td>
+                                            <td>{{ item.name }}</td>
+                                            <td>{{ item.city }}</td>
+                                            <td>{{ item.distance }}</td>
+                                            <td>
+                                                {% if item.filename %}
+                                                    <img src="{{ vich_uploader_asset(item, 'imageFile') | imagine_filter('mini_thumbs') }}">
+                                                {% endif %}
+                                            </td>
+
+                                            <td>
+                                                <a href="{{ path('admin.marche_adepte_location.edit', {id: item.id}) }}" class="btn btn-sm btn-warning"><i class="far fa-edit"></i></a>
+                                                <form method="post" action="{{ path('admin.marche_adepte_location.delete', {id: item.id}) }}" style="display: inline-block" onsubmit="return confirm('Etes-vous certain?')">
+                                                    <input type="hidden" name="_method" value="DELETE">
+                                                    <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ item.id) }}">
+                                                    <button class="btn btn-sm btn-danger"><i class="far fa-trash-alt"></i></button>
+                                                </form>
+                                            </td>
+                                        </tr>
+                                    {% endfor %}
+                                    </tbody>
+                                </table>
+                                <div class="text-left mt-3 mb-3">
+                                    <a href="{{  path('admin.marche_adepte_location.new') }}" class="btn btn-primary">Ajouter</a>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
